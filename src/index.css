@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --primary: #5d5f5f;
+  --gold-start: #D4AF37;
+  --gold-end: #C89B3C;
+  --secondary: #C89B3C;
+  --background: #fcf8f8;
+  --on-background: #1c1b1b;
+  --surface: #ffffff;
+  --surface-container: #f1edec;
+  --on-surface: #1c1b1b;
+  --on-surface-variant: #444748;
+  --font-headline: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --container-max: 1440px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background);
+  color: var(--on-background);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ── Gradient utilities ── */
+.text-gradient-gold {
+  background: linear-gradient(to right, var(--gold-start), var(--gold-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.bg-gradient-gold {
+  background: linear-gradient(to right, var(--gold-start), var(--gold-end));
+  color: white;
+}
+
+/* ── Container ── */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── Glass ── */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 40px 60px rgba(33, 33, 33, 0.08);
+}
+
+/* ── Buttons ── */
+.btn-pill {
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: linear-gradient(to right, var(--gold-start), var(--gold-end));
+  color: white;
+  box-shadow: 0 8px 24px rgba(200, 155, 60, 0.35);
+}
+.btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--gold-end);
+  color: var(--gold-end);
+}
+.btn-outline:hover { background: var(--gold-end); color: white; }
+
+/* ── Responsive grid helpers ── */
+.grid-auto {
+  display: grid;
+  gap: 30px;
+}
+
+/* ── Navbar mobile menu ── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(20px);
+  padding: 24px 20px 32px;
+  flex-direction: column;
+  gap: 0;
+  border-bottom: 1px solid #f1edec;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  z-index: 999;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a, .mobile-menu button {
+  padding: 16px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  text-decoration: none;
+  display: block;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  cursor: pointer;
+  text-align: left;
+  letter-spacing: 0.02em;
+}
+
+/* ── Hero buttons mobile ── */
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Vision section responsive grid ── */
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.vision-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ── Trust bar ── */
+.trust-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+/* ── Projects grid ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+/* ── Services grid ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+/* ── Footer grid ── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+/* ═══════════════════════════════
+   TABLET  ≤ 1024px
+═══════════════════════════════ */
+@media (max-width: 1024px) {
+  .container { padding: 0 28px; }
+  .vision-grid { grid-template-columns: 1fr; gap: 48px; }
+  .vision-images { grid-template-columns: 1fr 1fr; }
+}
+
+/* ═══════════════════════════════
+   MOBILE  ≤ 768px
+═══════════════════════════════ */
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.75rem !important; }
+  h3 { font-size: 1.25rem !important; }
+
+  /* Navbar */
+  .nav-links { display: none !important; }
+  .nav-actions-desktop { display: none !important; }
+  .mobile-toggle { display: flex !important; }
+
+  /* Hero */
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta .btn-pill { width: 100%; max-width: 280px; }
+
+  /* Trust bar → single column on very small, 3-col still okay on 768 */
+  .trust-bar-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .trust-bar-grid h2 { font-size: 28px !important; }
+
+  /* Grids */
+  .projects-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .vision-grid { grid-template-columns: 1fr; gap: 32px; }
+  .vision-images { grid-template-columns: 1fr; }
+  .vision-images img:last-child { margin-top: 0 !important; height: 250px !important; }
+  .vision-images img:first-child { height: 250px !important; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start !important; gap: 12px !important; }
+
+  /* Section padding */
+  section { padding-top: 60px !important; padding-bottom: 60px !important; }
+
+  /* Story timeline */
+  .timeline-line { display: none; }
+  .timeline-item { justify-content: flex-start !important; }
+  .timeline-item > div:first-child { width: 100% !important; text-align: left !important; }
+  .timeline-dot { display: none; }
+
+  /* Buttons */
+  .btn-pill { padding: 0.8rem 1.4rem; font-size: 12px; }
+}
+
+/* ═══════════════════════════════
+   SMALL MOBILE  ≤ 480px
+═══════════════════════════════ */
+@media (max-width: 480px) {
+  .trust-bar-grid { grid-template-columns: 1fr; }
+  .trust-bar-grid h2 { font-size: 32px !important; }
+  .projects-grid { grid-template-columns: 1fr; }
+}

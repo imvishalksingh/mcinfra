@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Details - MCINFRA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&amp;family=Manrope:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#dce2f3",
+                        "inverse-surface": "#dce2f3",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#008f5a",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "outline-variant": "#45474b",
+                        "inverse-primary": "#5d5e63",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#f0bf5c",
+                        "on-secondary-fixed": "#261900",
+                        "on-tertiary-fixed": "#002111",
+                        "surface-container": "#19202b",
+                        "primary-fixed-dim": "#c6c6cc",
+                        "surface-tint": "#c6c6cc",
+                        "surface": "#0c141f",
+                        "surface-container-low": "#151c27",
+                        "on-secondary-container": "#ffe9c6",
+                        "on-tertiary": "#003921",
+                        "surface-container-lowest": "#070e19",
+                        "on-primary": "#2f3035",
+                        "tertiary-fixed": "#78fbb6",
+                        "primary-container": "#0f1115",
+                        "background": "#0c141f",
+                        "secondary-fixed-dim": "#f0bf5c",
+                        "secondary-fixed": "#ffdea4",
+                        "secondary-container": "#8a6400",
+                        "error": "#ffb4ab",
+                        "outline": "#909095",
+                        "primary": "#c6c6cc",
+                        "surface-variant": "#2e3541",
+                        "surface-container-high": "#232a36",
+                        "tertiary-container": "#001509",
+                        "on-tertiary-fixed-variant": "#005232",
+                        "surface-dim": "#0c141f",
+                        "on-primary-fixed-variant": "#45474b",
+                        "on-primary-container": "#7b7c82",
+                        "on-primary-fixed": "#1a1c20",
+                        "on-surface": "#dce2f3",
+                        "on-surface-variant": "#c6c6cb",
+                        "surface-container-highest": "#2e3541",
+                        "primary-fixed": "#e2e2e8",
+                        "tertiary-fixed-dim": "#59de9b",
+                        "on-secondary": "#412d00",
+                        "inverse-on-surface": "#2a313d",
+                        "tertiary": "#59de9b",
+                        "surface-bright": "#323946"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "24px"
+                    },
+                    spacing: {
+                        "gutter": "32px",
+                        "stack-sm": "8px",
+                        "stack-lg": "24px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "stack-md": "16px",
+                        "section-padding": "120px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Epilogue"],
+                        "body-md": ["Manrope"],
+                        "headline-md": ["Epilogue"],
+                        "display-hero": ["Epilogue"],
+                        "body-lg": ["Manrope"],
+                        "label-caps": ["Manrope"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["48px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-hero": ["72px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .luxury-shadow {
+            box-shadow: 0 20px 60px rgba(12, 20, 31, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/5 dark:bg-black/10 backdrop-blur-xl border-b border-white/10 dark:border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] backdrop-filter transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center px-8 md:px-16 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-white dark:text-white">MCINFRA</div>
+<ul class="hidden md:flex gap-8 items-center font-sans tracking-tight uppercase text-xs font-semibold">
+<li><a class="text-white/70 hover:text-white hover:scale-105 transition-transform duration-300" href="#">Home</a></li>
+<li><a class="text-amber-500 border-b-2 border-amber-500 pb-1 hover:scale-105 transition-transform duration-300" href="#">Projects</a></li>
+<li><a class="text-white/70 hover:text-white hover:scale-105 transition-transform duration-300" href="#">About</a></li>
+<li><a class="text-white/70 hover:text-white hover:scale-105 transition-transform duration-300" href="#">Services</a></li>
+<li><a class="text-white/70 hover:text-white hover:scale-105 transition-transform duration-300" href="#">Contact</a></li>
+</ul>
+<button class="bg-amber-500 text-black px-6 py-2 rounded-full font-label-caps text-label-caps uppercase tracking-widest font-bold hover:bg-amber-400 transition-colors hidden md:block">
+                Inquire Now
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero Banner -->
+<section class="relative w-full h-[819px] flex items-end pb-24 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Luxurious modern architectural facade at twilight with glowing interior lights and reflective pool" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfJrakGm4Ek6e3T06TYrXXhg3S8MT6OqK7YXLp2Ni0PNDquSzYpw_WlOKKLchKQ6WSYRTwvT9b6_XrhKNCKI8bwH7B2ztzEZUSzSD-o7ocVOcPs7eXihBafJMy_WvB1YGsnDBBemdpI9jkrrnNkC3BgxXbdulVazSwf8-QABuAv165VMb-d2H2MMaJBYOWwHnyiS-6yYpleRcPl-sLMD711bguOdEyysH-9MnzWb66d1toRFk6NkitcLKSdtdiAc2rLYfL1nLswg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+<div class="relative max-w-container-max mx-auto px-8 md:px-16 w-full flex justify-between items-end">
+<div class="max-w-2xl">
+<span class="inline-block px-4 py-2 rounded-full bg-tertiary/20 text-tertiary font-label-caps text-label-caps border border-tertiary/30 mb-6">Available</span>
+<h1 class="font-display-hero text-display-hero text-on-background mb-4">The Aurelia</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">An exclusive enclave of architectural mastery, offering uncompromised luxury and panoramic city views.</p>
+</div>
+<div class="hidden md:flex gap-4">
+<div class="glass-panel rounded-2xl p-6 text-center">
+<div class="font-headline-md text-headline-md text-secondary">4BHK</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-2">Configurations</div>
+</div>
+<div class="glass-panel rounded-2xl p-6 text-center">
+<div class="font-headline-md text-headline-md text-secondary">6.5Cr+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-2">Starting Price</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Cinematic Gallery -->
+<section class="max-w-container-max mx-auto px-8 md:px-16 py-section-padding">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-12">Visual Journey</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-[600px]">
+<div class="md:col-span-8 rounded-2xl overflow-hidden relative group luxury-shadow">
+<img alt="Expansive living room with double-height ceiling, modern minimalist furniture, and floor-to-ceiling windows" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Expansive living room with double-height ceiling, modern minimalist furniture, and floor-to-ceiling windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV6rvzQyyQki1gPf4bVFbaH_joaOdSbaXJ9gTq6f7_D_HoFOC1hki2ebL2tF-y0QveMFvIdwpVD83S3oXuXRG2Cnx5IB4g-sNm6Ux7gCetYu-qoTFw5gU_0Z40AagPC15A28JJmDewF4zBbeqp15lwbr1xy7qiylU2aMvWK_iNmU7RocJ1-bzetAOdjoPHlc11qG4Y-mqsd7AUMqJ7YS5fXPKoNUgxmWDO3zogHMuDQUV0plvEi4yNu5SfE-IcOSAOzbG_AeNMRA"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl">zoom_in</span>
+</div>
+</div>
+<div class="md:col-span-4 grid grid-rows-2 gap-8">
+<div class="rounded-2xl overflow-hidden relative group luxury-shadow">
+<img alt="Luxurious master bedroom with ambient lighting, plush textiles, and city skyline view" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Luxurious master bedroom with ambient lighting, plush textiles, and city skyline view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIMBzbjw7BQhXCrBRQf-s6n1p2THS4dFZrNxgGjBCScKI6NnsTdt2wp5XrA7QSmVFHRDTX9cF6h_vpOrlQySeuAIafRGFJ7aHRugUgxdskfLAR3Y5bYGJ-444XnRLx0qjyUsSoxodPvJgUaIEmsPdGR6YP5Q_l9HClKn4UFJvwAOwvvOlnwUKN1NYBfwNfemGorCFJxoXC47_6j8R6_RLnVOuTB4fTVV20f0-goRnFCXNTq1vXOgcIfbn8Z34FuPr4nn3r7oOBOg"/>
+</div>
+<div class="rounded-2xl overflow-hidden relative group luxury-shadow">
+<img alt="State-of-the-art kitchen with dark marble countertops, sleek cabinetry, and premium appliances" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="State-of-the-art kitchen with dark marble countertops, sleek cabinetry, and premium appliances" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARtbefAToiUCPD84mrzkxK7K4tWZJaswfxbpupEfyHblnVxvxdkzfU7EwGF6e3LSsB-kXYTfOd_NC7QhpyLdKep_H-DXpXrErigvWeZ17EN2RNb6-xhTAq4SP_kuR86piu9Y9EHLZggTv3sZEc06LZcRoRGJ66m3kehvTcfOxDW9ph9htIOGtILL-r53O4rrqLvsOUcQ9IxTw0OlpeCDuY2Fs83o229OptnrGrBdx7quOzBASXIOw5m1SpdZawbg3xKYPh29AMoQ"/>
+<div class="absolute inset-0 bg-background/80 flex items-center justify-center cursor-pointer hover:bg-background/70 transition-colors">
+<span class="font-headline-md text-headline-md text-secondary">+12 More</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0F1115] dark:bg-[#0F1115] w-full border-t border-white/10 mt-auto">
+<div class="max-w-7xl mx-auto px-8 py-20 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-xl font-bold text-amber-500">MCINFRA</div>
+<div class="text-gray-500 text-sm">© 2024 MCINFRA. Architectural Excellence Defined.</div>
+<ul class="flex gap-6 font-sans text-sm tracking-widest uppercase">
+<li><a class="text-gray-500 hover:text-amber-400 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-gray-500 hover:text-amber-400 transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-gray-500 hover:text-amber-400 transition-colors" href="#">Cookie Policy</a></li>
+<li><a class="text-gray-500 hover:text-amber-400 transition-colors" href="#">Sustainability</a></li>
+</ul>
+</div>
+</footer>
+</body></html>

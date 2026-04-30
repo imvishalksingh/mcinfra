@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects - MCINFRA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&amp;family=Manrope:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#dce2f3",
+                    "inverse-surface": "#dce2f3",
+                    "on-error": "#690005",
+                    "on-tertiary-container": "#008f5a",
+                    "error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "outline-variant": "#45474b",
+                    "inverse-primary": "#5d5e63",
+                    "on-error-container": "#ffdad6",
+                    "secondary": "#f0bf5c",
+                    "on-secondary-fixed": "#261900",
+                    "on-tertiary-fixed": "#002111",
+                    "surface-container": "#19202b",
+                    "primary-fixed-dim": "#c6c6cc",
+                    "surface-tint": "#c6c6cc",
+                    "surface": "#0c141f",
+                    "surface-container-low": "#151c27",
+                    "on-secondary-container": "#ffe9c6",
+                    "on-tertiary": "#003921",
+                    "surface-container-lowest": "#070e19",
+                    "on-primary": "#2f3035",
+                    "tertiary-fixed": "#78fbb6",
+                    "primary-container": "#0f1115",
+                    "background": "#0c141f",
+                    "secondary-fixed-dim": "#f0bf5c",
+                    "secondary-fixed": "#ffdea4",
+                    "secondary-container": "#8a6400",
+                    "error": "#ffb4ab",
+                    "outline": "#909095",
+                    "primary": "#c6c6cc",
+                    "surface-variant": "#2e3541",
+                    "surface-container-high": "#232a36",
+                    "tertiary-container": "#001509",
+                    "on-tertiary-fixed-variant": "#005232",
+                    "surface-dim": "#0c141f",
+                    "on-primary-fixed-variant": "#45474b",
+                    "on-primary-container": "#7b7c82",
+                    "on-primary-fixed": "#1a1c20",
+                    "on-surface": "#dce2f3",
+                    "on-surface-variant": "#c6c6cb",
+                    "surface-container-highest": "#2e3541",
+                    "primary-fixed": "#e2e2e8",
+                    "tertiary-fixed-dim": "#59de9b",
+                    "on-secondary": "#412d00",
+                    "inverse-on-surface": "#2a313d",
+                    "tertiary": "#59de9b",
+                    "surface-bright": "#323946"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "stack-sm": "8px",
+                    "stack-lg": "24px",
+                    "container-max": "1440px",
+                    "unit": "8px",
+                    "stack-md": "16px",
+                    "section-padding": "120px"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "Epilogue"
+                    ],
+                    "body-md": [
+                            "Manrope"
+                    ],
+                    "headline-md": [
+                            "Epilogue"
+                    ],
+                    "display-hero": [
+                            "Epilogue"
+                    ],
+                    "body-lg": [
+                            "Manrope"
+                    ],
+                    "label-caps": [
+                            "Manrope"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-hero": [
+                            "72px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .luxury-shadow {
+            box-shadow: 0 20px 40px -10px rgba(12, 20, 31, 0.5);
+        }
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px -15px rgba(12, 20, 31, 0.7);
+        }
+        .gradient-gold {
+            background: linear-gradient(135deg, #ffdea4 0%, #f0bf5c 100%);
+        }
+        .gradient-dark {
+            background: linear-gradient(to top, rgba(12, 20, 31, 1) 0%, rgba(12, 20, 31, 0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/5 dark:bg-black/10 backdrop-blur-xl border-b border-white/10 dark:border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] backdrop-filter transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center px-8 md:px-16 py-6 max-w-[1440px] mx-auto">
+<a class="text-2xl font-black tracking-tighter text-white dark:text-white" href="#">MCINFRA</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-sans tracking-tight uppercase text-xs font-semibold text-white/70 hover:text-white hover:scale-105 transition-transform duration-300" href="#">Home</a>
+<a class="font-sans tracking-tight uppercase text-xs font-semibold text-amber-500 border-b-2 border-amber-500 pb-1 hover:scale-105 transition-transform duration-300" href="#">Projects</a>
+<a class="font-sans tracking-tight uppercase text-xs font-semibold text-white/70 hover:text-white hover:scale-105 transition-transform duration-300" href="#">About</a>
+<a class="font-sans tracking-tight uppercase text-xs font-semibold text-white/70 hover:text-white hover:scale-105 transition-transform duration-300" href="#">Services</a>
+<a class="font-sans tracking-tight uppercase text-xs font-semibold text-white/70 hover:text-white hover:scale-105 transition-transform duration-300" href="#">Contact</a>
+</div>
+<button class="hidden md:block gradient-gold text-on-secondary-fixed rounded-full px-6 py-3 font-label-caps text-label-caps hover:opacity-90 transition-opacity">
+                Inquire Now
+            </button>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Page Header -->
+<header class="pt-40 pb-16 px-8 md:px-16 max-w-[1440px] mx-auto">
+<div class="max-w-3xl">
+<h1 class="font-display-hero text-display-hero mb-6 text-on-surface">Curated Portfolio</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Explore our collection of exceptional architectural achievements. Each property is a testament to uncompromising quality and visionary design.
+            </p>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="px-8 md:px-16 pb-section-padding max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-1/4 shrink-0">
+<div class="glass-panel rounded-xl p-6 sticky top-32">
+<div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface text-xl">Refine</h2>
+<button class="text-secondary hover:text-secondary-fixed transition-colors font-label-caps text-label-caps">Reset</button>
+</div>
+<!-- Search -->
+<div class="mb-stack-lg">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-stack-sm">Search</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 pl-10 pr-4 text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all placeholder:text-outline/50 font-body-md text-sm" placeholder="Project name or location..." type="text"/>
+</div>
+</div>
+<!-- Location -->
+<div class="mb-stack-lg">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-stack-sm">Location</label>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 px-4 text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none appearance-none font-body-md text-sm">
+<option value="">All Locations</option>
+<option value="downtown">Downtown Metro</option>
+<option value="waterfront">Waterfront District</option>
+<option value="heights">The Heights</option>
+</select>
+</div>
+<!-- Property Type -->
+<div class="mb-stack-lg">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-stack-sm">Property Type</label>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox bg-surface-container-low border-outline-variant rounded text-secondary focus:ring-secondary focus:ring-offset-background w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-secondary transition-colors text-sm">Luxury Condominiums</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox bg-surface-container-low border-outline-variant rounded text-secondary focus:ring-secondary focus:ring-offset-background w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-secondary transition-colors text-sm">Villas &amp; Estates</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox bg-surface-container-low border-outline-variant rounded text-secondary focus:ring-secondary focus:ring-offset-background w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-secondary transition-colors text-sm">Commercial Towers</span>
+</label>
+</div>
+</div>
+<!-- Budget Range -->
+<div class="mb-stack-lg">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-stack-sm">Investment Range</label>
+<div class="flex gap-4">
+<input class="w-1/2 bg-surface-container-low border border-outline-variant rounded-lg py-2 px-3 text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-sm placeholder:text-outline/50" placeholder="Min" type="text"/>
+<input class="w-1/2 bg-surface-container-low border border-outline-variant rounded-lg py-2 px-3 text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary outline-none font-body-md text-sm placeholder:text-outline/50" placeholder="Max" type="text"/>
+</div>
+</div>
+<!-- Status -->
+<div class="mb-stack-lg">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-stack-sm">Status</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-secondary text-secondary font-label-caps text-xs hover:bg-secondary/10 transition-colors">Under Construction</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-caps text-xs hover:border-outline hover:text-on-surface transition-colors">Ready to Move</button>
+</div>
+</div>
+<button class="w-full gradient-gold text-on-secondary-fixed rounded-full py-3 font-label-caps text-label-caps hover:opacity-90 transition-opacity mt-4">
+                    Apply Filters
+                </button>
+</div>
+</aside>
+<!-- Project Grid -->
+<div class="w-full lg:w-3/4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project Card 1 -->
+<div class="glass-panel rounded-xl overflow-hidden hover-lift flex flex-col group">
+<div class="relative h-72 w-full overflow-hidden rounded-t-xl">
+<img alt="luxury modern mansion exterior with large glass windows pool and warm interior lighting at dusk" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="luxury modern mansion exterior with large glass windows pool and warm interior lighting at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgLYyTholVO1dv1v8VmzV01xvxzc-iwbY3WqTMgCVHOwcH2CkpLcSJ9gX6GzyYvp1vCZHncc01mRenhGnB1NRTLl27FAfSTFEh9ZXcELuvUNjqnPMtB8AHyBMKApZgLuzxPVpBO2ps6p1iGe8AiGT8nC6oOMQEdYJUrQDuXhH71xj42mxnM4W4lXxlgET2a3tiyAw6wIsx84WoxkvmR1_BexqHN8saoPNf5yZMplKCTE05nRVkajfOwKu7XfWAFskEhckrhH0w2g"/>
+<div class="absolute inset-0 gradient-dark opacity-60"></div>
+<div class="absolute top-4 right-4 bg-tertiary/20 backdrop-blur-md border border-tertiary/30 text-tertiary px-3 py-1 rounded-full font-label-caps text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                            Available
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface text-2xl">The Aurelia</h3>
+<span class="font-body-md text-secondary font-semibold">From $4.2M</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-sm mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Waterfront District
+                        </p>
+<div class="grid grid-cols-3 gap-2 mb-6 mt-auto border-t border-white/5 pt-4">
+<div class="text-center">
+<span class="block text-outline font-label-caps text-[10px] mb-1">TYPE</span>
+<span class="text-on-surface font-body-md text-sm">Villa</span>
+</div>
+<div class="text-center border-x border-white/5">
+<span class="block text-outline font-label-caps text-[10px] mb-1">BHK</span>
+<span class="text-on-surface font-body-md text-sm">4 &amp; 5</span>
+</div>
+<div class="text-center">
+<span class="block text-outline font-label-caps text-[10px] mb-1">AREA</span>
+<span class="text-on-surface font-body-md text-sm">6,500 sqft</span>
+</div>
+</div>
+<button class="w-full glass-panel text-on-surface hover:bg-white/10 rounded-full py-3 font-label-caps text-label-caps transition-colors flex items-center justify-center gap-2">
+                            View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="glass-panel rounded-xl overflow-hidden hover-lift flex flex-col group">
+<div class="relative h-72 w-full overflow-hidden rounded-t-xl">
+<img alt="sleek high rise modern apartment building exterior viewed from below against clear blue sky" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="sleek high rise modern apartment building exterior viewed from below against clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHq0j034plF6_AjTWYIKQGPpA3zxn80RJePcMv1hpGfQh3CZ6Yu6_rBMR-GxjaiSYAef2FAm-bs7TnL31qG83Q8pBh-JvFzP2rQcz23jUrfsU4jNyj2rXhwlg9beQfg5iOYvMjmzeS2d7a4DQhID-zVbjsE1qj2plW2crmUYtprD13M6KwI2A9NA2VSIUA2whmtszRKXnHmP2p67S0xSzdUOhMnc0hdjG-gF3PXer5IUWBgsDovBiuyF7XvG9V-s2QPAPo5ncl-A"/>
+<div class="absolute inset-0 gradient-dark opacity-60"></div>
+<div class="absolute top-4 right-4 bg-secondary/20 backdrop-blur-md border border-secondary/30 text-secondary px-3 py-1 rounded-full font-label-caps text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                            Presale
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface text-2xl">Lumina Tower</h3>
+<span class="font-body-md text-secondary font-semibold">From $1.8M</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-sm mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Downtown Metro
+                        </p>
+<div class="grid grid-cols-3 gap-2 mb-6 mt-auto border-t border-white/5 pt-4">
+<div class="text-center">
+<span class="block text-outline font-label-caps text-[10px] mb-1">TYPE</span>
+<span class="text-on-surface font-body-md text-sm">Condo</span>
+</div>
+<div class="text-center border-x border-white/5">
+<span class="block text-outline font-label-caps text-[10px] mb-1">BHK</span>
+<span class="text-on-surface font-body-md text-sm">2 &amp; 3</span>
+</div>
+<div class="text-center">
+<span class="block text-outline font-label-caps text-[10px] mb-1">AREA</span>
+<span class="text-on-surface font-body-md text-sm">2,100 sqft</span>
+</div>
+</div>
+<button class="w-full glass-panel text-on-surface hover:bg-white/10 rounded-full py-3 font-label-caps text-label-caps transition-colors flex items-center justify-center gap-2">
+                            View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="glass-panel rounded-xl overflow-hidden hover-lift flex flex-col group">
+<div class="relative h-72 w-full overflow-hidden rounded-t-xl">
+<img alt="contemporary minimalist living room with floor to ceiling windows overlooking forest luxury interior design" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="contemporary minimalist living room with floor to ceiling windows overlooking forest luxury interior design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACeadLrCH2GeqH2T6t0BIW_iJrgIJdgWo4m3f-8hMQbSfQz9bEJUWm8fi5he4Np_qRQFgY_aiU3yoO7Xbymm14vQo6oHudz3jaH6LmeAFbct4rjQkL7Pd0p9KZKoUnPenMEDYZno0SwRWuhin2r6fI-HRLwzpIT9SBLYb8nHshFWf03y4bf3fH4OB3uYNEFjoW1kCF_p-TLqtnSPC_72pt36hohzbL_spWFDiWP6KVNnNbyDnznYGYX7vhNq-dUPwF1XS6eajF3A"/>
+<div class="absolute inset-0 gradient-dark opacity-60"></div>
+<div class="absolute top-4 right-4 bg-tertiary/20 backdrop-blur-md border border-tertiary/30 text-tertiary px-3 py-1 rounded-full font-label-caps text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                            Available
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface text-2xl">The Canopy</h3>
+<span class="font-body-md text-secondary font-semibold">From $3.5M</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-sm mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> The Heights
+                        </p>
+<div class="grid grid-cols-3 gap-2 mb-6 mt-auto border-t border-white/5 pt-4">
+<div class="text-center">
+<span class="block text-outline font-label-caps text-[10px] mb-1">TYPE</span>
+<span class="text-on-surface font-body-md text-sm">Estate</span>
+</div>
+<div class="text-center border-x border-white/5">
+<span class="block text-outline font-label-caps text-[10px] mb-1">BHK</span>
+<span class="text-on-surface font-body-md text-sm">4</span>
+</div>
+<div class="text-center">
+<span class="block text-outline font-label-caps text-[10px] mb-1">AREA</span>
+<span class="text-on-surface font-body-md text-sm">5,200 sqft</span>
+</div>
+</div>
+<button class="w-full glass-panel text-on-surface hover:bg-white/10 rounded-full py-3 font-label-caps text-label-caps transition-colors flex items-center justify-center gap-2">
+                            View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="glass-panel rounded-xl overflow-hidden hover-lift flex flex-col group">
+<div class="relative h-72 w-full overflow-hidden rounded-t-xl">
+<img alt="modern glass commercial building facade reflecting sky architectural detail" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="modern glass commercial building facade reflecting sky architectural detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg8ill_u-uZguc4fLlY3LtfXq3V8ECiD8zNtjeGF4YWkXklwsQd7sSB1sANRDZjXZ_NpxAHYDBcm9hHu5lduysxtv4eSMw3L4SlbtQDWwWNoWbHdvOQSfA6AOCtV-lHXykNexVLDbfDrEGERg343rymCpZudfjDsXdfKWHKzg0UdxRafTYXtkEal5xo3jEsSi9LEcq_OWVnSN8M5HYaJy1_SchMKnlWbGvS3B7zNk0_6IttyCywZoOkjebh5XQ9itd8FSxY2JFig"/>
+<div class="absolute inset-0 gradient-dark opacity-60"></div>
+<div class="absolute top-4 right-4 bg-outline-variant/30 backdrop-blur-md border border-outline-variant/50 text-on-surface px-3 py-1 rounded-full font-label-caps text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                            Sold Out
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface text-2xl">Vertex Plaza</h3>
+<span class="font-body-md text-outline font-semibold">Contact Us</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-sm mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Financial District
+                        </p>
+<div class="grid grid-cols-3 gap-2 mb-6 mt-auto border-t border-white/5 pt-4 opacity-70">
+<div class="text-center">
+<span class="block text-outline font-label-caps text-[10px] mb-1">TYPE</span>
+<span class="text-on-surface font-body-md text-sm">Commercial</span>
+</div>
+<div class="text-center border-x border-white/5">
+<span class="block text-outline font-label-caps text-[10px] mb-1">UNITS</span>
+<span class="text-on-surface font-body-md text-sm">42</span>
+</div>
+<div class="text-center">
+<span class="block text-outline font-label-caps text-[10px] mb-1">AREA</span>
+<span class="text-on-surface font-body-md text-sm">Varied</span>
+</div>
+</div>
+<button class="w-full bg-transparent border border-outline-variant text-on-surface-variant hover:border-outline rounded-full py-3 font-label-caps text-label-caps transition-colors flex items-center justify-center gap-2">
+                            Join Waitlist
+                        </button>
+</div>
+</div>
+</div>
+<!-- Pagination (Conceptual) -->
+<div class="mt-12 flex justify-center gap-2">
+<button class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-on-surface hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-secondary text-on-secondary-fixed font-label-caps text-sm flex items-center justify-center">1</button>
+<button class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-on-surface hover:text-secondary transition-colors font-label-caps text-sm">2</button>
+<button class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-on-surface hover:text-secondary transition-colors font-label-caps text-sm">3</button>
+<button class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-on-surface hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-white/5 border-t border-white/10 none bg-[#0F1115] dark:bg-[#0F1115]">
+<div class="max-w-7xl mx-auto px-8 py-20 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-xl font-bold text-amber-500">MCINFRA</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-sans text-sm tracking-widest uppercase text-gray-500 hover:text-amber-400 transition-colors" href="#">Privacy Policy</a>
+<a class="font-sans text-sm tracking-widest uppercase text-gray-500 hover:text-amber-400 transition-colors" href="#">Terms of Service</a>
+<a class="font-sans text-sm tracking-widest uppercase text-gray-500 hover:text-amber-400 transition-colors" href="#">Cookie Policy</a>
+<a class="font-sans text-sm tracking-widest uppercase text-gray-500 hover:text-amber-400 transition-colors" href="#">Sustainability</a>
+</div>
+<div class="font-sans text-sm tracking-widest uppercase text-gray-500 text-center md:text-right">
+                © 2024 MCINFRA. Architectural Excellence Defined.
+            </div>
+</div>
+</footer>
+</body></html>
