@@ -116,7 +116,7 @@ const Story = () => {
                   borderRadius: '50%', 
                   transform: 'translateX(-50%)',
                   boxShadow: '0 0 0 6px rgba(200, 155, 60, 0.12)'
-                }}></div></div>
+                }}></div>
               </motion.div>
             ))}
           </div>
