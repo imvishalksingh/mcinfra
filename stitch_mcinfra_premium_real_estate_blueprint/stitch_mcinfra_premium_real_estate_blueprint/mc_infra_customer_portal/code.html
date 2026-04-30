@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Portal | Astra Build-Tech</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#bdc7db",
+                        "on-surface": "#191c1f",
+                        "on-background": "#191c1f",
+                        "surface-variant": "#e0e2e6",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f7f9fd",
+                        "secondary-fixed": "#ffe07f",
+                        "tertiary-container": "#2c3646",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1b365d",
+                        "on-tertiary-container": "#959fb2",
+                        "outline-variant": "#c4c6cf",
+                        "surface": "#f7f9fd",
+                        "surface-container": "#eceef2",
+                        "secondary-fixed-dim": "#edc200",
+                        "on-secondary-fixed-variant": "#564500",
+                        "on-secondary-container": "#6f5900",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#2e476f",
+                        "on-tertiary-fixed-variant": "#3d4757",
+                        "surface-container-highest": "#e0e2e6",
+                        "on-primary-fixed": "#001b3d",
+                        "on-primary-container": "#87a0cd",
+                        "surface-container-low": "#f2f4f8",
+                        "primary-fixed-dim": "#aec7f7",
+                        "on-surface-variant": "#44474e",
+                        "background": "#f7f9fd",
+                        "on-secondary": "#ffffff",
+                        "outline": "#74777f",
+                        "on-error-container": "#93000a",
+                        "primary": "#002046",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#eff1f5",
+                        "primary-fixed": "#d6e3ff",
+                        "secondary-container": "#fed000",
+                        "tertiary-fixed": "#d9e3f7",
+                        "surface-tint": "#465f88",
+                        "surface-dim": "#d8dade",
+                        "surface-container-high": "#e6e8ec",
+                        "on-tertiary-fixed": "#121c2a",
+                        "on-secondary-fixed": "#231b00",
+                        "tertiary": "#17212f",
+                        "inverse-surface": "#2d3134",
+                        "inverse-primary": "#aec7f7",
+                        "secondary": "#725c00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xl": "48px",
+                        "grid-gutter": "24px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "grid-margin": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "ui-button": ["Inter"],
+                        "h3": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "ui-button": ["14px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .industrial-border { border: 1px solid #E5E7EB; }
+        .blueprint-dashed { border-bottom: 1px dashed #c4c6cf; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 flex justify-between items-center h-20 px-8 max-w-full mx-auto">
+<div class="text-xl font-bold text-[#1B365D] dark:text-white uppercase tracking-wider">Astra Build-Tech</div>
+<nav class="hidden md:flex gap-8 items-center font-inter text-sm font-semibold tracking-tight">
+<a class="text-gray-600 dark:text-gray-400 hover:text-[#EAB308] transition-colors duration-200" href="#">Projects</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-[#EAB308] transition-colors duration-200" href="#">Services</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-[#EAB308] transition-colors duration-200" href="#">Blueprints</a>
+<a class="text-[#1B365D] border-b-2 border-[#EAB308] pb-1" href="#">Portal</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-[#EAB308] transition-colors duration-200" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-[#1B365D]" data-icon="phone">phone</span>
+<span class="material-symbols-outlined text-[#1B365D]" data-icon="mail">mail</span>
+<span class="material-symbols-outlined text-[#1B365D]" data-icon="chat">chat</span>
+</div>
+<button class="bg-[#1B365D] text-white px-6 py-2 rounded-lg font-ui-button text-ui-button uppercase tracking-wider hover:bg-primary-container transition-all">Get Quote</button>
+</div>
+</header>
+<div class="flex pt-20 min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r border-gray-300 bg-gray-100 dark:bg-slate-950">
+<div class="p-6 border-b border-gray-300">
+<div class="text-lg font-black text-[#1B365D] uppercase">Astra Indian Construction</div>
+<div class="text-xs font-label-caps text-gray-500 uppercase tracking-widest mt-1">Precision Engineering</div>
+</div>
+<nav class="flex-1 py-4">
+<div class="px-4 py-2 text-label-caps text-gray-400 mb-2">DASHBOARD</div>
+<a class="flex items-center gap-3 px-6 py-4 bg-gray-200 dark:bg-gray-800 text-[#1B365D] font-bold border-l-4 border-[#EAB308] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="foundation">foundation</span>
+<span class="font-label-caps">Home</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<span class="font-label-caps">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+<span class="font-label-caps">Portfolio</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-caps">Team</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="flex items-center gap-3 mb-6 industrial-border p-3 bg-white">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center text-white font-bold">JD</div>
+<div>
+<div class="text-xs font-bold">John Doe</div>
+<div class="text-[10px] text-gray-500">Unit 402, Block B</div>
+</div>
+</div>
+<button class="w-full bg-[#EAB308] text-[#1B365D] py-3 font-ui-button text-ui-button uppercase flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="contact_phone">contact_phone</span>
+                    Site Visit
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-8 bg-[#F3F4F6] overflow-y-auto">
+<div class="max-w-6xl mx-auto">
+<header class="mb-10">
+<h1 class="font-h1 text-h1 text-primary mb-2">Project Overview</h1>
+<p class="text-body-lg text-on-surface-variant">Welcome back, John. Here is the latest progress on your unit at Astra Vertica.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Construction Status Card -->
+<div class="col-span-12 lg:col-span-8 bg-white industrial-border rounded-lg overflow-hidden">
+<div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+<h3 class="font-h3 text-h3 uppercase text-sm tracking-widest text-[#1B365D]">Unit Progress: Astra Vertica - Block B</h3>
+<span class="px-3 py-1 bg-[#EAB308] text-[#1B365D] text-xs font-bold uppercase rounded">In Progress</span>
+</div>
+<div class="p-8">
+<div class="flex items-center justify-between mb-4">
+<span class="font-bold text-lg">Slab Casting: Floor 14</span>
+<span class="text-[#1B365D] font-black">65% Complete</span>
+</div>
+<div class="w-full bg-gray-200 h-4 rounded-full mb-8">
+<div class="bg-[#EAB308] h-4 rounded-full" style="width: 65%"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 blueprint-dashed">
+<div class="pb-4">
+<div class="text-xs text-gray-500 uppercase font-bold mb-1">Expected Completion</div>
+<div class="text-lg font-bold">Oct 2024</div>
+</div>
+<div class="pb-4">
+<div class="text-xs text-gray-500 uppercase font-bold mb-1">Next Milestone</div>
+<div class="text-lg font-bold">Internal Brickwork</div>
+</div>
+<div class="pb-4">
+<div class="text-xs text-gray-500 uppercase font-bold mb-1">Last Site Visit</div>
+<div class="text-lg font-bold">12 May 2024</div>
+</div>
+</div>
+</div>
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition-all duration-700" data-alt="A professional architectural photograph of a large-scale construction site featuring a reinforced concrete slab being cast. The lighting is high-contrast morning sun, highlighting the steel reinforcements and the texture of fresh concrete. The color palette is dominated by industrial grays and construction yellows, maintaining a grounded and structural aesthetic consistent with engineering precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYSgGfS7yuyspYfeBSzt5YrWZHDky5L-nugh8eAL7srAWdX7uA2E2HGoBrv28uTqcDHsbDD11b7nN13LMdpKkEJ6NcmpmplnbSHAiY3AXPS4t9BvxGH7tYdvl43LSoHK1OAjfC8pHp8k5dpZsndVBgeOLGk9HLg3c9FAZKcq_44LrTI08B1t4KjjRwywp9epFE-u-ijMjntytiGL7_spDAcoKTKOUHANw1hRAYyLFi2L2ubcb2HMLWHgXVldwJxOL-wAffIaCRIg"/>
+</div>
+</div>
+<!-- Payment Overview -->
+<div class="col-span-12 lg:col-span-4 bg-white industrial-border rounded-lg flex flex-col">
+<div class="p-6 border-b border-gray-100 bg-[#1B365D]">
+<h3 class="font-h3 text-h3 text-white text-sm uppercase tracking-widest">Financial Summary</h3>
+</div>
+<div class="p-6 flex-1">
+<div class="mb-6">
+<div class="text-xs text-gray-500 uppercase font-bold mb-1">Total Unit Cost</div>
+<div class="text-3xl font-black text-[#1B365D]">₹ 1,45,00,000</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-sm font-bold">Paid to date</span>
+<span class="text-sm">₹ 85,00,000</span>
+</div>
+<div class="w-full bg-gray-100 h-2">
+<div class="bg-green-600 h-2" style="width: 58%"></div>
+</div>
+<div class="flex justify-between items-end text-error">
+<span class="text-sm font-bold">Upcoming Demand</span>
+<span class="text-sm font-black">₹ 12,50,000</span>
+</div>
+<div class="text-[10px] text-gray-400 italic">Due on completion of 14th floor slab.</div>
+</div>
+</div>
+<div class="p-6 bg-gray-50 border-t border-gray-100">
+<button class="w-full bg-[#1B365D] text-white py-3 rounded font-ui-button uppercase tracking-widest">Pay Now</button>
+</div>
+</div>
+<!-- Documents Section -->
+<div class="col-span-12 lg:col-span-6 bg-white industrial-border rounded-lg">
+<div class="p-6 border-b border-gray-100 flex items-center justify-between">
+<h3 class="font-h3 text-h3 text-sm uppercase tracking-widest text-[#1B365D]">Project Documents</h3>
+<span class="material-symbols-outlined text-gray-400" data-icon="folder">folder</span>
+</div>
+<div class="divide-y divide-gray-100">
+<div class="p-4 flex items-center justify-between hover:bg-gray-50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded">
+<span class="material-symbols-outlined text-error" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<div class="font-bold text-sm">Builder Buyer Agreement (BBA)</div>
+<div class="text-xs text-gray-400">Signed on 15 Jan 2024 • 4.2MB</div>
+</div>
+</div>
+<button class="p-2 hover:bg-gray-200 rounded transition-colors">
+<span class="material-symbols-outlined text-[#1B365D]" data-icon="download">download</span>
+</button>
+</div>
+<div class="p-4 flex items-center justify-between hover:bg-gray-50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded">
+<span class="material-symbols-outlined text-error" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<div class="font-bold text-sm">Payment Receipt #A2940</div>
+<div class="text-xs text-gray-400">Issued on 10 May 2024 • 1.1MB</div>
+</div>
+</div>
+<button class="p-2 hover:bg-gray-200 rounded transition-colors">
+<span class="material-symbols-outlined text-[#1B365D]" data-icon="download">download</span>
+</button>
+</div>
+<div class="p-4 flex items-center justify-between hover:bg-gray-50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded">
+<span class="material-symbols-outlined text-error" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<div class="font-bold text-sm">Possession Letter Draft</div>
+<div class="text-xs text-gray-400">Available for Review • 800KB</div>
+</div>
+</div>
+<button class="p-2 hover:bg-gray-200 rounded transition-colors">
+<span class="material-symbols-outlined text-[#1B365D]" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<div class="p-4 text-center">
+<a class="text-xs font-bold text-[#1B365D] hover:underline uppercase tracking-widest" href="#">View All Documents</a>
+</div>
+</div>
+<!-- Support Ticket Area -->
+<div class="col-span-12 lg:col-span-6 bg-white industrial-border rounded-lg">
+<div class="p-6 border-b border-gray-100 flex items-center justify-between">
+<h3 class="font-h3 text-h3 text-sm uppercase tracking-widest text-[#1B365D]">Support &amp; Requests</h3>
+<span class="material-symbols-outlined text-gray-400" data-icon="support_agent">support_agent</span>
+</div>
+<div class="p-6 space-y-6">
+<div class="industrial-border p-4 bg-surface-container-low rounded">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold uppercase text-[#1B365D]">Ticket #9021 - Flooring Selection</span>
+<span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] font-bold rounded">RESOLVED</span>
+</div>
+<p class="text-sm text-gray-600 mb-3">Customer confirmed Choice B (Granite) for the main foyer area during visit.</p>
+<div class="text-[10px] text-gray-400">Last updated 2 days ago by CRM Team</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-xs font-bold uppercase text-gray-400">New Request</h4>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center justify-center p-4 border border-dashed border-gray-300 rounded hover:border-[#1B365D] hover:bg-gray-50 transition-all group">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-[#1B365D] mb-2" data-icon="construction">construction</span>
+<span class="text-[10px] font-bold uppercase">Change Request</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 border border-dashed border-gray-300 rounded hover:border-[#1B365D] hover:bg-gray-50 transition-all group">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-[#1B365D] mb-2" data-icon="visibility">visibility</span>
+<span class="text-[10px] font-bold uppercase">Request Visit</span>
+</button>
+</div>
+<button class="w-full bg-white border-2 border-[#1B365D] text-[#1B365D] py-3 rounded font-ui-button uppercase tracking-widest hover:bg-gray-50 transition-all">Submit Technical Query</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full border-t border-t-2 border-gray-300 dark:border-gray-800 bg-gray-100 dark:bg-slate-950 grid grid-cols-1 md:grid-cols-3 gap-8 p-12 w-full">
+<div>
+<div class="text-md font-bold text-[#1B365D] mb-4">Astra Build-Tech</div>
+<p class="text-xs font-inter uppercase tracking-widest text-gray-500">Building India's future with engineering excellence and structural integrity. ISO 9001:2015 Certified.</p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="text-xs font-bold text-gray-900 dark:text-gray-100 uppercase tracking-widest mb-2">Corporate Offices</div>
+<a class="text-xs font-inter uppercase tracking-widest text-gray-500 hover:underline hover:text-[#1B365D]" href="#">Mumbai Office</a>
+<a class="text-xs font-inter uppercase tracking-widest text-gray-500 hover:underline hover:text-[#1B365D]" href="#">Delhi HQ</a>
+</div>
+<div class="flex flex-col gap-2">
+<div class="text-xs font-bold text-gray-900 dark:text-gray-100 uppercase tracking-widest mb-2">Legal</div>
+<a class="text-xs font-inter uppercase tracking-widest text-gray-500 hover:underline hover:text-[#1B365D]" href="#">Privacy Policy</a>
+<a class="text-xs font-inter uppercase tracking-widest text-gray-500 hover:underline hover:text-[#1B365D]" href="#">T&amp;C</a>
+<a class="text-xs font-inter uppercase tracking-widest text-gray-500 hover:underline hover:text-[#1B365D]" href="#">Compliance</a>
+<div class="mt-4 text-[10px] text-gray-400">© 2024 Astra Build-Tech Private Limited. All Rights Reserved.</div>
+</div>
+</footer>
+</body></html>

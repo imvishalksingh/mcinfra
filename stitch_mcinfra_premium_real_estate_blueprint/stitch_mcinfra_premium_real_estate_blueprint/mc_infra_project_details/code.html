@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary": "#ffffff",
+                "surface-variant": "#e0e2e6",
+                "tertiary-container": "#2c3646",
+                "secondary-container": "#fed000",
+                "on-surface": "#191c1f",
+                "inverse-on-surface": "#eff1f5",
+                "surface-tint": "#465f88",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#564500",
+                "surface-container-highest": "#e0e2e6",
+                "tertiary-fixed-dim": "#bdc7db",
+                "surface-container-high": "#e6e8ec",
+                "error-container": "#ffdad6",
+                "primary-fixed": "#d6e3ff",
+                "outline": "#74777f",
+                "on-tertiary-container": "#959fb2",
+                "on-tertiary-fixed-variant": "#3d4757",
+                "on-primary-container": "#87a0cd",
+                "on-primary-fixed-variant": "#2e476f",
+                "primary-container": "#1b365d",
+                "on-primary-fixed": "#001b3d",
+                "secondary-fixed-dim": "#edc200",
+                "on-primary": "#ffffff",
+                "tertiary": "#17212f",
+                "primary-fixed-dim": "#aec7f7",
+                "primary": "#002046",
+                "surface-container": "#eceef2",
+                "background": "#f7f9fd",
+                "tertiary-fixed": "#d9e3f7",
+                "secondary": "#725c00",
+                "inverse-primary": "#aec7f7",
+                "secondary-fixed": "#ffe07f",
+                "surface-container-low": "#f2f4f8",
+                "on-error": "#ffffff",
+                "inverse-surface": "#2d3134",
+                "on-background": "#191c1f",
+                "on-secondary-fixed": "#231b00",
+                "surface": "#f7f9fd",
+                "on-error": "#ffffff",
+                "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "lg": "24px",
+                "grid-margin": "64px",
+                "md": "16px",
+                "xl": "48px",
+                "sm": "8px",
+                "grid-gutter": "24px",
+                "unit": "4px",
+                "xs": "4px"
+            },
+            "fontFamily": {
+                "h3": ["Inter"],
+                "h1": ["Inter"],
+                "label-caps": ["Inter"],
+                "body-md": ["Inter"],
+                "ui-button": ["Inter"],
+                "body-lg": ["Inter"],
+                "h2": ["Inter"]
+            },
+            "fontSize": {
+                "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "ui-button": ["14px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .blueprint-dashed {
+            background-image: linear-gradient(to right, #74777f 33%, rgba(255,255,255,0) 0%);
+            background-position: bottom;
+            background-size: 12px 1px;
+            background-repeat: repeat-x;
+        }
+        .cement-grid {
+            border-bottom: 1px solid #e5e7eb;
+            border-right: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 border-b border-gray-300 bg-white">
+<div class="flex justify-between items-center px-8 py-3 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#1B365D]">MC Infra</div>
+<nav class="hidden md:flex items-center space-x-8 font-['Inter'] font-medium text-sm tracking-wide">
+<a class="text-gray-600 hover:text-yellow-600 transition-colors" href="#">Home</a>
+<a class="text-gray-600 hover:text-yellow-600 transition-colors" href="#">About</a>
+<a class="text-[#1B365D] border-b-2 border-yellow-500 pb-1" href="#">Projects</a>
+<a class="text-gray-600 hover:text-yellow-600 transition-colors" href="#">Services</a>
+<a class="text-gray-600 hover:text-yellow-600 transition-colors" href="#">Ongoing Work</a>
+<a class="text-gray-600 hover:text-yellow-600 transition-colors" href="#">Gallery</a>
+<a class="text-gray-600 hover:text-yellow-600 transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="hidden lg:flex space-x-3 text-[#1B365D]">
+<span class="material-symbols-outlined">call</span>
+<span class="material-symbols-outlined">mail</span>
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<button class="bg-[#1B365D] text-white px-6 py-2 text-ui-button rounded-lg">Get Quote</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto bg-white border-x border-gray-200 min-h-screen">
+<!-- Hero Section -->
+<section class="relative h-[600px] w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A wide-angle aerial drone shot capturing a massive construction site for a luxury high-rise apartment complex named The Horizon Apartments. The scene features multiple towering yellow cranes set against a clear blue sky, with concrete foundations and steel reinforcement grids visible on the ground. The lighting is high-contrast afternoon sun, emphasizing the industrial textures of the gray cement and metallic scaffolds. The composition is grounded and professional, reflecting a corporate engineering aesthetic with a palette of deep blues and architectural grays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4_0nAl_fs5YGHo9DUhWS9_SJnTM-4D_x7E8kGGazqxa5vvmjmXAThGTjQRb0D0Sw1diQ8TmnbKHa9AP9Kc2G9U9GAsVGwGSutfQFRhDalJnTaZJcH9DpmQPOBJPk0EcRNJQ7AiFM2ymJbiSttmWxAfz7qigBoDLace8ypTnTeD0j3Q-5TZce-jZ8QiptCBLUzbQudcYSE7YNicIHtehO3RDaeBckq_nq6K7N9eslsZPFvtkQE1FHfg5_6VITbRHAiQYS7qwGUHQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#002046]/80 to-transparent flex flex-col justify-end p-grid-margin">
+<span class="text-secondary-container font-label-caps mb-sm">RESIDENTIAL PROJECT</span>
+<h1 class="text-white font-h1 text-h1 max-w-3xl">The Horizon Apartments</h1>
+<div class="flex items-center gap-md mt-md">
+<span class="bg-secondary-container text-on-secondary-fixed px-3 py-1 font-label-caps">IN PROGRESS</span>
+<span class="text-white/80 font-body-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> Whitefield, Bangalore
+                    </span>
+</div>
+</div>
+</section>
+<!-- Project Overview & Form Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-b border-gray-200">
+<!-- Left Content: Overview -->
+<div class="lg:col-span-8 p-grid-margin border-r border-gray-200">
+<h2 class="font-h2 text-h2 text-primary mb-lg">Project Overview</h2>
+<p class="font-body-lg text-on-surface-variant mb-xl leading-relaxed">
+                    Designed for urban professionals, The Horizon Apartments combine architectural elegance with structural integrity. Spanning 4.5 acres, this development features 220 premium units with panoramic city views and Grade-A construction standards. Every slab is cast with high-strength reinforced concrete to ensure generational longevity.
+                </p>
+<!-- Floor Plans (Technical Drawing Style) -->
+<div class="mb-xl">
+<div class="flex justify-between items-end mb-md blueprint-dashed pb-2">
+<h3 class="font-h3 text-h3 text-primary">Floor Plans</h3>
+<span class="font-label-caps text-outline">TECHNICAL SPECIFICATIONS SHEET NO. 04</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter">
+<div class="border border-gray-300 p-md bg-surface-container-lowest">
+<img class="w-full grayscale opacity-80 hover:opacity-100 transition-opacity" data-alt="A clean, minimalist technical architectural floor plan for a 3BHK apartment in The Horizon Apartments. The drawing is rendered in a blueprint style with sharp black lines on a white background, featuring precise measurements, structural pillars, and room labels like Master Bedroom and Kitchen. The design is strictly professional and mathematical, following a grounded architectural aesthetic without unnecessary decorative elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxnss7STs-W6WcUehOe2DwdWqf3hlH1pRD5giySOivThs5vsyr1MMPBB4_DW5bQYlArrR7DhGB1-yI6S_-GQGK6Hcr90kKwyx2Or_XRzUa3OJZfwtmLWIbHAW3_p4WZf3yuKdwVKPn03fSn6MIBmOYRUOdrrBBn5FxAhcpKg5pW8ErlJSiTC6ZxoeJYxanIGjqc-MUFM9vaCXCcjU5HYQuqeS_xprPhN9HbUZGoBEAdBHMzzCiPe7rlpFqHyEdnGEHrXEdPMe-GA"/>
+<div class="mt-md">
+<p class="font-label-caps text-primary">UNIT TYPE A - 3BHK</p>
+<p class="text-sm text-outline">1,850 SQ. FT. | EAST FACING</p>
+</div>
+</div>
+<div class="border border-gray-300 p-md bg-surface-container-lowest">
+<img class="w-full grayscale opacity-80 hover:opacity-100 transition-opacity" data-alt="A detailed architectural section drawing of a 2BHK residential unit. The technical sketch shows precise wall thicknesses, doorway openings, and plumbing layouts using professional CAD software aesthetics. The image is rendered with thin, crisp lines on a stark white surface, reinforcing the engineering and construction focus of MC Infra. The lighting is uniform and bright, mimicking a professional studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnktCmrMqNs9YGQEKKaxj1uguL2dxNcJLeQeZz57yyLSP2o7x3Hl6VXYZrtmQFki8JHp8cusgzQRpKtSv7sDSSeKNbWVGFf7I2l98rIfB_peqzu1F7I73t06Xhj-Bauuz6P5glAyhVIZdoHZZHP0OujFfyXyWL7uuy6OE87H9T3oJ-NSfoEtDiGgchIW9oJkZoh5YW3yzyJEX1VUXff5Q4fJGJvFzGxoLFQzddSSSZpz6FYrKZNMEAY4qLgyjm_newujldNP_kEw"/>
+<div class="mt-md">
+<p class="font-label-caps text-primary">UNIT TYPE B - 2BHK</p>
+<p class="text-sm text-outline">1,420 SQ. FT. | WEST FACING</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Construction Progress Timeline -->
+<div class="mb-xl">
+<h3 class="font-h3 text-h3 text-primary mb-lg">Construction Progress</h3>
+<div class="space-y-lg border-l-2 border-primary-container pl-lg">
+<div class="relative">
+<div class="absolute -left-[33px] top-1 w-4 h-4 bg-secondary-container border-2 border-primary"></div>
+<span class="font-label-caps text-primary mb-xs block">OCTOBER 2024 - PRESENT</span>
+<h4 class="font-h3 text-lg mb-sm">Floor 12 Slab Pouring</h4>
+<img class="w-full h-48 object-cover border border-gray-300 mb-md" data-alt="A high-resolution photograph of an active construction site showing heavy machinery pouring concrete into a steel-reinforced floor slab on a high-rise building. Workers in high-visibility yellow vests and safety helmets are supervising the process. The image has a raw, industrial feel with textures of wet gray concrete, rusted steel bars, and bright yellow construction equipment under the glare of industrial floodlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSrtJX6rdDijrxfa31QjI7zeonzEW-ZCGKmxPzVtwkCBGc3IBsxg07PwukTdmSgWBaL1RjZIyORiMEIHYdslrJyA6lNL5mKhhhSYwGnFwNbiGwR4CLhVInsUUs0994XMwly9VUITaBnk0jVqsye_UBfGxc4vvTheuQcbaF15GXqLHP7XcBgwcr7r-7xO3VcMEA-_muVr_QVwZm9iqU0eWji9Z0B5_ShdTi7u7hrg4_W0ijxp7AklwnpV7W0zeZ8L1UdXLqqZ1HOw"/>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] top-1 w-4 h-4 bg-gray-300 border-2 border-gray-400"></div>
+<span class="font-label-caps text-outline mb-xs block">AUGUST 2024</span>
+<h4 class="font-h3 text-lg mb-sm text-outline">Brickwork &amp; Internal Plastering (Floors 1-6)</h4>
+<div class="w-full h-1 bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-secondary-container"></div>
+</div>
+<p class="text-sm text-outline mt-sm">Status: 100% Completed</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Content: Form -->
+<div class="lg:col-span-4 p-grid-margin bg-surface-container-low">
+<div class="sticky top-24 border border-gray-300 bg-white p-lg">
+<h3 class="font-h3 text-h3 text-primary mb-sm">Schedule a Site Visit</h3>
+<p class="text-sm text-on-surface-variant mb-lg">Experience the structural precision of The Horizon Apartments firsthand.</p>
+<form class="space-y-md">
+<div>
+<label class="font-label-caps text-primary block mb-xs">FULL NAME</label>
+<input class="w-full border-gray-300 focus:border-primary focus:ring-0 rounded-none h-12" placeholder="Enter your name" type="text"/>
+</div>
+<div>
+<label class="font-label-caps text-primary block mb-xs">PHONE NUMBER</label>
+<input class="w-full border-gray-300 focus:border-primary focus:ring-0 rounded-none h-12" placeholder="+91 XXX XXX XXXX" type="tel"/>
+</div>
+<div>
+<label class="font-label-caps text-primary block mb-xs">PREFERRED DATE</label>
+<input class="w-full border-gray-300 focus:border-primary focus:ring-0 rounded-none h-12" type="date"/>
+</div>
+<button class="w-full bg-secondary-container text-primary font-ui-button py-4 border border-primary shadow-sm active:shadow-inner transition-all">BOOK INSPECTION</button>
+</form>
+<div class="mt-lg border-t border-dashed border-gray-300 pt-lg">
+<div class="flex items-center gap-md text-sm text-primary mb-sm font-semibold">
+<span class="material-symbols-outlined">verified</span> RERA Registered Project
+                        </div>
+<p class="text-xs text-outline">PRM/KA/RERA/1251/310/PR/180516/001715</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Amenities Bento Grid -->
+<section class="p-grid-margin border-b border-gray-200">
+<h2 class="font-h2 text-h2 text-primary mb-xl">World-Class Amenities</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="md:col-span-2 border border-gray-200 p-lg flex flex-col justify-between bg-surface-bright h-64">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">pool</span>
+<div>
+<h4 class="font-h3 text-lg mb-xs">Infinity Pool</h4>
+<p class="text-sm text-on-surface-variant">Temperature-controlled lap pool overlooking the city skyline.</p>
+</div>
+</div>
+<div class="border border-gray-200 p-lg flex flex-col justify-between h-64">
+<span class="material-symbols-outlined text-4xl text-primary">fitness_center</span>
+<div>
+<h4 class="font-h3 text-lg mb-xs">Elite Gym</h4>
+<p class="text-sm text-on-surface-variant">Precor-equipped fitness center.</p>
+</div>
+</div>
+<div class="border border-gray-200 p-lg flex flex-col justify-between h-64">
+<span class="material-symbols-outlined text-4xl text-primary">park</span>
+<div>
+<h4 class="font-h3 text-lg mb-xs">Zen Garden</h4>
+<p class="text-sm text-on-surface-variant">Landscaped meditation zones.</p>
+</div>
+</div>
+<div class="border border-gray-200 p-lg flex flex-col justify-between h-64">
+<span class="material-symbols-outlined text-4xl text-primary">electric_car</span>
+<div>
+<h4 class="font-h3 text-lg mb-xs">EV Charging</h4>
+<p class="text-sm text-on-surface-variant">Dedicated 22kW charging bays.</p>
+</div>
+</div>
+<div class="md:col-span-3 border border-gray-200 p-lg flex flex-col justify-between bg-[#1B365D] text-white h-64">
+<span class="material-symbols-outlined text-4xl text-secondary-container">security</span>
+<div>
+<h4 class="font-h3 text-lg mb-xs">Industrial-Grade Security</h4>
+<p class="text-sm text-white/80">3-tier biometric access, 24/7 CCTV perimeter surveillance, and armed response teams for maximum resident safety.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Advantages & Map -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-0 border-b border-gray-200">
+<div class="p-grid-margin">
+<h2 class="font-h2 text-h2 text-primary mb-lg">Location Advantage</h2>
+<div class="space-y-lg">
+<div class="flex gap-md">
+<div class="w-12 h-12 bg-surface-container-high flex items-center justify-center font-bold text-primary">05</div>
+<div>
+<h4 class="font-h3 text-md">MINS TO ITPL</h4>
+<p class="text-sm text-outline">Direct connectivity to the largest tech hub in Bangalore.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-12 h-12 bg-surface-container-high flex items-center justify-center font-bold text-primary">10</div>
+<div>
+<h4 class="font-h3 text-md">MINS TO MANIPAL HOSPITAL</h4>
+<p class="text-sm text-outline">World-class tertiary healthcare within immediate reach.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-12 h-12 bg-surface-container-high flex items-center justify-center font-bold text-primary">02</div>
+<div>
+<h4 class="font-h3 text-md">MINS TO METRO STATION</h4>
+<p class="text-sm text-outline">Effortless transit via the newly opened Purple Line extension.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-full min-h-[400px] border-l border-gray-200 bg-gray-100">
+<img class="w-full h-full object-cover grayscale opacity-90" data-alt="A clean, professional map visualization showing the Whitefield area of Bangalore. The map highlights The Horizon Apartments with a distinct blue pin, while surrounding landmarks like hospitals, tech parks, and schools are marked with industrial-style icons. The aesthetic is modern and high-contrast, using a light mode theme with subtle gray roads and navy-blue points of interest, emphasizing accessibility and infrastructure." data-location="Bangalore" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdIcbSz9npZggSmo_-OAJFcim9TlLIPTxrH2hR6kCawnqIsuUbPRc2tWAki8-028Kvx6ijrlwO3eLeHwfj0I9oUD1TXRwKqc1SBN_TOa7ik2L-fTkf4v8Vi3H_TwPuHBq5hTQeUlbqrWwtnaKwRURk1Hpz4EnoWiNayx4NDNMjnxXjhlWetTqjPEQ5JXWKrWERou9e6TuhUljqyt2nvlbSbfrVCeJHN7GGHbk1qXCEBsabgOyldRIfPf3ZKfdr35Kc6HXZO1WGXQ"/>
+</div>
+</section>
+<!-- Payment Plan Table -->
+<section class="p-grid-margin">
+<h2 class="font-h2 text-h2 text-primary mb-lg">Structured Payment Plan</h2>
+<div class="overflow-x-auto border border-gray-300">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary text-white font-label-caps">
+<th class="p-md border-r border-white/10">MILESTONE</th>
+<th class="p-md border-r border-white/10 text-center">% PAYABLE</th>
+<th class="p-md">REMARKS</th>
+</tr>
+</thead>
+<tbody class="font-body-md">
+<tr class="bg-white border-b border-gray-300">
+<td class="p-md border-r border-gray-300 font-semibold">Booking Amount</td>
+<td class="p-md border-r border-gray-300 text-center">10%</td>
+<td class="p-md text-outline">Due at time of reservation</td>
+</tr>
+<tr class="bg-surface-container-low border-b border-gray-300">
+<td class="p-md border-r border-gray-300 font-semibold">Completion of Foundation</td>
+<td class="p-md border-r border-gray-300 text-center">15%</td>
+<td class="p-md text-outline">Certified by project structural engineer</td>
+</tr>
+<tr class="bg-white border-b border-gray-300">
+<td class="p-md border-r border-gray-300 font-semibold">Completion of 5th Floor Slab</td>
+<td class="p-md border-r border-gray-300 text-center">25%</td>
+<td class="p-md text-outline">Ongoing construction milestone</td>
+</tr>
+<tr class="bg-surface-container-low border-b border-gray-300">
+<td class="p-md border-r border-gray-300 font-semibold">Completion of Brickwork</td>
+<td class="p-md border-r border-gray-300 text-center">20%</td>
+<td class="p-md text-outline">Internal and external wall completion</td>
+</tr>
+<tr class="bg-white">
+<td class="p-md border-r border-gray-300 font-semibold">Possession</td>
+<td class="p-md border-r border-gray-300 text-center">30%</td>
+<td class="p-md text-outline">Handover of keys and RERA closure</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-900 text-white border-t border-gray-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="text-xl font-bold text-white uppercase mb-lg">MC Infra</div>
+<p class="text-sm text-gray-400 max-w-md leading-relaxed mb-md">
+                    Leading the infrastructure landscape with engineering excellence and uncompromised quality. We build landmarks that stand the test of time.
+                </p>
+<p class="text-xs text-gray-500">© 2024 MC Infra. RERA Reg No: PRM/KA/RERA/1251/310/PR/180516/001715</p>
+</div>
+<div>
+<h4 class="font-label-caps text-yellow-500 mb-lg">Quick Links</h4>
+<ul class="space-y-sm text-sm text-gray-400">
+<li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">RERA Disclosure</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Site Map</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-yellow-500 mb-lg">Contact Us</h4>
+<div class="space-y-sm text-sm text-gray-400">
+<p class="flex items-center gap-xs"><span class="material-symbols-outlined text-sm">location_on</span> Level 4, MC Tower, Bangalore</p>
+<p class="flex items-center gap-xs"><span class="material-symbols-outlined text-sm">call</span> +91 80 4455 6677</p>
+<p class="flex items-center gap-xs"><span class="material-symbols-outlined text-sm">mail</span> contact@mcinfra.com</p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

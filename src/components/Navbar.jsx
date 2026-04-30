@@ -1,110 +1,112 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, CircleUser, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const links = [
-    { name: 'Projects',   path: '/projects' },
-    { name: 'About Us',   path: '/story' },
-    { name: 'Residences', path: '/services' },
-    { name: 'Investment', path: '#' },
-    { name: 'Contact',    path: '/contact' },
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/story' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Services', path: '/services' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Careers', path: '/careers' },
+    { name: 'News', path: '/news' },
+    { name: 'Portal', path: '/portal' },
+    { name: 'Contact', path: '/contact' },
   ];
-
-  // Close menu on route change
-  React.useEffect(() => { setIsOpen(false); }, [location.pathname]);
 
   return (
     <>
-      <nav style={{
-        position: 'fixed',
-        top: 0,
-        width: '100%',
-        zIndex: 1000,
-        backgroundColor: 'rgba(255, 255, 255, 0.95)',
-        backdropFilter: 'blur(25px)',
-        borderBottom: '1px solid rgba(0,0,0,0.05)',
-        height: '80px',
-        display: 'flex',
-        alignItems: 'center',
-      }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+      {/* Utility Top Bar */}
+      <div className="bg-primary-container text-white py-2 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs tracking-wider font-label-caps gap-2 md:gap-0">
+          <div className="flex gap-4 md:gap-6">
+            <span className="flex items-center gap-1">
+              <span className="material-symbols-outlined text-sm" data-icon="call">call</span>
+              +91 00000 00000
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+              demo@example.com
+            </span>
+          </div>
+          <div className="flex gap-4 md:gap-6">
+            <span className="flex items-center gap-1">
+              <span className="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+              9 AM - 7 PM
+            </span>
+            <span className="flex items-center gap-1 hidden md:flex">
+              <span className="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+              123 Demo Street
+            </span>
+          </div>
+        </div>
+      </div>
 
-          {/* Brand */}
-          <Link to="/" style={{ fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: 900, letterSpacing: '-0.06em', color: '#0f172a', textDecoration: 'none' }}>
-            MCINFRA
+      {/* TopAppBar */}
+      <header className="sticky top-0 w-full z-50 border-b border-gray-300 bg-white">
+        <nav className="flex justify-between items-center px-4 md:px-8 py-3 max-w-7xl mx-auto">
+          <Link to="/" className="text-2xl font-black tracking-tighter text-primary-container">
+            MC Infra
           </Link>
-
-          {/* Desktop Links */}
-          <div className="nav-links" style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
+          
+          <div className="hidden lg:flex gap-4 xl:gap-8 items-center font-body-md font-medium text-sm tracking-wide">
             {links.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                style={{
-                  fontSize: '14px',
-                  fontWeight: 700,
-                  color: location.pathname === link.path ? '#C89B3C' : '#475569',
-                  textDecoration: 'none',
-                  letterSpacing: '0.03em',
-                  transition: 'color 0.2s',
-                  position: 'relative',
-                }}
+                className={`transition-colors ${
+                  location.pathname === link.path
+                    ? 'text-primary-container border-b-2 border-secondary-container pb-1'
+                    : 'text-on-surface-variant hover:text-secondary'
+                }`}
               >
                 {link.name}
-                {location.pathname === link.path && (
-                  <div style={{ position: 'absolute', bottom: '-6px', left: 0, width: '100%', height: '2px', background: '#C89B3C', borderRadius: '2px' }} />
-                )}
               </Link>
             ))}
           </div>
-
-          {/* Desktop Actions */}
-          <div className="nav-actions-desktop" style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
-            <button style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-              <Search size={20} />
+          
+          <div className="hidden md:flex items-center gap-4">
+            <button className="bg-secondary-container text-primary font-ui-button px-6 py-2 rounded-lg hover:bg-yellow-400 transition-all uppercase tracking-widest text-xs">
+              Get Quote
             </button>
-            <Link to="/contact" className="btn-pill btn-primary" style={{ fontSize: '12px', padding: '0.65rem 1.4rem' }}>
-              Book Site Visit
-            </Link>
           </div>
 
-          {/* Mobile Toggle */}
           <button
-            className="mobile-toggle"
+            className="md:hidden flex items-center text-primary-container"
             onClick={() => setIsOpen(!isOpen)}
-            style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', color: '#0f172a', alignItems: 'center', justifyContent: 'center', padding: '4px' }}
-            aria-label="Toggle menu"
           >
-            {isOpen ? <X size={26} /> : <Menu size={26} />}
+            <span className="material-symbols-outlined text-3xl">
+              {isOpen ? 'close' : 'menu'}
+            </span>
           </button>
-        </div>
-      </nav>
+        </nav>
 
-      {/* Mobile Menu */}
-      <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
-        {links.map((link) => (
-          <Link
-            key={link.name}
-            to={link.path}
-            onClick={() => setIsOpen(false)}
-            style={{
-              color: location.pathname === link.path ? '#C89B3C' : '#0f172a',
-              fontWeight: location.pathname === link.path ? 800 : 700,
-            }}
-          >
-            {link.name}
-          </Link>
-        ))}
-        <div style={{ paddingTop: '16px' }}>
-          <Link to="/contact" className="btn-pill btn-primary" onClick={() => setIsOpen(false)} style={{ width: '100%', justifyContent: 'center' }}>
-            Book Site Visit
-          </Link>
-        </div>
-      </div>
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="md:hidden bg-white border-t border-gray-200 py-4 px-4 shadow-lg absolute w-full">
+            <div className="flex flex-col gap-4">
+              {links.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`block text-lg font-medium ${
+                    location.pathname === link.path ? 'text-primary-container font-bold' : 'text-on-surface-variant'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <button className="bg-secondary-container text-primary font-ui-button px-6 py-3 rounded-lg hover:bg-yellow-400 transition-all uppercase tracking-widest text-sm w-full mt-4">
+                Get Quote
+              </button>
+            </div>
+          </div>
+        )}
+      </header>
     </>
   );
 };

@@ -1,128 +1,163 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Target, Eye } from 'lucide-react';
 
 const Story = () => {
   return (
-    <div style={{ paddingTop: '80px', backgroundColor: '#fcf8f8' }}>
-      {/* Hero */}
-      <section style={{ padding: '120px 0', backgroundColor: '#ffffff', borderBottom: '1px solid #e5e2e1' }}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            style={{ maxWidth: '800px' }}
-          >
-            <span className="text-gradient-gold" style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', display: 'block', marginBottom: '16px' }}>ESTABLISHED 2010</span>
-            <h1 style={{ fontSize: 'clamp(2rem,5vw,64px)', lineHeight: '1.1', marginBottom: '24px', color: '#1c1b1b' }}>Legacy of <span className="text-gradient-gold">Visionary</span> Development</h1>
-            <p style={{ fontSize: '18px', color: '#444748', lineHeight: '1.8' }}>
-              Founded on the principles of architectural integrity and uncompromising luxury, MCINFRA has evolved from a boutique firm to a global leader in high-end developments.
-            </p>
-          </motion.div>
+    <main className="max-w-7xl mx-auto px-4 md:px-8 py-16 bg-surface text-on-surface font-body-md">
+      {/* Hero Section: Company Story */}
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
+        <div className="lg:col-span-7">
+          <span className="font-label-caps text-secondary mb-4 block">ESTABLISHED 2008</span>
+          <h1 className="font-h1 text-3xl md:text-h1 text-primary mb-6">Our Foundation is Built on Honesty and Grit</h1>
+          <p className="font-body-lg text-base md:text-body-lg text-on-surface-variant mb-8 max-w-2xl">
+            Started as a small engineering consultancy with just three desks and a single vision, MC Infra has grown into a regional leader in industrial and residential infrastructure. We don't just build structures; we forge lasting legacies through structural reliability and architectural precision.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="border border-gray-200 p-6 bg-white flex-1">
+              <div className="text-3xl md:text-h2 text-primary font-bold">16+</div>
+              <div className="font-label-caps text-on-surface-variant mt-2">YEARS OF SERVICE</div>
+            </div>
+            <div className="border border-gray-200 p-6 bg-white flex-1">
+              <div className="text-3xl md:text-h2 text-primary font-bold">450+</div>
+              <div className="font-label-caps text-on-surface-variant mt-2">PROJECTS COMPLETED</div>
+            </div>
+          </div>
+        </div>
+        <div className="lg:col-span-5 relative">
+          <div className="border border-gray-200 bg-white p-2">
+            <img 
+              alt="Professional photograph of a modern commercial headquarters building" 
+              className="w-full h-auto md:h-[500px] object-cover rounded-sm" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5HeEZSqqz85Y2lFq1HM14MyEAVH1tt4BYP_O7tAkNQF3UeWePb9onsomsVh5UBquPZT22Ys1SSPryyjaT-W94ezG_gYcuVhU2XQ7fPsjhRRocnWKwm1iSQJhsLNoEOlcQlnt27evBg4vbf3mIpZzGOj2Srt-nJg6Iuo0MhHn5o_Wb2nNciMLuDsPq_qxpzhPHoX2rSbSNRodFxujEQPQx_uC18aVIcuHPC4skKYpvLe2smMmL3AUS4fuXbB83t3YUS1-i1FyvNw"
+            />
+          </div>
+          <div className="absolute -bottom-6 -left-6 bg-secondary-container p-6 border border-gray-200 hidden md:block">
+            <p className="font-h3 text-on-secondary-container">Integrity in Every Beam.</p>
+          </div>
         </div>
       </section>
 
-      {/* Mission/Vision */}
-      <section style={{ padding: '120px 0' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '80px', alignItems: 'center' }}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" 
-                alt="Office" 
-                style={{ width: '100%', borderRadius: '24px', boxShadow: '0 40px 60px rgba(33,33,33,0.05)' }}
-              />
-            </motion.div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
-              <div style={{ display: 'flex', gap: '24px' }}>
-                <div style={{ padding: '16px', background: '#f1edec', borderRadius: '12px', height: 'fit-content' }}>
-                  <Target className="text-gold" size={24} />
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '24px', marginBottom: '8px' }}>Our Mission</h3>
-                  <p style={{ color: '#444748', fontSize: '16px', lineHeight: '1.7' }}>To create spaces that inspire, endure, and elevate the human experience through surgical precision in design and construction.</p>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '24px' }}>
-                <div style={{ padding: '16px', background: '#f1edec', borderRadius: '12px', height: 'fit-content' }}>
-                  <Eye className="text-gold" size={24} />
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '24px', marginBottom: '8px' }}>Our Vision</h3>
-                  <p style={{ color: '#444748', fontSize: '16px', lineHeight: '1.7' }}>To be the global benchmark for architectural luxury, recognized for pushing the boundaries of what is possible in sustainable development.</p>
-                </div>
-              </div>
+      {/* Blueprint Separator */}
+      <div className="w-full h-px blueprint-line mb-24"></div>
+
+      {/* Company Journey Timeline */}
+      <section className="mb-24">
+        <div className="text-center mb-16">
+          <h2 className="font-h2 text-3xl md:text-h2 text-primary">The MC Infra Journey</h2>
+          <p className="text-on-surface-variant mt-2">A decade and a half of engineering excellence.</p>
+        </div>
+        <div className="relative">
+          <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 hidden lg:block"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* 2008 */}
+            <div className="relative bg-white border border-gray-200 p-6 group hover:border-primary transition-colors">
+              <div className="w-12 h-12 bg-primary text-white flex items-center justify-center font-bold mb-4">2008</div>
+              <h3 className="font-h3 text-primary mb-2 text-lg">The First Blueprint</h3>
+              <p className="text-sm text-on-surface-variant">Founded as Cole Engineering Associates, specializing in local bridge inspections and soil testing for small developers.</p>
+            </div>
+            {/* 2013 */}
+            <div className="relative bg-white border border-gray-200 p-6 group hover:border-primary transition-colors">
+              <div className="w-12 h-12 bg-primary text-white flex items-center justify-center font-bold mb-4">2013</div>
+              <h3 className="font-h3 text-primary mb-2 text-lg">Expansion</h3>
+              <p className="text-sm text-on-surface-variant">Secured the first major government contract for urban drainage systems, doubling our team of licensed civil engineers.</p>
+            </div>
+            {/* 2018 */}
+            <div className="relative bg-white border border-gray-200 p-6 group hover:border-primary transition-colors">
+              <div className="w-12 h-12 bg-primary text-white flex items-center justify-center font-bold mb-4">2018</div>
+              <h3 className="font-h3 text-primary mb-2 text-lg">MC Infra Rebrand</h3>
+              <p className="text-sm text-on-surface-variant">Official rebranding to MC Infra to reflect our broad capabilities in full-scale industrial construction and RERA compliance.</p>
+            </div>
+            {/* 2024 */}
+            <div className="relative bg-white border border-gray-200 p-6 group hover:border-primary transition-colors">
+              <div className="w-12 h-12 bg-secondary text-on-surface flex items-center justify-center font-bold mb-4">2024</div>
+              <h3 className="font-h3 text-primary mb-2 text-lg">Future Horizons</h3>
+              <p className="text-sm text-on-surface-variant">Leading the industry with sustainable building practices and a workforce of over 100+ specialized engineers.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
-      <section style={{ padding: '120px 0', backgroundColor: '#ffffff' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <span className="text-gradient-gold" style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', display: 'block', marginBottom: '16px' }}>OUR JOURNEY</span>
-            <h2 style={{ fontSize: 'clamp(1.6rem,3.5vw,48px)' }}>Defining the Skyline</h2>
+      {/* Founder's Message & Team */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
+        <div className="bg-primary-container p-8 md:p-12 text-white flex flex-col justify-center">
+          <span className="material-symbols-outlined text-4xl text-secondary-container mb-6" data-icon="format_quote">format_quote</span>
+          <h2 className="font-h2 text-2xl md:text-h2 text-white mb-6">A Message from Marcus Cole</h2>
+          <p className="font-body-lg italic mb-8 opacity-90 text-sm md:text-base">
+            "At MC Infra, we believe that construction is more than just steel and concrete. It's about trust. When we sign a contract, we aren't just promising a building; we are promising our word that every bolt is tightened and every safety protocol is exceeded. Our stability comes from the sweat of our engineers and the honesty of our leadership."
+          </p>
+          <div className="flex items-center gap-4">
+            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-secondary-container">
+              <img 
+                alt="Portrait of Marcus Cole" 
+                className="w-full h-full object-cover" 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC52hxqMHNpGuk9DNGYQtN7pKcEPu4j1ZQaENFHCNIGDOF8Q0R_cYpdl5lx80b2AaJDEVaqgcO2GwChDkWDaMaqt1adEK3cvLjZ2L47qLA8XVnBKkzJrery-UaWu6dIOy-N_9zxlfyRBXtzIdHryceDscKFH6Gsj3r1IhhJCrhnUreLRRLN_en4IMOBIZFDUAG5_d1V5KcHvSnrE1-SPya8fw4tOMiH-3WXUQAkq85_0nESNCT56Ec_Ok81b7A8UM-iLce1tBY7Tw"
+              />
+            </div>
+            <div>
+              <div className="font-bold text-lg">Marcus Cole</div>
+              <div className="font-label-caps text-secondary-container">FOUNDER & CHIEF ENGINEER</div>
+            </div>
           </div>
-          
-          <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto' }}>
-            <div style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '1px', background: '#e5e2e1', transform: 'translateX(-50%)' }} className="timeline-line"></div>
-            
-            {[
-              { year: '2010', title: 'The Foundation', desc: 'MCINFRA established with a focus on luxury residential boutiques.' },
-              { year: '2015', title: 'Vertical Expansion', desc: 'Launch of our first high-rise commercial tower in Manhattan.' },
-              { year: '2018', title: 'Global Recognition', desc: 'Awarded "Architecture of the Year" for the Emerald Bay Villas.' },
-              { year: '2023', title: 'Sustainable Future', desc: 'Initiated our first zero-carbon luxury development series.' }
-            ].map((item, i) => (
-                <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="timeline-item"
-                style={{ 
-                  display: 'flex', 
-                  justifyContent: i % 2 === 0 ? 'flex-end' : 'flex-start',
-                  width: '100%',
-                  marginBottom: '60px',
-                  position: 'relative'
-                }}
-              >
-                <div style={{ 
-                  width: '45%', 
-                  padding: '28px', 
-                  backgroundColor: '#fcf8f8', 
-                  borderRadius: '20px',
-                  textAlign: i % 2 === 0 ? 'right' : 'left',
-                  border: '1px solid #e5e2e1',
-                }}>
-                  <span className="text-gradient-gold" style={{ fontWeight: 800, fontSize: '20px' }}>{item.year}</span>
-                  <h4 style={{ margin: '8px 0', fontSize: '18px' }}>{item.title}</h4>
-                  <p style={{ fontSize: '14px', color: '#444748' }}>{item.desc}</p>
-                </div>
-                <div className="timeline-dot" style={{ 
-                  position: 'absolute', 
-                  left: '50%', 
-                  top: '32px', 
-                  width: '12px', 
-                  height: '12px', 
-                  background: '#C89B3C', 
-                  borderRadius: '50%', 
-                  transform: 'translateX(-50%)',
-                  boxShadow: '0 0 0 6px rgba(200, 155, 60, 0.12)'
-                }}></div>
-              </motion.div>
-            ))}
+        </div>
+
+        <div className="flex flex-col gap-8">
+          <div>
+            <h2 className="font-h2 text-2xl md:text-h2 text-primary mb-4">Our Engineering Strength</h2>
+            <p className="text-on-surface-variant mb-6 text-sm md:text-base">Our greatest asset is our collective technical intelligence. With over 100+ site engineers and project managers, we bring unparalleled expertise to every site.</p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="border border-gray-200 p-4 bg-white text-center">
+                <span className="material-symbols-outlined text-primary text-3xl" data-icon="engineering">engineering</span>
+                <div className="font-bold text-xl mt-2">100+</div>
+                <div className="font-label-caps text-xs">LICENSED ENGINEERS</div>
+              </div>
+              <div className="border border-gray-200 p-4 bg-white text-center">
+                <span className="material-symbols-outlined text-primary text-3xl" data-icon="safety_check">safety_check</span>
+                <div className="font-bold text-xl mt-2">10M+</div>
+                <div className="font-label-caps text-xs">SAFE MAN-HOURS</div>
+              </div>
+            </div>
+          </div>
+          <div className="relative h-48 md:h-64 border border-gray-200 overflow-hidden">
+            <img 
+              alt="Group of site engineers" 
+              className="w-full h-full object-cover" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpoNyHS5GbTxVmbVyNOROQNMmF5jB6CQetVkeaZVHM7-i01aHLLVy0byiJX7X-KR2EWlzoUHrzuVLfARCoYSQ3BfvihrsE8bOgSvVSfOhZTP4yuQzh4qbQf2vnIMLYwidQzPM5h8MoPnkR9Jol2PZIckHpmz8OOL-F6Ulm7gulLegGVXub_qhlmWLhYZI8iQstzoayCA0qgw1jR_E1CnH9HtUaC_mBL6rd8T0s4k64uRogf4AJlLdkTHJ57gpxpxQ8MqopwVcEyg"
+            />
           </div>
         </div>
       </section>
-    </div>
+
+      {/* Certifications & Standards */}
+      <section className="border border-gray-200 bg-white p-8 md:p-12">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="max-w-md text-center md:text-left">
+            <h2 className="font-h3 text-xl md:text-2xl text-primary mb-2">Compliance & Certifications</h2>
+            <p className="text-on-surface-variant text-sm">We strictly adhere to national and international standards to ensure the highest levels of safety and quality in every project.</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-80 grayscale hover:grayscale-0 transition-all">
+            <div className="flex flex-col items-center">
+              <span className="material-symbols-outlined text-4xl mb-2 text-primary" data-icon="verified">verified</span>
+              <span className="font-label-caps text-[10px]">ISO 9001:2015</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="material-symbols-outlined text-4xl mb-2 text-primary" data-icon="apartment">apartment</span>
+              <span className="font-label-caps text-[10px]">RERA REGISTERED</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="material-symbols-outlined text-4xl mb-2 text-primary" data-icon="construction">construction</span>
+              <span className="font-label-caps text-[10px]">NACE CERTIFIED</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="material-symbols-outlined text-4xl mb-2 text-primary" data-icon="eco">eco</span>
+              <span className="font-label-caps text-[10px]">IGBC GREEN HOME</span>
+            </div>
+          </div>
+        </div>
+        <div className="mt-8 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between text-xs text-gray-500 uppercase tracking-widest gap-4 text-center md:text-left">
+          <div>RERA REG NO: PRM/KA/RERA/1251/310/PR/180516/001715</div>
+          <div>ISO CERTIFIED MANAGEMENT SYSTEMS</div>
+        </div>
+      </section>
+    </main>
   );
 };
 

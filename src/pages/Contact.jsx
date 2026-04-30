@@ -1,79 +1,158 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Globe, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <div style={{ paddingTop: '60px' }}>
-      <section style={{ padding: '120px 0' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '80px' }}>
-            {/* Left: Contact Info */}
-            <div>
-              <h1 style={{ fontSize: '3.5rem', marginBottom: '2rem' }}>Let's Build the <span className="text-gold">Future</span></h1>
-              <p style={{ fontSize: '1.125rem', color: 'var(--on-surface-variant)', marginBottom: '4rem' }}>
-                Whether you're looking for a new residence, an investment opportunity, or a partnership, our team is ready to assist you.
-              </p>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-                <div style={{ display: 'flex', gap: '1.5rem' }}>
-                  <div style={{ padding: '1rem', background: '#f3f4f6', borderRadius: 'var(--radius-default)', height: 'fit-content' }}>
-                    <Mail className="text-gold" />
+    <main className="max-w-7xl mx-auto px-4 md:px-8 py-12 bg-background text-on-surface font-body-md">
+      {/* Map Section */}
+      <section className="w-full mb-12 border border-outline-variant bg-white overflow-hidden">
+        <div className="h-[300px] md:h-[450px] bg-surface-container-highest relative">
+          <img 
+            alt="Satellite map view of Test City" 
+            className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1]" 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGD7H5p69shuSTWeOEJkfP3QIZKqeK71Y9V9VCpYQyrhhSUee0oXwhNgGEXjdYkwPTm3l9RZ1rJtdQ3DIiYo3Bk_Y5_xlcVn81C4dQ6a6iUEvU-2_Ci8RGL7tuRRersqdOBiW4PcS-HCHN6DesPQcV6ikAjxs4kT65VLdDHKx8_2dXSAci0kr88RpEHXtfJw_smHk7Iq40rM-150e4TlRhN3gsZF8B6osDfon2Wu_3P7Q8tNmUft13WNmqS_P7j4oeC8Cd_7DeWw"
+          />
+          <div className="absolute inset-0 pointer-events-none border-[8px] md:border-[12px] border-white/10"></div>
+          {/* Mock Map Marker Overlay */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+            <span className="material-symbols-outlined text-error text-4xl md:text-5xl drop-shadow-md" style={{fontVariationSettings: "'FILL' 1"}}>location_on</span>
+            <div className="bg-white p-2 md:p-3 border border-outline mt-2 shadow-sm text-center">
+              <p className="font-h3 text-primary text-xs md:text-sm">MC Infra Headquarters</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        {/* Left Side: Office Details */}
+        <div className="lg:col-span-5 space-y-10">
+          <div className="border border-outline-variant bg-white p-6 md:p-8">
+            <h1 className="font-h2 text-3xl md:text-h2 text-primary mb-6">Contact Details</h1>
+            <div className="space-y-8">
+              {/* Main Office */}
+              <div className="blueprint-line pb-6">
+                <span className="font-label-caps text-secondary uppercase block mb-3">Main Office - Test City</span>
+                <div className="flex gap-4">
+                  <span className="material-symbols-outlined text-outline">apartment</span>
+                  <p className="font-body-md text-on-surface-variant text-sm md:text-base">
+                    123 Demo Street,<br />
+                    Test City, 000000
+                  </p>
+                </div>
+              </div>
+              {/* Site Offices */}
+              <div className="blueprint-line pb-6">
+                <span className="font-label-caps text-secondary uppercase block mb-3">Site Offices</span>
+                <div className="space-y-4">
+                  <div className="flex gap-4">
+                    <span className="material-symbols-outlined text-outline">construction</span>
+                    <p className="font-body-md text-on-surface-variant text-sm md:text-base">
+                      <span className="font-bold">Project Alpha:</span> Electronic City Phase II
+                    </p>
                   </div>
-                  <div>
-                    <h4 style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Email Us</h4>
-                    <p style={{ color: 'var(--on-surface-variant)' }}>info@mcinfra.com</p>
+                  <div className="flex gap-4">
+                    <span className="material-symbols-outlined text-outline">construction</span>
+                    <p className="font-body-md text-on-surface-variant text-sm md:text-base">
+                      <span className="font-bold">Project Horizon:</span> Whitefield IT Hub
+                    </p>
                   </div>
                 </div>
-                
-                <div style={{ display: 'flex', gap: '1.5rem' }}>
-                  <div style={{ padding: '1rem', background: '#f3f4f6', borderRadius: 'var(--radius-default)', height: 'fit-content' }}>
-                    <Phone className="text-gold" />
+              </div>
+              {/* Communication */}
+              <div className="blueprint-line pb-6">
+                <span className="font-label-caps text-secondary uppercase block mb-3">Communication</span>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-4">
+                    <span className="material-symbols-outlined text-outline">phone_iphone</span>
+                    <a className="font-body-md text-primary font-bold hover:underline text-sm md:text-base" href="tel:+910000000000">+91 00000 00000</a>
                   </div>
-                  <div>
-                    <h4 style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Call Us</h4>
-                    <p style={{ color: 'var(--on-surface-variant)' }}>+1 (555) 123-4567</p>
+                  <div className="flex items-center gap-4">
+                    <span className="material-symbols-outlined text-outline">call</span>
+                    <a className="font-body-md text-primary font-bold hover:underline text-sm md:text-base" href="tel:+910000000000">+91 00 0000 0000</a>
+                  </div>
+                  <div className="mt-4">
+                    <button className="flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3 font-ui-button hover:opacity-90 transition-all w-full sm:w-auto">
+                      <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>chat</span>
+                      Chat on WhatsApp
+                    </button>
                   </div>
                 </div>
-                
-                <div style={{ display: 'flex', gap: '1.5rem' }}>
-                  <div style={{ padding: '1rem', background: '#f3f4f6', borderRadius: 'var(--radius-default)', height: 'fit-content' }}>
-                    <MapPin className="text-gold" />
-                  </div>
+              </div>
+              {/* Hours */}
+              <div>
+                <span className="font-label-caps text-secondary uppercase block mb-3">Office Hours</span>
+                <div className="flex gap-4">
+                  <span className="material-symbols-outlined text-outline">schedule</span>
                   <div>
-                    <h4 style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Visit Us</h4>
-                    <p style={{ color: 'var(--on-surface-variant)' }}>123 Luxury Ave, New York, NY</p>
+                    <p className="font-body-md text-on-surface-variant text-sm md:text-base">Monday - Saturday: 09:00 AM - 07:00 PM</p>
+                    <p className="font-body-md text-on-surface-variant text-sm md:text-base">Sunday: Closed</p>
                   </div>
                 </div>
               </div>
             </div>
-            
-            {/* Right: Form */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              style={{ padding: '4rem', backgroundColor: '#ffffff', borderRadius: 'var(--radius-xl)', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 20px 40px rgba(0,0,0,0.03)' }}
-            >
-              <form style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <label style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--on-surface-variant)' }}>Full Name</label>
-                  <input type="text" placeholder="John Doe" style={{ padding: '1rem', border: '1px solid #e5e7eb', borderRadius: 'var(--radius-default)', background: '#f9fafb' }} />
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <label style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--on-surface-variant)' }}>Email Address</label>
-                  <input type="email" placeholder="john@example.com" style={{ padding: '1rem', border: '1px solid #e5e7eb', borderRadius: 'var(--radius-default)', background: '#f9fafb' }} />
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <label style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--on-surface-variant)' }}>Message</label>
-                  <textarea rows="5" placeholder="Your requirements..." style={{ padding: '1rem', border: '1px solid #e5e7eb', borderRadius: 'var(--radius-default)', background: '#f9fafb', resize: 'none' }}></textarea>
-                </div>
-                <button type="submit" className="btn-pill btn-primary" style={{ width: '100%' }}>Send Message <ArrowRight size={18} style={{ marginLeft: '0.5rem' }} /></button>
-              </form>
-            </motion.div>
+          </div>
+
+          {/* Office Visual */}
+          <div className="border border-outline-variant bg-white overflow-hidden group">
+            <img 
+              alt="Professional corporate reception area" 
+              className="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-700" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAozZrMts8IBEGgnCWz0yKrcjMQ_4rVlwpnDOVNUulmNSHULMigMjfUoCOKt0-6cI2OlWZi6_P6HOhHpUQqZNdjypwTgF_esFXPf5C-WoEmSz5bO-ikjSMVf2ZDC7vU62ryXksRV4ezuxViGJYl52mPIIGy6g5_1DSlm4vGk9Xk62mNFdXxn353sWHPdmQy51JUkiaSm_wt-ylPjXx8d9AEdbuE61YTXsiR1eFr3b0SQ9taDKa43e-SHshH339aLQlJFFpgqiHuEA"
+            />
+            <div className="p-4 border-t border-outline-variant">
+              <p className="font-label-caps text-outline text-center">MAIN OFFICE RECEPTION</p>
+            </div>
           </div>
         </div>
-      </section>
-    </div>
+
+        {/* Right Side: Inquiry Form */}
+        <div className="lg:col-span-7 mt-8 lg:mt-0">
+          <div className="border border-outline-variant bg-white p-6 md:p-10 h-full">
+            <h2 className="font-h2 text-2xl md:text-h2 text-primary mb-2">Inquiry Form</h2>
+            <p className="font-body-lg text-on-surface-variant mb-10 text-sm md:text-base">Please fill out the form below, and our team will get back to you within 24 business hours.</p>
+            
+            <form className="space-y-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="font-label-caps text-primary uppercase">Full Name</label>
+                  <input className="w-full bg-white border border-outline-variant px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md" placeholder="e.g. John Doe" type="text" />
+                </div>
+                <div className="space-y-2">
+                  <label className="font-label-caps text-primary uppercase">Phone Number</label>
+                  <input className="w-full bg-white border border-outline-variant px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md" placeholder="+91 00000 00000" type="tel" />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="font-label-caps text-primary uppercase">Email Address</label>
+                  <input className="w-full bg-white border border-outline-variant px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md" placeholder="demo@example.com" type="email" />
+                </div>
+                <div className="space-y-2">
+                  <label className="font-label-caps text-primary uppercase">Area of Interest</label>
+                  <select className="w-full bg-white border border-outline-variant px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md">
+                    <option>Commercial Development</option>
+                    <option>Residential Construction</option>
+                    <option>Government Tenders</option>
+                    <option>Infrastructure Logistics</option>
+                    <option>Others</option>
+                  </select>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="font-label-caps text-primary uppercase">Message</label>
+                <textarea className="w-full bg-white border border-outline-variant px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md resize-none" placeholder="Describe your project or inquiry details..." rows={6}></textarea>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-outline-variant gap-4">
+                <p className="text-xs text-outline italic text-center sm:text-left">By submitting this form, you agree to our privacy policy.</p>
+                <button className="bg-secondary-container text-on-secondary-container px-10 py-4 font-ui-button uppercase tracking-widest hover:brightness-95 transition-all flex items-center justify-center gap-3 border border-secondary w-full sm:w-auto" type="submit" onClick={(e) => e.preventDefault()}>
+                  Send Inquiry
+                  <span className="material-symbols-outlined text-sm">send</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 };
 

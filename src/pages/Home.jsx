@@ -1,138 +1,265 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div style={{ backgroundColor: '#fcf8f8', width: '100%', overflow: 'hidden' }}>
-
-      {/* ── 1. HERO ── */}
-      <section style={{ minHeight: '100svh', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi5Q9mRBmUcYdYr8E-AVDkJwIehEBCengW_Zy9VeiYDeZB1HaRA7sv1HGVj36LRW8avxJKojpDu9TYluVes2QIT1uQypgT25WxinKz7vEUi9HeqtqljLG8HpT8ADMhb8LpF-oPBebpKqy2DNih2brN0ab1S5PPoEACS7Eq0l8V9l_bOkVeDMXs01o4Anhf21-D5vFfPO8AyTMs_sWd9WXpdmJ0jUb74qsdcLN5diU8kIHAz87671HN4zxrOMAYNbyds4ZddzqJ7g"
-            alt="Ultra-luxury mansion at twilight"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+    <main className="bg-background text-on-background font-body-md">
+      {/* Hero Section */}
+      <section className="relative h-[650px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            className="w-full h-full object-cover grayscale-[20%]" 
+            alt="A large scale construction site at dusk with several towering cranes" 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU0g6f098CWP0bBTIB5yg-ojnVQ_npwGbBo2y3_0gRJScY4hey_ipdPuJQL_dGZOg52oG1WsW_SOOPQa5dJt_1j7I-5rPh9U_1g564QjD8ULgw63cBVPD_4GZbFPXEStjHMTJpjNLpdsIo6EjmKOLMKaWSfXcqB5NIIW7iXmw4iOzi95RxX0JEDXZ1VNWH7_0EE7CaYsk-5_qYoE46i8B8rwULZ9xBGkcWYu8X39zO-_Xwv079mgtXqXAUqkgJcSFuLDca7HzI6w"
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.55) 100%)' }} />
+          <div className="absolute inset-0 bg-primary/60 mix-blend-multiply"></div>
         </div>
-
-        <div className="container" style={{ position: 'relative', zIndex: 20, textAlign: 'center', padding: '120px 20px 200px' }}>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            style={{ fontSize: 'clamp(2rem, 6vw, 72px)', color: 'white', lineHeight: '1.1', marginBottom: '20px', fontWeight: 900 }}
-          >
-            Building The Future Of<br />
-            <span className="text-gradient-gold">Luxury Living</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: 'rgba(255,255,255,0.88)', maxWidth: '560px', margin: '0 auto 36px' }}
-          >
-            Premium residential and commercial real estate crafted with innovation, trust, and elegance.
-          </motion.p>
-          <motion.div
-            className="hero-cta"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <Link to="/projects" className="btn-pill btn-primary">Explore Projects</Link>
-            <Link to="/contact" className="btn-pill" style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.6)', color: 'white', backdropFilter: 'blur(10px)' }}>
-              Book Consultation
-            </Link>
-          </motion.div>
+        <div className="relative z-10 max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="text-white space-y-6">
+            <h1 className="font-h1 text-4xl md:text-5xl lg:text-h1">Building Homes and Commercial Spaces with Trust</h1>
+            <p className="font-body-lg text-lg md:text-xl text-surface-variant max-w-xl">
+              MC Infra delivers residential, commercial, and infrastructure projects with quality construction and timely delivery.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link to="/projects" className="bg-secondary-container text-primary font-ui-button px-8 py-4 rounded hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                View Projects
+              </Link>
+              <Link to="/contact" className="border-2 border-white text-white font-ui-button px-8 py-4 rounded hover:bg-white/10 transition-all text-center">
+                Contact Team
+              </Link>
+            </div>
+          </div>
+          <div className="hidden md:grid grid-cols-2 gap-4">
+            <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+              <div className="text-secondary-container font-h1 text-4xl mb-2">15+</div>
+              <div className="font-label-caps text-xs text-surface-variant uppercase tracking-widest">Years of Excellence</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+              <div className="text-secondary-container font-h1 text-4xl mb-2">50+</div>
+              <div className="font-label-caps text-xs text-surface-variant uppercase tracking-widest">Projects Delivered</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20 col-span-2">
+              <div className="text-secondary-container font-h1 text-4xl mb-2">10M+</div>
+              <div className="font-label-caps text-xs text-surface-variant uppercase tracking-widest">Sq Ft Developed</div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        {/* TRUST BAR */}
-        <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', transform: 'translateY(50%)', zIndex: 30 }}>
-          <div className="container">
-            <div className="trust-bar-grid" style={{ backgroundColor: 'white', padding: '28px 32px', borderRadius: '20px', boxShadow: '0 20px 50px rgba(0,0,0,0.12)' }}>
-              <div>
-                <h2 className="text-gradient-gold" style={{ fontSize: 'clamp(28px,4vw,44px)' }}>10+</h2>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Years Experience</span>
+      {/* Services Section */}
+      <section className="py-24 bg-white border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div className="space-y-4">
+              <span className="text-secondary font-label-caps tracking-[0.2em] uppercase">Specializations</span>
+              <h2 className="font-h2 text-3xl md:text-h2 text-primary">Core Construction Services</h2>
+            </div>
+            <div className="h-1 flex-grow mx-12 blueprint-line opacity-30 hidden md:block"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="group p-10 border border-gray-200 hover:border-primary transition-all bg-surface-container-lowest">
+              <span className="material-symbols-outlined text-5xl text-primary mb-6" data-icon="apartment">apartment</span>
+              <h3 className="font-h3 text-2xl mb-4 group-hover:text-primary transition-colors">Residential</h3>
+              <p className="text-on-surface-variant">High-end apartment towers and luxury gated communities designed for modern urban living.</p>
+            </div>
+            <div className="group p-10 border border-gray-200 hover:border-primary transition-all bg-surface-container-lowest">
+              <span className="material-symbols-outlined text-5xl text-primary mb-6" data-icon="corporate_fare">corporate_fare</span>
+              <h3 className="font-h3 text-2xl mb-4 group-hover:text-primary transition-colors">Commercial</h3>
+              <p className="text-on-surface-variant">State-of-the-art office spaces, tech parks, and retail centers built for commercial success.</p>
+            </div>
+            <div className="group p-10 border border-gray-200 hover:border-primary transition-all bg-surface-container-lowest">
+              <span className="material-symbols-outlined text-5xl text-primary mb-6" data-icon="engineering">engineering</span>
+              <h3 className="font-h3 text-2xl mb-4 group-hover:text-primary transition-colors">Civil Engineering</h3>
+              <p className="text-on-surface-variant">Robust infrastructure projects, bridges, and industrial structures with engineering precision.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="relative">
+            <img 
+              className="w-full h-[500px] object-cover border border-gray-300" 
+              alt="An expert site engineer inspecting a complex architectural blueprint" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmRiUEJCfvGEB3qp_vBhC9GTD6YtzE3ElChHIOw7H924lG7bGk2QdrLEUrw2xIMibTv-Of5GeskNpfB83H1RtM3SXvv93v9eA4NzgY3OF41QZhJrKePi_CHLE6ayE5mYuSS2EJ-6xNsCe1oNJ80Jly4OYRIY7GXvQHuoEw6Sdq5cqp-tOdz_BHvw-rvNzSwGy4VZ6YKW5A_4-4aZp7DBCv5YDLTm3ZQUt6lt0Sb_kgrieKqKUtkqbZc5U6DP3H-QGBU4pJeIHNbA"
+            />
+            <div className="absolute -bottom-8 -right-8 bg-secondary-container p-8 border border-primary hidden md:block">
+              <span className="block font-h3 text-3xl text-primary">ISO 9001:2015</span>
+              <span className="block font-label-caps text-xs text-primary/80 uppercase">Certified Standards</span>
+            </div>
+          </div>
+          <div className="space-y-8">
+            <span className="text-secondary font-label-caps tracking-[0.2em] uppercase">Who We Are</span>
+            <h2 className="font-h2 text-3xl md:text-h2 text-primary">Engineering Quality with Rigid Safety Standards</h2>
+            <p className="text-body-lg text-on-surface-variant leading-relaxed">
+              At MC Infra, we believe that structural integrity is the foundation of trust. Every project undergoes rigorous site inspections and quality checks to ensure it exceeds global safety benchmarks.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 pb-4 border-b border-gray-200">
+                <span className="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+                <div>
+                  <h4 className="font-bold text-primary">Premium Grade Materials</h4>
+                  <p className="text-sm text-on-surface-variant">We source only Tier-1 materials for long-term structural durability.</p>
+                </div>
               </div>
-              <div>
-                <h2 className="text-gradient-gold" style={{ fontSize: 'clamp(28px,4vw,44px)' }}>50+</h2>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Projects Delivered</span>
-              </div>
-              <div>
-                <h2 className="text-gradient-gold" style={{ fontSize: 'clamp(28px,4vw,44px)' }}>5000+</h2>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Happy Families</span>
+              <div className="flex items-start gap-4 pb-4 border-b border-gray-200">
+                <span className="material-symbols-outlined text-primary" data-icon="safety_check">safety_check</span>
+                <div>
+                  <h4 className="font-bold text-primary">Zero-Incident Safety Policy</h4>
+                  <p className="text-sm text-on-surface-variant">Strict adherence to industrial safety protocols for every onsite personnel.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <div style={{ height: 'clamp(80px, 12vw, 150px)' }} />
-
-      {/* ── 2. FEATURED PROJECTS ── */}
-      <section style={{ padding: 'clamp(48px,8vw,80px) 0' }}>
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', marginBottom: '32px' }}>
-            <h2 style={{ fontSize: 'clamp(1.6rem,4vw,48px)', color: '#0f172a' }}>Featured Projects</h2>
-            <div style={{ display: 'flex', gap: '10px' }}>
-              <button style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #ddd', background: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><ChevronLeft size={18} /></button>
-              <button style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #ddd', background: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><ChevronRight size={18} /></button>
+      {/* Projects Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="space-y-4">
+              <span className="text-secondary font-label-caps tracking-[0.2em] uppercase">Our Portfolio</span>
+              <h2 className="font-h2 text-3xl md:text-h2 text-primary">Project Showcase</h2>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button className="bg-primary text-white px-4 py-2 text-sm font-label-caps">ALL</button>
+              <button className="border border-gray-300 px-4 py-2 text-sm font-label-caps hover:bg-gray-50 transition-colors">ONGOING</button>
+              <button className="border border-gray-300 px-4 py-2 text-sm font-label-caps hover:bg-gray-50 transition-colors">COMPLETED</button>
             </div>
           </div>
-
-          <div className="projects-grid">
-            {[
-              { title: 'The Aura Residences', loc: 'Downtown District', price: '$2.5M', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800' },
-              { title: 'Crestview Estates',   loc: 'Highland Hills',   price: '$4.1M', img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800' },
-              { title: 'Nexus Commercial',    loc: 'Financial Hub',    price: '$1.2M', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800' },
-            ].map((p, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -6 }}
-                style={{ backgroundColor: 'white', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.05)', border: '1px solid #f1edec' }}
-              >
-                <img src={p.img} alt={p.title} style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
-                <div style={{ padding: '20px' }}>
-                  <h3 style={{ fontSize: '18px', marginBottom: '4px' }}>{p.title}</h3>
-                  <p style={{ color: '#64748b', fontSize: '14px', margin: '0 0 16px' }}>{p.loc}</p>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '22px', fontWeight: 800 }}>{p.price}</span>
-                    <Link to={`/projects/${i + 1}`} style={{ color: '#C89B3C', fontWeight: 700, fontSize: '13px' }}>View Details →</Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* Project Card 1 */}
+            <div className="group border border-gray-200">
+              <div className="relative overflow-hidden h-[400px]">
+                <img 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  alt="Modern architectural rendering of high-rise apartment towers" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHUNjkS1FjeJSSe8W4IBwDbxrqavTUd42XyTpHSaouM-8MCURbWmtjWXymMa9HUBPThRebapsM_cMRelDHcQWZJaQudOeIJi6IwQK-Ov27MPC2Zrll8EViS7e_8Z_Q3g6Sz2eE5fcvivxcv7kj8pRXAzSVvxStyv-lDX4lN2CGT172orXv-Z4ai7jUgh9xC6JB-YT9SwR5joEHtFxWCkZg4eD3mmXhSjrSVlncwJn-ovHd-2YBT0_zr1_vg1IFkUmKm5qksANY5Q"
+                />
+                <div className="absolute top-4 left-4 bg-secondary-container px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">Ongoing</div>
+              </div>
+              <div className="p-6 md:p-8">
+                <div className="flex flex-col sm:flex-row justify-between items-start mb-4 gap-2">
+                  <div>
+                    <h3 className="font-h3 text-xl mb-1">Skyline Heights</h3>
+                    <p className="text-sm text-on-surface-variant flex items-center gap-1">
+                      <span className="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> Demo Location, Test City
+                    </p>
+                  </div>
+                  <div className="sm:text-right">
+                    <span className="block text-[10px] font-label-caps text-on-surface-variant uppercase mb-1">RERA No.</span>
+                    <span className="bg-gray-100 px-2 py-1 text-[10px] border border-gray-300">PRM/KA/RERA/1251/310/PR/180516/001715</span>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+                <div className="w-full bg-gray-100 h-2 mb-2">
+                  <div className="bg-secondary-container h-full w-[65%]"></div>
+                </div>
+                <div className="flex justify-between text-[10px] font-label-caps text-on-surface-variant">
+                  <span>65% COMPLETE</span>
+                  <span>POSSESSION: DEC 2025</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project Card 2 */}
+            <div className="group border border-gray-200">
+              <div className="relative overflow-hidden h-[400px]">
+                <img 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  alt="A finished contemporary commercial building" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJbYqyi5xA3Hx2EX-P-fmP7UE6vFzBKRFALlFZ7COCVYSZ1cJ5fOeqqIMKLVCRFMZ1k_Wln83lUTLJyWt5Jtnlm1F12-cvMbJoOS1uLyOl8HEXGwTNUH-XSzAFf4Wsb1clmaX1nsY1NANg2QA5OMntlOvweXf_xHBcnQ_RNyiDe6nbOKU_gCqF9QvuUWeXJIknSHFPUpiWzsBT8uGVKuriWpNC75m7YHXAe19jb3dsDArWQYIhPxS6Pdt2ljMRvtrPT04qadG_pg"
+                />
+                <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest">Completed</div>
+              </div>
+              <div className="p-6 md:p-8">
+                <div className="flex flex-col sm:flex-row justify-between items-start mb-4 gap-2">
+                  <div>
+                    <h3 className="font-h3 text-xl mb-1">Nexus Business Hub</h3>
+                    <p className="text-sm text-on-surface-variant flex items-center gap-1">
+                      <span className="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> Demo Location, Test City
+                    </p>
+                  </div>
+                  <div className="sm:text-right">
+                    <span className="block text-[10px] font-label-caps text-on-surface-variant uppercase mb-1">Status</span>
+                    <span className="bg-green-100 text-green-700 px-2 py-1 text-[10px] border border-green-200">Ready to Move</span>
+                  </div>
+                </div>
+                <p className="text-sm text-on-surface-variant mb-6">A premium grade-A office space delivered 4 months ahead of schedule with 100% occupancy.</p>
+                <button className="text-primary font-label-caps text-xs flex items-center gap-2 hover:gap-4 transition-all">
+                  VIEW CASE STUDY <span className="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 3. VISION ── */}
-      <section style={{ padding: 'clamp(60px,10vw,100px) 0', backgroundColor: '#ffffff' }}>
-        <div className="container">
-          <div className="vision-grid">
-            <div className="vision-images">
-              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=600" alt="Office" style={{ width: '100%', height: '380px', objectFit: 'cover', borderRadius: '20px' }} />
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" alt="Building" style={{ width: '100%', height: '460px', objectFit: 'cover', borderRadius: '20px', marginTop: '40px' }} />
+      {/* Construction Process */}
+      <section className="py-24 bg-primary text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-20 space-y-4">
+            <span className="text-secondary-container font-label-caps tracking-[0.2em] uppercase">The Blueprint</span>
+            <h2 className="font-h2 text-3xl md:text-h2">Our Systematic Construction Process</h2>
+          </div>
+          <div className="relative">
+            <div className="absolute top-12 left-0 w-full border-t border-dashed border-white/20 hidden md:block"></div>
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-8 relative z-10">
+              {[
+                { step: "01", title: "Planning", desc: "Feasibility study and landscape analysis.", active: true },
+                { step: "02", title: "Design", desc: "3D modeling and architectural blueprints." },
+                { step: "03", title: "Site Dev", desc: "Excavation and foundation engineering." },
+                { step: "04", title: "Structure", desc: "Framing, walls, and structural roofing." },
+                { step: "05", title: "Finishing", desc: "Interior, MEP, and aesthetic detailing." },
+                { step: "06", title: "Handover", desc: "Final audit and key handover ceremony." },
+              ].map((item, idx) => (
+                <div key={idx} className="text-center space-y-4">
+                  <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary border-4 ${item.active ? 'border-secondary-container' : 'border-white/20'} flex items-center justify-center mx-auto mb-6 relative z-10`}>
+                    <span className="text-xl md:text-2xl font-bold">{item.step}</span>
+                  </div>
+                  <h4 className="font-bold uppercase text-sm tracking-widest">{item.title}</h4>
+                  <p className="text-xs text-surface-variant opacity-70">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <span className="text-secondary font-label-caps tracking-[0.2em] uppercase">Happy Homeowners</span>
+              <h2 className="font-h2 text-3xl md:text-h2 text-primary">Voices of Satisfaction</h2>
+              <div className="bg-white p-8 md:p-12 border border-gray-200 relative">
+                <span className="material-symbols-outlined text-6xl text-secondary-container absolute -top-8 -left-4 opacity-50" data-icon="format_quote">format_quote</span>
+                <p className="text-body-lg text-base md:text-lg italic mb-8">
+                  "Moving into our new home at Skyline Heights was a dream come true. The quality of finishing and the way the MC Infra team handled the entire handover ceremony made us feel truly special. It's rare to see such transparency in construction timelines today."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold">RS</div>
+                  <div>
+                    <h4 className="font-bold text-primary">Rakesh & Sneha Sharma</h4>
+                    <p className="text-xs text-on-surface-variant">Homeowners, Phase 1</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div>
-              <span className="text-gradient-gold" style={{ fontSize: '12px', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Our Vision</span>
-              <h2 style={{ fontSize: 'clamp(1.6rem,3.5vw,52px)', color: '#0f172a', margin: '16px 0' }}>Crafting Legacies in Stone and Glass</h2>
-              <p style={{ fontSize: 'clamp(15px,1.5vw,18px)', color: '#475569', lineHeight: '1.7', marginBottom: '28px' }}>
-                At MCINFRA, we sculpt environments that elevate the human experience — every façade, every interior, every community is a testament to our craft.
-              </p>
-              <div style={{ borderLeft: '4px solid #C89B3C', paddingLeft: '20px', fontSize: 'clamp(16px,2vw,22px)', fontStyle: 'italic', color: '#475569', marginBottom: '36px', lineHeight: '1.6' }}>
-                "Our mission is architectural brilliance."
-              </div>
-              <Link to="/story" className="btn-pill btn-outline">Discover Our Story</Link>
+              <img 
+                className="w-full h-[400px] md:h-[600px] object-cover border-8 border-white shadow-sm" 
+                alt="A joyful family standing in front of their brand new modern home" 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Tsc1JQyPrE9w8JdIbQYdrw3_0AEC5_QCFXUqJZjHKonmnYX7VIU_9BIihDqyF3LAjUpJ6dO2K2GItQ1oVhNBUCKQzIBVp_WVgAl7MAKAnYr_DEiu0OAPVw93Nh60KVQF54xbC8WOm7TQY4fGmvz_8riyuyabBRJK2nvRwVSzHP9rkI8pFzz25cePoyAIYL3S78hIWeIgHf_O5p6gaLgrTcY1fcaYAwf9f0lp-MitWK6IuGCeq21nT80w42ympcbpd7x1IpXEGw"
+              />
             </div>
           </div>
         </div>
       </section>
-
-    </div>
+    </main>
   );
 };
 

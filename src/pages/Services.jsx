@@ -1,121 +1,185 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-
-// Inline SVG icons — avoids lucide-react v1.x naming issues
-const LandmarkIcon = () => (
-  <svg width={32} height={32} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/>
-    <line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/>
-    <line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/>
-  </svg>
-);
-const PenToolIcon = () => (
-  <svg width={32} height={32} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
-    <path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>
-  </svg>
-);
-const BarChartIcon = () => (
-  <svg width={32} height={32} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
-    <line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/>
-  </svg>
-);
-const HardHatIcon = () => (
-  <svg width={32} height={32} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/>
-    <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M4 15v-3a8 8 0 0 1 16 0v3"/>
-  </svg>
-);
-
-const services = [
-  {
-    icon: <LandmarkIcon />,
-    title: 'Architectural Design',
-    desc: 'Collaborating with global architects to create iconic silhouettes that redefine city skylines and coastal vistas.',
-    features: ['Concept Development', 'Structural Engineering', 'Interior Curation'],
-  },
-  {
-    icon: <PenToolIcon />,
-    title: 'Luxury Development',
-    desc: 'End-to-end development of premium residential and commercial real estate with a focus on artisanal craftsmanship.',
-    features: ['Site Acquisition', 'Feasibility Studies', 'Master Planning'],
-  },
-  {
-    icon: <BarChartIcon />,
-    title: 'Strategic Investment',
-    desc: 'Providing exclusive investment opportunities in high-growth luxury markets with robust projected returns.',
-    features: ['Portfolio Management', 'Market Analysis', 'Risk Assessment'],
-  },
-  {
-    icon: <HardHatIcon />,
-    title: 'Project Management',
-    desc: 'Surgical precision in execution, ensuring every project is delivered on time, on budget, and beyond expectations.',
-    features: ['Quality Control', 'Supply Chain', 'Safety Oversight'],
-  },
-];
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   return (
-    <div style={{ paddingTop: '80px', backgroundColor: '#fcf8f8' }}>
-
-      {/* Header */}
-      <section style={{ padding: 'clamp(60px,8vw,120px) 0', textAlign: 'center', backgroundColor: '#ffffff', borderBottom: '1px solid #e5e2e1' }}>
-        <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <span className="text-gradient-gold" style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>What We Do</span>
-            <h1 style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', marginBottom: '20px' }}>
-              Our <span style={{ color: '#C89B3C' }}>Expertise</span>
-            </h1>
-            <p style={{ fontSize: 'clamp(15px,1.5vw,1.2rem)', color: '#475569', maxWidth: '640px', margin: '0 auto', lineHeight: 1.7 }}>
-              We provide a full spectrum of real estate solutions, executed with architectural precision and a relentless focus on luxury.
-            </p>
-          </motion.div>
+    <main className="bg-background font-body-md text-on-background">
+      {/* Hero Section */}
+      <section className="relative h-[400px] md:h-[614px] flex items-center bg-primary overflow-hidden">
+        <div className="absolute inset-0 opacity-40">
+          <img 
+            alt="Massive construction site at twilight" 
+            className="w-full h-full object-cover" 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWXQVMBTUV_2QUowNpj6GNltopCuyXU-tE9_lkVpgj09icVu1ew6_QuUwOr9HZrBAKdwsGZyOP6l5io6gjFVMUgJIVfUzYO0KEkruGkIlDGGGmnV6iied8H-mMhHB_xoWX9PBb4ywEkQgp2dvRvsL_W3v74W_tm_Tb-JKkg2AUwVbo-6IoCs32kWgexK4Hd_OcZ3exZ2wTEd5KC1E3QWiqyCfV_YqzQb3HWfKCEkflxBuG3AtBPuM5Eg3MKEq9swVbl9ktZUtV3A"
+          />
         </div>
-      </section>
-
-      {/* Cards */}
-      <section style={{ padding: 'clamp(48px,8vw,100px) 0' }}>
-        <div className="container">
-          <div className="services-grid">
-            {services.map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -8 }}
-                style={{
-                  padding: 'clamp(24px,3vw,40px)',
-                  backgroundColor: '#ffffff',
-                  borderRadius: '24px',
-                  border: '1px solid #e5e2e1',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.03)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '20px',
-                }}
-              >
-                <div style={{ color: '#C89B3C' }}>{service.icon}</div>
-                <h3 style={{ fontSize: 'clamp(18px,2vw,24px)' }}>{service.title}</h3>
-                <p style={{ color: '#475569', lineHeight: 1.7, fontSize: '15px' }}>{service.desc}</p>
-                <div style={{ marginTop: 'auto', paddingTop: '20px', borderTop: '1px solid #f1edec' }}>
-                  <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px', listStyle: 'none', padding: 0 }}>
-                    {service.features.map((feat, j) => (
-                      <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#475569' }}>
-                        <div style={{ width: '6px', height: '6px', backgroundColor: '#C89B3C', borderRadius: '50%', flexShrink: 0 }} />
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full">
+          <div className="max-w-2xl">
+            <span className="bg-secondary-container text-on-secondary-container px-2 py-1 text-xs font-label-caps inline-block mb-4">Our Expertise</span>
+            <h1 className="font-h1 text-4xl md:text-h1 text-white mb-4">Engineering the <br className="hidden md:block" />Future of Infrastructure.</h1>
+            <p className="text-base md:text-body-lg font-body-lg text-primary-fixed-dim max-w-lg">From residential landmarks to complex civil works, MC Infra delivers structural integrity and aesthetic excellence across India.</p>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* Services Bento Grid */}
+      <section className="py-16 md:py-24 bg-surface-container-low border-b border-outline-variant">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="mb-12">
+            <h2 className="font-h2 text-3xl md:text-h2 text-primary">Core Specializations</h2>
+            <div className="h-1 w-24 bg-secondary-container mt-2 md:mt-4"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            {/* Residential */}
+            <div className="md:col-span-8 bg-white border border-outline-variant p-6 md:p-8 flex flex-col md:flex-row gap-8 group hover:border-primary transition-colors">
+              <div className="w-full md:w-1/2 overflow-hidden">
+                <img 
+                  alt="Modern luxury residential villa" 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeR-QLFyWvj6gNMO-xKa8VF-_xijC5ES93HjWXdsTqlooRf58kbEo3OO-FuxhjWtKpGoJdBfELXxQlAFK5lVNEMiqGhZ9a3zIa4DqPjtHOd0HXDZYgP8gpTc-HkugVU06cKjDwOss1aKuEyPi6cHnl62CEoi8Uf_nAY_iZsqHvLRdAaD9cjD8s5z6Y64U1MtbGcEQsU3HceLp06AElbWQPh1CHdsjEh2yeCNFR0rZflMn_bTYAQxTS4BkgfhN9_-wDenxWJ9QL2g"
+                />
+              </div>
+              <div className="w-full md:w-1/2 flex flex-col justify-center">
+                <span className="material-symbols-outlined text-primary text-4xl mb-2" data-icon="foundation">foundation</span>
+                <h3 className="font-h3 text-2xl md:text-h3 text-primary mb-2">Residential Construction</h3>
+                <p className="text-on-surface-variant mb-4 text-sm md:text-base">Bespoke luxury villas, high-rise apartments, and sustainable housing communities built with premium materials.</p>
+                <ul className="space-y-2 mb-6 text-sm font-semibold text-primary">
+                  <li className="flex items-center gap-2"><span className="material-symbols-outlined text-xs">check_circle</span> Turnkey Housing</li>
+                  <li className="flex items-center gap-2"><span className="material-symbols-outlined text-xs">check_circle</span> Sustainable Design</li>
+                  <li className="flex items-center gap-2"><span className="material-symbols-outlined text-xs">check_circle</span> Smart Home Integration</li>
+                </ul>
+                <button className="text-primary font-ui-button flex items-center gap-2 group-hover:gap-4 transition-all">Explore Residential <span className="material-symbols-outlined">arrow_forward</span></button>
+              </div>
+            </div>
+            {/* Interior */}
+            <div className="md:col-span-4 bg-white border border-outline-variant p-6 md:p-8 group hover:border-primary transition-colors">
+              <div className="h-48 mb-4 overflow-hidden">
+                <img 
+                  alt="Elegant corporate office interior" 
+                  className="w-full h-full object-cover" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBexoq4I8H-EMd0oG1TP9E0NJOE5e9b855EH5y7wOAGjMpMqrPeLjaEZpjNHj-9pQCwnwVYNoOJM5yeWde5VmUf3RTO78UuagrYqQoR3xs3oICUQ8F6EZDSwJaT3ZukUBZsJQC5woJ2tCYmiSDL0IWI-A2R80VhdCPajeDHMXPfGqS91cy8K_mHvZMqkp61mlTKoq1XigNqLbryBeJIS2-eM_crpaea2ULQ0_F2hz24PZ29L6XVk_tS3wPO0395AewRskPVAulH8Q"
+                />
+              </div>
+              <span className="material-symbols-outlined text-primary text-4xl mb-2" data-icon="format_paint">format_paint</span>
+              <h3 className="font-h3 text-2xl md:text-h3 text-primary mb-2">Interior Work</h3>
+              <p className="text-on-surface-variant text-sm mb-4">Custom interiors for corporate offices, retail outlets, and luxury homes focusing on ergonomics and brand identity.</p>
+              <button className="text-primary font-ui-button flex items-center gap-2">View Portfolio <span className="material-symbols-outlined">arrow_forward</span></button>
+            </div>
+            {/* Commercial */}
+            <div className="md:col-span-4 bg-white border border-outline-variant p-6 md:p-8 group hover:border-primary transition-colors">
+              <div className="h-48 mb-4 overflow-hidden">
+                <img 
+                  alt="Towering glass skyscraper" 
+                  className="w-full h-full object-cover" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuACNh3HYaFPXarj6nBWQfDUi8JyB1UcC-FEtecYy08QQwTs0oEgvlvPomIK5HWBJ5_HkjyCFKPeec09xcaWSfJt0xC9mVm7sNJmHER4n8ILikQD_EQKUdin-MRiDN_DCBrw9nznf7HdPDxGzLcWXwTv6i25ln1c4KY_4gGwjwnTId4zAWzp7Nsd69pperYUEMzhJBO0sqe_hhTAHRLnXQ3HuqfdkhvdY6ZGV11yZEehMFS-6UaVdi6nGK28OyDtXqkT7-Wec06Tjg"
+                />
+              </div>
+              <span className="material-symbols-outlined text-primary text-4xl mb-2" data-icon="apartment">apartment</span>
+              <h3 className="font-h3 text-2xl md:text-h3 text-primary mb-2">Commercial Projects</h3>
+              <p className="text-on-surface-variant text-sm mb-4">Office towers, shopping malls, and industrial complexes engineered for maximum utility and ROI.</p>
+              <button className="text-primary font-ui-button flex items-center gap-2">Project List <span className="material-symbols-outlined">arrow_forward</span></button>
+            </div>
+            {/* Civil */}
+            <div className="md:col-span-8 bg-white border border-outline-variant p-6 md:p-8 flex flex-col md:flex-row gap-8 group hover:border-primary transition-colors">
+              <div className="w-full md:w-1/2 flex flex-col justify-center order-2 md:order-1">
+                <span className="material-symbols-outlined text-primary text-4xl mb-2" data-icon="architecture">architecture</span>
+                <h3 className="font-h3 text-2xl md:text-h3 text-primary mb-2">Civil Engineering</h3>
+                <p className="text-on-surface-variant mb-4 text-sm md:text-base">Public infrastructure including bridges, highways, and water treatment plants designed with rigorous safety standards.</p>
+                <ul className="space-y-2 mb-6 text-sm font-semibold text-primary">
+                  <li className="flex items-center gap-2"><span className="material-symbols-outlined text-xs">check_circle</span> Structural Stability</li>
+                  <li className="flex items-center gap-2"><span className="material-symbols-outlined text-xs">check_circle</span> Seismic Retrofitting</li>
+                  <li className="flex items-center gap-2"><span className="material-symbols-outlined text-xs">check_circle</span> Geotechnical Survey</li>
+                </ul>
+                <button className="text-primary font-ui-button flex items-center gap-2">Technical Specs <span className="material-symbols-outlined">arrow_forward</span></button>
+              </div>
+              <div className="w-full md:w-1/2 overflow-hidden order-1 md:order-2">
+                <img 
+                  alt="Massive civil engineering project" 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy4B_szKN2uL1jg4OFONhjYMEKpaBERkY4ZBMle64U-PtLnalJrnliIE_aNGMxtzqfqLGp3puhGtOS3mJREcKux85_FKwEb98XWXvVbTzu9cOT4uWyt4SJO8g-cJ63hXCYWoS__5u3_3vhAfWkKX5DM_iTUUkFF7hPlXK_WA6Qw1L0N5m9eb4Em_jJDx8_bGJCqZ9pWd4ACRPk6ahao9ssm9BpHtW6vyRBUX6RyUTfXKRLeUNo-8eNlRgKfLKcEIt8jjaymwILAg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Construction Process Timeline */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <span className="font-label-caps text-secondary tracking-widest text-xs">The MC Infra Methodology</span>
+            <h2 className="font-h2 text-3xl md:text-h2 text-primary">From Planning to Handover</h2>
+          </div>
+          <div className="relative">
+            {/* Desktop Timeline Line */}
+            <div className="hidden lg:block absolute top-12 left-0 w-full h-1 bg-gray-200">
+              <div className="absolute top-0 left-0 h-full bg-secondary-container w-3/4"></div>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 relative z-10">
+              {/* Step 1 */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-4 shadow-lg">
+                  <span className="material-symbols-outlined text-primary text-3xl" data-icon="edit_note">edit_note</span>
+                </div>
+                <h4 className="font-h3 text-lg md:text-xl mb-2">Planning</h4>
+                <p className="text-xs text-on-surface-variant">Requirement gathering, feasibility studies, and site surveys.</p>
+              </div>
+              {/* Step 2 */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-4 shadow-lg">
+                  <span className="material-symbols-outlined text-primary text-3xl" data-icon="design_services">design_services</span>
+                </div>
+                <h4 className="font-h3 text-lg md:text-xl mb-2">Blueprint</h4>
+                <p className="text-xs text-on-surface-variant">Architectural rendering and structural engineering documentation.</p>
+              </div>
+              {/* Step 3 */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-4 shadow-lg">
+                  <span className="material-symbols-outlined text-primary text-3xl" data-icon="construction">construction</span>
+                </div>
+                <h4 className="font-h3 text-lg md:text-xl mb-2">Execution</h4>
+                <p className="text-xs text-on-surface-variant">Core construction, site management, and safety compliance.</p>
+              </div>
+              {/* Step 4 */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-4 shadow-lg">
+                  <span className="material-symbols-outlined text-primary text-3xl" data-icon="assignment_turned_in">assignment_turned_in</span>
+                </div>
+                <h4 className="font-h3 text-lg md:text-xl mb-2">Inspection</h4>
+                <p className="text-xs text-on-surface-variant">Quality audits, structural testing, and finishing checks.</p>
+              </div>
+              {/* Step 5 */}
+              <div className="flex flex-col items-center text-center opacity-50 col-span-2 lg:col-span-1">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-white border-4 border-gray-200 rounded-full flex items-center justify-center mb-4">
+                  <span className="material-symbols-outlined text-outline text-3xl" data-icon="key">key</span>
+                </div>
+                <h4 className="font-h3 text-lg md:text-xl mb-2">Handover</h4>
+                <p className="text-xs text-on-surface-variant">Project delivery, final documentation, and maintenance support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 md:py-24 bg-primary-container text-on-primary-container">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="text-center md:text-left">
+            <h2 className="font-h2 text-3xl md:text-h2 text-white mb-2">Ready to build your vision?</h2>
+            <p className="text-body-md opacity-80 text-white">Consult with our lead engineers today for a detailed technical proposal.</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+            <Link to="/contact" className="bg-secondary-container text-on-secondary-container px-6 py-3 rounded font-ui-button uppercase tracking-widest active:scale-95 transition-all text-center">
+              Schedule Site Visit
+            </Link>
+            <button className="border border-white text-white px-6 py-3 rounded font-ui-button uppercase tracking-widest hover:bg-white hover:text-primary transition-all text-center">
+              Download Brochure
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 };
 

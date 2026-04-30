@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | Astra Build-Tech</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#bdc7db",
+                    "on-surface": "#191c1f",
+                    "on-background": "#191c1f",
+                    "surface-variant": "#e0e2e6",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f7f9fd",
+                    "secondary-fixed": "#ffe07f",
+                    "tertiary-container": "#2c3646",
+                    "error": "#ba1a1a",
+                    "primary-container": "#1b365d",
+                    "on-tertiary-container": "#959fb2",
+                    "outline-variant": "#c4c6cf",
+                    "surface": "#f7f9fd",
+                    "surface-container": "#eceef2",
+                    "secondary-fixed-dim": "#edc200",
+                    "on-secondary-fixed-variant": "#564500",
+                    "on-secondary-container": "#6f5900",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#2e476f",
+                    "on-tertiary-fixed-variant": "#3d4757",
+                    "surface-container-highest": "#e0e2e6",
+                    "on-primary-fixed": "#001b3d",
+                    "on-primary-container": "#87a0cd",
+                    "surface-container-low": "#f2f4f8",
+                    "primary-fixed-dim": "#aec7f7",
+                    "on-surface-variant": "#44474e",
+                    "background": "#f7f9fd",
+                    "on-secondary": "#ffffff",
+                    "outline": "#74777f",
+                    "on-error-container": "#93000a",
+                    "primary": "#002046",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#eff1f5",
+                    "primary-fixed": "#d6e3ff",
+                    "secondary-container": "#fed000",
+                    "tertiary-fixed": "#d9e3f7",
+                    "surface-tint": "#465f88",
+                    "surface-dim": "#d8dade",
+                    "surface-container-high": "#e6e8ec",
+                    "on-tertiary-fixed": "#121c2a",
+                    "on-secondary-fixed": "#231b00",
+                    "tertiary": "#17212f",
+                    "inverse-surface": "#2d3134",
+                    "inverse-primary": "#aec7f7",
+                    "secondary": "#725c00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "xl": "48px",
+                    "grid-gutter": "24px",
+                    "unit": "4px",
+                    "lg": "24px",
+                    "grid-margin": "64px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "ui-button": ["Inter"],
+                    "h3": ["Inter"],
+                    "h2": ["Inter"],
+                    "h1": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "ui-button": ["14px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .blueprint-line {
+        background-image: linear-gradient(to right, #74777f 33%, rgba(255,255,255,0) 0%);
+        background-position: bottom;
+        background-size: 12px 1px;
+        background-repeat: repeat-x;
+      }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 fixed top-0 w-full z-50 border-b border-gray-300 dark:border-gray-700 flex justify-between items-center h-20 px-8 max-w-full mx-auto">
+<div class="text-xl font-bold text-[#1B365D] dark:text-white uppercase tracking-wider font-h3">
+            Astra Build-Tech
+        </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-inter text-sm font-semibold tracking-tight text-gray-600 dark:text-gray-400 hover:text-[#EAB308] transition-colors duration-200" href="#">Projects</a>
+<a class="font-inter text-sm font-semibold tracking-tight text-[#1B365D] border-b-2 border-[#EAB308] pb-1" href="#">Services</a>
+<a class="font-inter text-sm font-semibold tracking-tight text-gray-600 dark:text-gray-400 hover:text-[#EAB308] transition-colors duration-200" href="#">Blueprints</a>
+<a class="font-inter text-sm font-semibold tracking-tight text-gray-600 dark:text-gray-400 hover:text-[#EAB308] transition-colors duration-200" href="#">About</a>
+<a class="font-inter text-sm font-semibold tracking-tight text-gray-600 dark:text-gray-400 hover:text-[#EAB308] transition-colors duration-200" href="#">Careers</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex gap-4 mr-4">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">phone</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">mail</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">chat</span>
+</div>
+<button class="bg-primary text-on-primary px-lg py-sm font-ui-button rounded active:scale-95 duration-100 uppercase tracking-wide">
+                Get Quote
+            </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center bg-primary overflow-hidden">
+<div class="absolute inset-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="A cinematic wide shot of a massive construction site at twilight, featuring high-reaching cranes and steel structural skeletons against a deep blue sky. The lighting is industrial with cool tones and bright amber safety lights, reflecting a professional and highly technical building environment. The overall mood is powerful, organized, and focused on large-scale precision engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWXQVMBTUV_2QUowNpj6GNltopCuyXU-tE9_lkVpgj09icVu1ew6_QuUwOr9HZrBAKdwsGZyOP6l5io6gjFVMUgJIVfUzYO0KEkruGkIlDGGGmnV6iied8H-mMhHB_xoWX9PBb4ywEkQgp2dvRvsL_W3v74W_tm_Tb-JKkg2AUwVbo-6IoCs32kWgexK4Hd_OcZ3exZ2wTEd5KC1E3QWiqyCfV_YqzQb3HWfKCEkflxBuG3AtBPuM5Eg3MKEq9swVbl9ktZUtV3A"/>
+</div>
+<div class="relative z-10 container mx-auto px-grid-margin">
+<div class="max-w-2xl">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs font-label-caps inline-block mb-md">Our Expertise</span>
+<h1 class="font-h1 text-h1 text-white mb-md">Engineering the <br/>Future of Infrastructure.</h1>
+<p class="text-body-lg font-body-lg text-primary-fixed-dim max-w-lg">From residential landmarks to complex civil works, Astra Build-Tech delivers structural integrity and aesthetic excellence across India.</p>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="py-xl bg-surface-container-low border-b border-outline-variant">
+<div class="container mx-auto px-grid-margin">
+<div class="mb-lg">
+<h2 class="font-h2 text-h2 text-primary">Core Specializations</h2>
+<div class="h-1 w-24 bg-secondary-container mt-sm"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Residential -->
+<div class="md:col-span-8 bg-white border border-outline-variant p-lg flex flex-col md:flex-row gap-lg group hover:border-primary transition-colors">
+<div class="w-full md:w-1/2 overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A modern luxury residential villa with clean architectural lines, large glass windows, and a minimalist white facade set against a clear morning sky. The lighting is bright and natural, emphasizing the precise textures of the concrete and steel. The image conveys a sense of high-end craftsmanship and sophisticated living spaces in a light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeR-QLFyWvj6gNMO-xKa8VF-_xijC5ES93HjWXdsTqlooRf58kbEo3OO-FuxhjWtKpGoJdBfELXxQlAFK5lVNEMiqGhZ9a3zIa4DqPjtHOd0HXDZYgP8gpTc-HkugVU06cKjDwOss1aKuEyPi6cHnl62CEoi8Uf_nAY_iZsqHvLRdAaD9cjD8s5z6Y64U1MtbGcEQsU3HceLp06AElbWQPh1CHdsjEh2yeCNFR0rZflMn_bTYAQxTS4BkgfhN9_-wDenxWJ9QL2g"/>
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-sm" data-icon="foundation">foundation</span>
+<h3 class="font-h3 text-h3 text-primary mb-sm">Residential Construction</h3>
+<p class="text-on-surface-variant mb-md">Bespoke luxury villas, high-rise apartments, and sustainable housing communities built with premium materials.</p>
+<ul class="space-y-2 mb-lg text-sm font-semibold text-primary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Turnkey Housing</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Sustainable Design</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Smart Home Integration</li>
+</ul>
+<button class="text-primary font-ui-button flex items-center gap-2 group-hover:gap-4 transition-all">Explore Residential <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<!-- Interior -->
+<div class="md:col-span-4 bg-white border border-outline-variant p-lg group hover:border-primary transition-colors">
+<div class="h-48 mb-md overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An elegant corporate office interior featuring high-end wood paneling, ergonomic furniture, and soft recessed lighting that creates a professional yet warm atmosphere. The design is minimalist and modern, focusing on functional aesthetics and premium textures. The lighting is soft and diffused, perfectly illustrating modern interior work and finish quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBexoq4I8H-EMd0oG1TP9E0NJOE5e9b855EH5y7wOAGjMpMqrPeLjaEZpjNHj-9pQCwnwVYNoOJM5yeWde5VmUf3RTO78UuagrYqQoR3xs3oICUQ8F6EZDSwJaT3ZukUBZsJQC5woJ2tCYmiSDL0IWI-A2R80VhdCPajeDHMXPfGqS91cy8K_mHvZMqkp61mlTKoq1XigNqLbryBeJIS2-eM_crpaea2ULQ0_F2hz24PZ29L6XVk_tS3wPO0395AewRskPVAulH8Q"/>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl mb-sm" data-icon="format_paint">format_paint</span>
+<h3 class="font-h3 text-h3 text-primary mb-sm">Interior Work</h3>
+<p class="text-on-surface-variant text-sm mb-md">Custom interiors for corporate offices, retail outlets, and luxury homes focusing on ergonomics and brand identity.</p>
+<button class="text-primary font-ui-button flex items-center gap-2">View Portfolio <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+<!-- Commercial -->
+<div class="md:col-span-4 bg-white border border-outline-variant p-lg group hover:border-primary transition-colors">
+<div class="h-48 mb-md overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A towering glass skyscraper reflecting a bright blue sky, showcasing advanced structural engineering and modern commercial architecture. The facade features precise metal grids and high-transparency glass. The lighting is sharp and high-contrast, symbolizing corporate growth and industrial reliability in a modern urban setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACNh3HYaFPXarj6nBWQfDUi8JyB1UcC-FEtecYy08QQwTs0oEgvlvPomIK5HWBJ5_HkjyCFKPeec09xcaWSfJt0xC9mVm7sNJmHER4n8ILikQD_EQKUdin-MRiDN_DCBrw9nznf7HdPDxGzLcWXwTv6i25ln1c4KY_4gGwjwnTId4zAWzp7Nsd69pperYUEMzhJBO0sqe_hhTAHRLnXQ3HuqfdkhvdY6ZGV11yZEehMFS-6UaVdi6nGK28OyDtXqkT7-Wec06Tjg"/>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl mb-sm" data-icon="apartment">apartment</span>
+<h3 class="font-h3 text-h3 text-primary mb-sm">Commercial Projects</h3>
+<p class="text-on-surface-variant text-sm mb-md">Office towers, shopping malls, and industrial complexes engineered for maximum utility and ROI.</p>
+<button class="text-primary font-ui-button flex items-center gap-2">Project List <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+<!-- Civil -->
+<div class="md:col-span-8 bg-white border border-outline-variant p-lg flex flex-col md:flex-row gap-lg group hover:border-primary transition-colors">
+<div class="w-full md:w-1/2 flex flex-col justify-center order-2 md:order-1">
+<span class="material-symbols-outlined text-primary text-4xl mb-sm" data-icon="architecture">architecture</span>
+<h3 class="font-h3 text-h3 text-primary mb-sm">Civil Engineering</h3>
+<p class="text-on-surface-variant mb-md">Public infrastructure including bridges, highways, and water treatment plants designed with rigorous safety standards.</p>
+<ul class="space-y-2 mb-lg text-sm font-semibold text-primary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Structural Stability</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Seismic Retrofitting</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Geotechnical Survey</li>
+</ul>
+<button class="text-primary font-ui-button flex items-center gap-2">Technical Specs <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+<div class="w-full md:w-1/2 overflow-hidden order-1 md:order-2">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A massive civil engineering project featuring a heavy-duty concrete bridge support under construction. The scene shows large steel rebar cages and wet concrete textures under harsh, bright daylight. The visual style is industrial and gritty yet highly organized, highlighting the strength and complexity of major infrastructure developments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy4B_szKN2uL1jg4OFONhjYMEKpaBERkY4ZBMle64U-PtLnalJrnliIE_aNGMxtzqfqLGp3puhGtOS3mJREcKux85_FKwEb98XWXvVbTzu9cOT4uWyt4SJO8g-cJ63hXCYWoS__5u3_3vhAfWkKX5DM_iTUUkFF7hPlXK_WA6Qw1L0N5m9eb4Em_jJDx8_bGJCqZ9pWd4ACRPk6ahao9ssm9BpHtW6vyRBUX6RyUTfXKRLeUNo-8eNlRgKfLKcEIt8jjaymwILAg"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Construction Process Timeline -->
+<section class="py-xl bg-white">
+<div class="container mx-auto px-grid-margin">
+<div class="text-center mb-xl">
+<span class="font-label-caps text-secondary">The Astra Methodology</span>
+<h2 class="font-h2 text-h2 text-primary">From Planning to Handover</h2>
+</div>
+<div class="relative">
+<!-- Desktop Timeline Line -->
+<div class="hidden lg:block absolute top-12 left-0 w-full h-1 bg-gray-200">
+<div class="absolute top-0 left-0 h-full bg-secondary-container w-3/4"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-lg relative z-10">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-md shadow-lg">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="edit_note">edit_note</span>
+</div>
+<h4 class="font-h3 text-lg mb-sm">Planning</h4>
+<p class="text-xs text-on-surface-variant">Requirement gathering, feasibility studies, and site surveys.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-md shadow-lg">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="design_services">design_services</span>
+</div>
+<h4 class="font-h3 text-lg mb-sm">Blueprint</h4>
+<p class="text-xs text-on-surface-variant">Architectural rendering and structural engineering documentation.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-md shadow-lg">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="construction">construction</span>
+</div>
+<h4 class="font-h3 text-lg mb-sm">Execution</h4>
+<p class="text-xs text-on-surface-variant">Core construction, site management, and safety compliance.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-md shadow-lg">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="assignment_turned_in">assignment_turned_in</span>
+</div>
+<h4 class="font-h3 text-lg mb-sm">Inspection</h4>
+<p class="text-xs text-on-surface-variant">Quality audits, structural testing, and finishing checks.</p>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col items-center text-center opacity-50">
+<div class="w-24 h-24 bg-white border-4 border-gray-200 rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-outline text-3xl" data-icon="key">key</span>
+</div>
+<h4 class="font-h3 text-lg mb-sm">Handover</h4>
+<p class="text-xs text-on-surface-variant">Project delivery, final documentation, and maintenance support.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl bg-primary-container text-on-primary-container">
+<div class="container mx-auto px-grid-margin flex flex-col md:flex-row justify-between items-center gap-lg">
+<div>
+<h2 class="font-h2 text-h2 text-white mb-sm">Ready to build your vision?</h2>
+<p class="text-body-md opacity-80">Consult with our lead engineers today for a detailed technical proposal.</p>
+</div>
+<div class="flex gap-md">
+<button class="bg-secondary-container text-on-secondary-container px-lg py-md rounded font-ui-button uppercase tracking-widest active:scale-95 transition-all">
+                        Schedule Site Visit
+                    </button>
+<button class="border border-white text-white px-lg py-md rounded font-ui-button uppercase tracking-widest hover:bg-white hover:text-primary transition-all">
+                        Download Brochure
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-gray-100 dark:bg-slate-950 border-t-2 border-gray-300 dark:border-gray-800 w-full">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-12 w-full max-w-full mx-auto container px-grid-margin">
+<div>
+<div class="text-md font-bold text-[#1B365D] mb-md uppercase tracking-widest">Astra Build-Tech</div>
+<p class="text-xs text-gray-500 uppercase tracking-widest leading-loose">
+                    Leading the construction landscape in India through precision engineering and industrial transparency. Dedicated to building legacies that stand the test of time.
+                </p>
+</div>
+<div>
+<div class="font-inter text-xs uppercase tracking-widest font-bold text-gray-900 mb-md">Locations</div>
+<ul class="space-y-sm">
+<li><a class="font-inter text-xs uppercase tracking-widest text-gray-500 hover:underline hover:text-[#1B365D] opacity-80 hover:opacity-100" href="#">Mumbai Office</a></li>
+<li><a class="font-inter text-xs uppercase tracking-widest text-gray-500 hover:underline hover:text-[#1B365D] opacity-80 hover:opacity-100" href="#">Delhi HQ</a></li>
+</ul>
+</div>
+<div>
+<div class="font-inter text-xs uppercase tracking-widest font-bold text-gray-900 mb-md">Quick Links</div>
+<ul class="space-y-sm">
+<li><a class="font-inter text-xs uppercase tracking-widest text-gray-500 hover:underline hover:text-[#1B365D] opacity-80 hover:opacity-100" href="#">Privacy Policy</a></li>
+<li><a class="font-inter text-xs uppercase tracking-widest text-gray-500 hover:underline hover:text-[#1B365D] opacity-80 hover:opacity-100" href="#">T&amp;C</a></li>
+<li><a class="font-inter text-xs uppercase tracking-widest text-gray-500 hover:underline hover:text-[#1B365D] opacity-80 hover:opacity-100" href="#">Compliance</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-300 dark:border-gray-800 p-8 text-center">
+<p class="font-inter text-xs uppercase tracking-widest text-gray-500">© 2024 Astra Build-Tech Private Limited. All Rights Reserved.</p>
+</div>
+</footer>
+<!-- FAB (Suppressed on Details Page but relevant here for Service Engagement) -->
+<div class="fixed bottom-lg right-lg z-50">
+<button class="w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full shadow-xl flex items-center justify-center group active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="add_call">add_call</span>
+</button>
+</div>
+</body></html>

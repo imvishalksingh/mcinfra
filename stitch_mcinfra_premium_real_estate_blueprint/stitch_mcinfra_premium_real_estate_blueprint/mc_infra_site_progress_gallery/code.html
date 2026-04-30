@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e0e2e6",
+                    "tertiary-container": "#2c3646",
+                    "secondary-container": "#fed000",
+                    "on-surface": "#191c1f",
+                    "inverse-on-surface": "#eff1f5",
+                    "surface-tint": "#465f88",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#564500",
+                    "surface-container-highest": "#e0e2e6",
+                    "tertiary-fixed-dim": "#bdc7db",
+                    "surface-container-high": "#e6e8ec",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#d6e3ff",
+                    "outline": "#74777f",
+                    "on-tertiary-container": "#959fb2",
+                    "on-tertiary-fixed-variant": "#3d4757",
+                    "on-primary-container": "#87a0cd",
+                    "on-secondary-container": "#6f5900",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#d8dade",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#44474e",
+                    "surface-bright": "#f7f9fd",
+                    "outline-variant": "#c4c6cf",
+                    "on-tertiary-fixed": "#121c2a",
+                    "on-primary-fixed-variant": "#2e476f",
+                    "primary-container": "#1b365d",
+                    "on-primary-fixed": "#001b3d",
+                    "secondary-fixed-dim": "#edc200",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#17212f",
+                    "primary-fixed-dim": "#aec7f7",
+                    "primary": "#002046",
+                    "surface-container": "#eceef2",
+                    "background": "#f7f9fd",
+                    "tertiary-fixed": "#d9e3f7",
+                    "secondary": "#725c00",
+                    "inverse-primary": "#aec7f7",
+                    "secondary-fixed": "#ffe07f",
+                    "surface-container-low": "#f2f4f8",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2d3134",
+                    "on-background": "#191c1f",
+                    "on-secondary-fixed": "#231b00",
+                    "surface": "#f7f9fd",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "grid-margin": "64px",
+                    "md": "16px",
+                    "xl": "48px",
+                    "sm": "8px",
+                    "grid-gutter": "24px",
+                    "unit": "4px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "h3": ["Inter"],
+                    "h1": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"],
+                    "ui-button": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h2": ["Inter"]
+            },
+            "fontSize": {
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "ui-button": ["14px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .blueprint-dashed {
+            background-image: linear-gradient(to right, #cbd5e1 50%, rgba(255, 255, 255, 0) 0%);
+            background-position: bottom;
+            background-size: 8px 1px;
+            background-repeat: repeat-x;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 border-b border-gray-300 bg-white">
+<div class="flex justify-between items-center px-8 py-3 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#1B365D]">MC Infra</div>
+<nav class="hidden md:flex space-x-6">
+<a class="text-gray-600 hover:text-yellow-600 transition-colors font-medium text-sm tracking-wide" href="#">Home</a>
+<a class="text-gray-600 hover:text-yellow-600 transition-colors font-medium text-sm tracking-wide" href="#">About</a>
+<a class="text-gray-600 hover:text-yellow-600 transition-colors font-medium text-sm tracking-wide" href="#">Projects</a>
+<a class="text-gray-600 hover:text-yellow-600 transition-colors font-medium text-sm tracking-wide" href="#">Services</a>
+<a class="text-[#1B365D] border-b-2 border-yellow-500 pb-1 font-medium text-sm tracking-wide" href="#">Ongoing Work</a>
+<a class="text-[#1B365D] border-b-2 border-yellow-500 pb-1 font-medium text-sm tracking-wide" href="#">Gallery</a>
+<a class="text-gray-600 hover:text-yellow-600 transition-colors font-medium text-sm tracking-wide" href="#">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="hidden lg:flex space-x-3 text-primary">
+<span class="material-symbols-outlined cursor-pointer">call</span>
+<span class="material-symbols-outlined cursor-pointer">mail</span>
+<span class="material-symbols-outlined cursor-pointer">schedule</span>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded font-ui-button hover:bg-primary-container transition-all">Get Quote</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-8 py-12">
+<!-- Page Header -->
+<section class="mb-16 border-l-4 border-secondary pl-6">
+<span class="font-label-caps text-secondary uppercase tracking-widest">Site Progress Portfolio</span>
+<h1 class="font-h1 text-primary mt-2">Ongoing Work &amp; Gallery</h1>
+<p class="text-body-lg text-on-surface-variant mt-4 max-w-2xl">A transparent, documentary-style look into our active sites, specialized machinery, and recent structural completions. Precision in every pour, safety in every lift.</p>
+</section>
+<!-- Live From Sites (Documentary Feed) -->
+<section class="mb-24">
+<div class="flex items-center justify-between mb-8 blueprint-dashed pb-4">
+<h2 class="font-h2 text-primary flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">sensors</span>
+                    Live From Sites
+                </h2>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-error text-white text-xs font-bold rounded">LIVE UPDATES</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Featured Progress Card -->
+<div class="md:col-span-8 group border border-outline-variant bg-white p-2">
+<div class="relative overflow-hidden aspect-[16/9]">
+<img class="w-full h-full object-cover" data-alt="A wide-angle, documentary-style photograph of a massive construction site during the golden hour. Steel rebar structures rise from a deep concrete foundation as several workers in high-visibility vests and hard hats coordinate a concrete pour. The lighting is natural and high-contrast, emphasizing the raw industrial texture of the cement and metal. The scene conveys a sense of large-scale engineering and organized activity in a professional corporate construction environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxAFe7oCgu0xdZPQxyLDtYkjzDxo1ZfH1syH9WjV0ZjDBqT8K4lEMkoM-ZeB0ylhSs39BexkWpYpcW5LB278m5sLxCFOpdKYtu5xFG3645lvabN9CQTluO7bD0Pvo4GU94JXkvnfkAsAc7rN9mrBVLwSZ2rEMfJt2l4tP7JVUX4fKmu_kAWY0fJu2JXQlc5jyb-hMfFcgsOFZkUtTlXKwldT1tyugehoVbIINyO0X3e689HbTUW9EoNIVdylFXK-cBU4pUHjceQg"/>
+<div class="absolute top-4 left-4 bg-primary/90 text-white px-3 py-1 text-xs font-bold">PROJECT ID: MC-204-BLR</div>
+</div>
+<div class="py-4 px-2">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h3 text-primary">Prestige Tech Park - Phase III</h3>
+<span class="font-label-caps text-on-surface-variant">OCT 24, 2024</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-4">Finalizing the Level 4 slab reinforcement. Concrete pouring initiated at 06:00 IST with three pump trucks on rotation.</p>
+<div class="w-full bg-surface-container h-3 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[65%]"></div>
+</div>
+<div class="flex justify-between mt-2 font-label-caps text-on-surface-variant">
+<span>65% COMPLETE</span>
+<span>ETA: Q1 2025</span>
+</div>
+</div>
+</div>
+<!-- Secondary Progress Cards Stack -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<div class="border border-outline-variant bg-white p-2">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover" data-alt="A close-up, sharp-focus industrial photograph of a construction worker performing precision welding on a heavy steel beam. Intense bright sparks fly against a dark, moody background of an internal construction frame. The worker is wearing full protective gear, including a professional welding mask. The style is documentary and authentic, focusing on the grit and technical skill of industrial labor within the MC Infra brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXmvULCBSP8DcDCg7x1IabF6z_oSwZT7CIhyTRhKWosF6kIB3zZTt8Dl70RHNdqPBn9dOPpEP0hXc-vuiTGr9p45_2kJcpl-ph2tBspLLn5itMcx8EyhWbEV5eHJYpLWDgrtPHi5z8KK7VcB2Qf-LIJJ2jHbeMB-s6-2lHd_81w2V27SrUFpBjrXCZDHsr0KHGUB42jRRw9Ka8MJxohpqfvVvT19SPZa3XJBI0OBqf2azsiWER-MttmCgFCozB8Hi_DrO16xT50w"/>
+</div>
+<div class="pt-4 px-2">
+<div class="flex justify-between text-xs font-bold mb-1">
+<span class="text-secondary uppercase">Structural Steel</span>
+<span class="text-on-surface-variant">OCT 22, 2024</span>
+</div>
+<h4 class="font-bold text-primary">Vertical Frame Welding</h4>
+</div>
+</div>
+<div class="border border-outline-variant bg-white p-2">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover" data-alt="A vertical, documentary-style shot looking up at a towering yellow construction crane against a clear, deep blue sky. The steel lattice of the crane is intricate and sharp, showing the scale of the machinery. The sunlight creates strong geometric shadows across the frame, highlighting the engineering precision. The image feels grounded and monumental, representing the industrial strength of MC Infra's equipment fleet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBKOKdsL67PM6TmLagYS_9TqF9KFlwcwwl4j_n7xDg979EbBsQD-W1cjTJr_K453sDO05mhtOyT9TT4hz2N54BSZHAhIHk05kuFuH1bWh4_-ownYKpfVja7GRqhq7b6KoP0_KuM6y0fC0v9c68yJGgaQo5Q921V1F5dB8ZkV-UZ5RtnoyGQN0h3n5opwyB1AFvteowCGGmoZb6Vq5GF6JIqXROiSAMQ6AG7Yh3CBlpJgBhFEi6CePb-5kH7FG5x9I7suvQdk2Klg"/>
+</div>
+<div class="pt-4 px-2">
+<div class="flex justify-between text-xs font-bold mb-1">
+<span class="text-secondary uppercase">Logistics</span>
+<span class="text-on-surface-variant">OCT 21, 2024</span>
+</div>
+<h4 class="font-bold text-primary">Crane Assembly: Site B</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Machinery Section -->
+<section class="mb-24 bg-surface-container-low -mx-8 px-8 py-16 border-y border-outline-variant">
+<div class="max-w-7xl mx-auto">
+<div class="mb-10">
+<h2 class="font-h2 text-primary flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+                        Heavy Machinery Fleet
+                    </h2>
+<p class="text-body-md text-on-surface-variant mt-2">Our owned and maintained equipment ensures zero downtime and maximum site safety.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Machine 1 -->
+<div class="bg-white border border-outline-variant rounded-lg overflow-hidden group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional, clean-cut photograph of a high-capacity concrete mixer truck branded with a corporate logo, parked on a dusty construction site. The truck is modern, well-maintained, and painted in industrial white and blue. The background shows a soft-focus construction landscape with rising structures. The lighting is bright and clear, emphasizing the cleanliness and reliability of the company's machinery fleet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB33p7Ar3sO8MwJFcJlq6ugqA0rqF99gai3vkTngjnLRc20IUXJ_4yoW3sUUZwkiBRjQkgLl4e_CVwARROFS3nPxcRrglp8Npo24srP7uHODN9fXnUWDdwS8yNTlEj0S_qYQkDDxG68WXvHQPe5s9_M85EIceoD8Hxz_DgpVepQ7Y1KV6JwDDRH80v3nSzzMvG65QFNDxwEqURe0Ss9AaJTqSQujaBA0CpHXRXahyPA8Qscjb52a5eHk05sAdl5Oq5eQMCDb-yv_Q"/>
+</div>
+<div class="p-6">
+<span class="font-label-caps text-secondary">READY-MIX DELIVERY</span>
+<h3 class="font-h3 text-primary mt-1">Schwing Stetter Transit Mixer</h3>
+<div class="mt-4 space-y-2 border-t border-gray-100 pt-4">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Capacity:</span>
+<span class="font-bold">7.0 m³</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Fleet Count:</span>
+<span class="font-bold">12 Units</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Machine 2 -->
+<div class="bg-white border border-outline-variant rounded-lg overflow-hidden group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An industrial, documentary photo of a heavy-duty yellow hydraulic excavator working in a deep earthen excavation pit. The lighting is bright daylight, casting sharp shadows and highlighting the mechanical power of the machine's arm and bucket. Fine dust particles are caught in the air, adding an authentic, raw site atmosphere. The composition is focused on the machine's robust build and functional efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlPFyElyb5ZHltO9uf69aDYSPHDiMlw8cenlD9cNrQFHEOgdMLjazWjLh1fA5DIaKtglmrfjwYauEtcahqUI8u1zjW5rc_KG6LdwymbkKelLquJqPKhetCR47-9C_aOnRFeFomB5mhRCJcjYBtz0oJkK6B-n09fXbnVk_7DWDDHeTBCywJuFlQZKFwd3qHKQyALlpF_EBaw-90j6SH1FbaYNw-ru1TfKza_VBkN1t6yWxOMScGnwE3vBu6jrGeFZuHdcPGK0G4cw"/>
+</div>
+<div class="p-6">
+<span class="font-label-caps text-secondary">EARTHWORKS</span>
+<h3 class="font-h3 text-primary mt-1">CAT 320 Hydraulic Excavator</h3>
+<div class="mt-4 space-y-2 border-t border-gray-100 pt-4">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Operating Weight:</span>
+<span class="font-bold">22,500 kg</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Engine Power:</span>
+<span class="font-bold">110 kW</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Machine 3 -->
+<div class="bg-white border border-outline-variant rounded-lg overflow-hidden group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A wide-angle, industrial photograph of a massive blue and yellow mobile crane positioned in a large urban construction zone. The crane's telescopic boom is extended towards a rising glass and concrete skyscraper. The lighting is crisp and clear, showing every detail of the crane's stabilizer legs and mechanical winch system. The image conveys a high sense of professional engineering and structural ambition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSji6II2_uogEAPLdcR4O7NN0kyJKxqIkly8x6ac0m9C1gdu9CMEjuGK8XrXYtLjfrEyEHiRmne_VpLGEMrd8KMU_SssT75m_07HqKNhnBHbs0LLNPscgLNiFIrQoY-9XtwmINbKCOTu9QFTYFccwHXOhR4c-oxZGzfhsdOwZOcund4xCYkM3qmssLi6QX01ugTH2n_27OFNaDpEMD68ZwZ3vjdRjmrBCLfOC7MsiBqKy4T1f19Kutn5-dQ0VSekbQEzbQYCUu8A"/>
+</div>
+<div class="p-6">
+<span class="font-label-caps text-secondary">HEAVY LIFTING</span>
+<h3 class="font-h3 text-primary mt-1">Liebherr LTM 1100 Mobile Crane</h3>
+<div class="mt-4 space-y-2 border-t border-gray-100 pt-4">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Max Capacity:</span>
+<span class="font-bold">100 t</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Boom Length:</span>
+<span class="font-bold">60 m</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Completed Work Section -->
+<section class="mb-16">
+<div class="flex items-center justify-between mb-10">
+<h2 class="font-h2 text-primary flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    Completed Work
+                </h2>
+<button class="flex items-center gap-2 text-primary font-bold hover:underline">
+                    View All Projects
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Completed Card 1 -->
+<div class="flex flex-col gap-6">
+<div class="relative group">
+<div class="absolute inset-0 border-2 border-secondary translate-x-3 translate-y-3 -z-10 transition-transform group-hover:translate-x-1 group-hover:translate-y-1"></div>
+<img class="w-full aspect-[4/3] object-cover border border-outline-variant" data-alt="A sophisticated architectural photograph of a completed modern commercial office building featuring a sleek glass curtain wall and dark stone accents. The image is taken from a low angle, emphasizing the building's verticality and clean lines. The reflection in the glass shows a clear blue sky. The lighting is crisp and even, highlighting the premium quality of the construction and materials used by MC Infra." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApPH-O8Oa8qQLN8WPkMJr0PIzAxPTQcmDqbgtgKcB9gAx5MtWfMY29UDUTv_t2IBbRPgNXRBiee8FMqYn4c45BpY_Zh_1MzhR5PXCtw4e4KWSKt4HkdsOjy804h8I6w4kOQFJ8NY5kKqSfU6pU65d-t9s4_KXzvNR4BpPTdht9zHky7FLnI5m5Np59dVFJ8g-i3baXtj9F-r2L7yXymnD04iBZWJ9_pn11XQXPdJBE8pN0jCO4yH6aarRE-7cfHP90g_zVywLrRg"/>
+</div>
+<div>
+<span class="font-label-caps text-secondary">COMMERCIAL SECTOR</span>
+<h3 class="font-h1 text-primary mt-1">Skyline Corporate Center</h3>
+<p class="text-body-md text-on-surface-variant mt-3">Completed in 2023. A 250,000 sq. ft. Grade-A office space featuring sustainable facade engineering and advanced HVAC integration.</p>
+<div class="mt-6 flex gap-4">
+<span class="px-3 py-1 bg-surface-container text-xs font-bold border border-outline-variant">RERA REGISTERED</span>
+<span class="px-3 py-1 bg-surface-container text-xs font-bold border border-outline-variant">LEED GOLD</span>
+</div>
+</div>
+</div>
+<!-- Completed Card 2 -->
+<div class="flex flex-col gap-6">
+<div class="relative group">
+<div class="absolute inset-0 border-2 border-secondary translate-x-3 translate-y-3 -z-10 transition-transform group-hover:translate-x-1 group-hover:translate-y-1"></div>
+<img class="w-full aspect-[4/3] object-cover border border-outline-variant" data-alt="A clean, professional photograph of a completed high-end residential apartment complex. The architecture features modern white concrete balconies, large windows, and integrated green spaces. The image is captured in soft, late-afternoon daylight, creating a warm and inviting atmosphere. The surrounding landscaping is pristine, demonstrating the holistic approach of MC Infra's construction and finishing services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG2m7_eSJFBTBBnzfG4sYsZIpe74dN4iMhYMB7-OFeBr-6jud1A5xZPsdxh8dXzGsVCPH74eZRbx6CY64SIlwbu7O0O-IcLVY_ABGHHjWiLfsixmQ42Bzg1u4_g9uprNsMfDjYdMHcQN4lztCONxur5IoO9FdRIqgfWY1CHn77yAOmmslIOq5s970deebX6CYaCHxkl9qAoTGG7V-dxqayNiD7fBOHxrQuEe8JWsKLD5nZ6h-JcTmqiaY53Jx5uTkSBnboWdp9jg"/>
+</div>
+<div>
+<span class="font-label-caps text-secondary">RESIDENTIAL SECTOR</span>
+<h3 class="font-h1 text-primary mt-1">The Grand Atrium Residences</h3>
+<p class="text-body-md text-on-surface-variant mt-3">Delivered 4 months ahead of schedule. A luxury residential project consisting of 120 units with premium finishing and structural integrity.</p>
+<div class="mt-6 flex gap-4">
+<span class="px-3 py-1 bg-surface-container text-xs font-bold border border-outline-variant">OC RECEIVED</span>
+<span class="px-3 py-1 bg-surface-container text-xs font-bold border border-outline-variant">VAASTU COMPLIANT</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-900 text-white w-full border-t border-gray-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-white uppercase mb-4">MC Infra</div>
+<p class="text-gray-400 font-['Inter'] text-sm leading-relaxed">Pioneering structural excellence through technical precision and uncompromising safety standards since 2008.</p>
+</div>
+<div>
+<h4 class="font-bold text-yellow-500 mb-4 font-['Inter'] text-sm uppercase tracking-wider">Quick Links</h4>
+<ul class="space-y-2">
+<li><a class="text-gray-400 hover:text-white transition-colors font-['Inter'] text-sm" href="#">Terms of Service</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors font-['Inter'] text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors font-['Inter'] text-sm" href="#">RERA Disclosure</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors font-['Inter'] text-sm" href="#">Site Map</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors font-['Inter'] text-sm" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-yellow-500 mb-4 font-['Inter'] text-sm uppercase tracking-wider">Connect</h4>
+<div class="flex space-x-4">
+<span class="material-symbols-outlined text-gray-400 hover:text-yellow-500 cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-gray-400 hover:text-yellow-500 cursor-pointer">linked_camera</span>
+<span class="material-symbols-outlined text-gray-400 hover:text-yellow-500 cursor-pointer">share</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-yellow-500 mb-4 font-['Inter'] text-sm uppercase tracking-wider">Head Office</h4>
+<p class="text-gray-400 font-['Inter'] text-sm leading-relaxed">
+                    12th Floor, Infra Heights<br/>
+                    Cunningham Road<br/>
+                    Bengaluru, Karnataka 560052
+                </p>
+</div>
+</div>
+<div class="border-t border-gray-800 py-6 px-8 max-w-7xl mx-auto">
+<p class="text-center md:text-left text-gray-500 font-['Inter'] text-sm">
+                © 2024 MC Infra. RERA Reg No: PRM/KA/RERA/1251/310/PR/180516/001715
+            </p>
+</div>
+</footer>
+</body></html>

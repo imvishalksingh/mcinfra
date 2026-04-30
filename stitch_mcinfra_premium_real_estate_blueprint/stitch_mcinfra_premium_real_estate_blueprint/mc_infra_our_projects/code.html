@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e0e2e6",
+                    "tertiary-container": "#2c3646",
+                    "secondary-container": "#fed000",
+                    "on-surface": "#191c1f",
+                    "inverse-on-surface": "#eff1f5",
+                    "surface-tint": "#465f88",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#564500",
+                    "surface-container-highest": "#e0e2e6",
+                    "tertiary-fixed-dim": "#bdc7db",
+                    "surface-container-high": "#e6e8ec",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#d6e3ff",
+                    "outline": "#74777f",
+                    "on-tertiary-container": "#959fb2",
+                    "on-tertiary-fixed-variant": "#3d4757",
+                    "on-primary-container": "#87a0cd",
+                    "on-secondary-container": "#6f5900",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#d8dade",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#44474e",
+                    "surface-bright": "#f7f9fd",
+                    "outline-variant": "#c4c6cf",
+                    "on-tertiary-fixed": "#121c2a",
+                    "on-primary-fixed-variant": "#2e476f",
+                    "primary-container": "#1b365d",
+                    "on-primary-fixed": "#001b3d",
+                    "secondary-fixed-dim": "#edc200",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#17212f",
+                    "primary-fixed-dim": "#aec7f7",
+                    "primary": "#002046",
+                    "surface-container": "#eceef2",
+                    "background": "#f7f9fd",
+                    "tertiary-fixed": "#d9e3f7",
+                    "secondary": "#725c00",
+                    "inverse-primary": "#aec7f7",
+                    "secondary-fixed": "#ffe07f",
+                    "surface-container-low": "#f2f4f8",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2d3134",
+                    "on-background": "#191c1f",
+                    "on-secondary-fixed": "#231b00",
+                    "surface": "#f7f9fd",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "grid-margin": "64px",
+                    "md": "16px",
+                    "xl": "48px",
+                    "sm": "8px",
+                    "grid-gutter": "24px",
+                    "unit": "4px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "h3": ["Inter"],
+                    "h1": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"],
+                    "ui-button": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h2": ["Inter"]
+            },
+            "fontSize": {
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "ui-button": ["14px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .blueprint-line {
+            background-image: linear-gradient(to right, #74777f 33%, rgba(255,255,255,0) 0%);
+            background-position: bottom;
+            background-size: 8px 1px;
+            background-repeat: repeat-x;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 border-b border-gray-300 bg-white dark:bg-slate-900">
+<div class="flex justify-between items-center px-8 py-3 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#1B365D] dark:text-slate-50 uppercase">
+                MC Infra
+            </div>
+<nav class="hidden md:flex items-center gap-8 font-['Inter'] font-medium text-sm tracking-wide">
+<a class="text-gray-600 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Home</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">About</a>
+<a class="text-[#1B365D] dark:text-yellow-500 border-b-2 border-yellow-500 pb-1" href="#">Projects</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Services</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Ongoing Work</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Gallery</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-3 text-[#1B365D]">
+<span class="material-symbols-outlined">call</span>
+<span class="material-symbols-outlined">mail</span>
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<button class="bg-[#1B365D] text-white px-6 py-2 rounded-lg text-ui-button hover:bg-primary-container transition-all">
+                    Get Quote
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-8 py-12">
+<!-- Page Header -->
+<div class="mb-12 border-l-4 border-secondary-container pl-6">
+<h1 class="font-h1 text-h1 text-primary uppercase">Project Portfolio</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
+                Explore our landmark developments, from premium residential enclaves to sophisticated commercial hubs. Built on precision engineering and architectural integrity.
+            </p>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Filters Sidebar -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="bg-white border border-outline-variant p-6 rounded-lg sticky top-24">
+<div class="flex items-center gap-2 mb-6 text-primary">
+<span class="material-symbols-outlined">filter_list</span>
+<span class="font-h3 text-lg uppercase tracking-tight">Filters</span>
+</div>
+<!-- Category Filter -->
+<div class="mb-8">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-3 block">CATEGORY</label>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="form-checkbox text-primary rounded-sm border-outline-variant" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Residential</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox text-primary rounded-sm border-outline-variant" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Commercial</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox text-primary rounded-sm border-outline-variant" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Plots</span>
+</label>
+</div>
+</div>
+<!-- Status Filter -->
+<div class="mb-8">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-3 block">PROJECT STATUS</label>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-radio text-primary border-outline-variant" name="status" type="radio"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Ongoing</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-radio text-primary border-outline-variant" name="status" type="radio"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Completed</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-radio text-primary border-outline-variant" name="status" type="radio"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Upcoming</span>
+</label>
+</div>
+</div>
+<!-- Location Filter -->
+<div class="mb-6">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-3 block">LOCATION</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded p-2 text-body-md focus:border-primary focus:ring-0">
+<option>All Locations</option>
+<option>Central Business District</option>
+<option>North Industrial Corridor</option>
+<option>Premium Residential Zone</option>
+</select>
+</div>
+<button class="w-full py-2 bg-primary text-on-primary font-ui-button rounded hover:bg-primary-container transition-all uppercase tracking-widest text-xs">
+                        Reset Filters
+                    </button>
+</div>
+</aside>
+<!-- Projects Grid -->
+<div class="flex-grow space-y-8">
+<!-- Project Card 1: Green Meadows (Ongoing) -->
+<div class="bg-white border border-outline-variant rounded-lg overflow-hidden flex flex-col md:flex-row transition-all hover:border-primary-container">
+<div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden">
+<img alt="Ongoing Construction Site" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500" data-alt="A sprawling construction site of a modern residential complex called Green Meadows. Towering steel scaffolding and yellow cranes dominate the scene against a bright blue sky. Concrete structural frames are partially visible, showing high-quality engineering. The atmosphere is industrial and productive, reflecting a busy daytime schedule with clear sunlight highlighting the textures of raw materials and heavy machinery in a professional development setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO8Qg-XL2HWu02ucwB1NAQSDGV-jiqhfsOgFJkLi8FpvRcTTBJeCq54NUO3hruIb27RvBDufKzVgsBqHs8-A-aa4I8Qe26ZkUkuULhxxKFBWNaFcJ7RYxCbfSPoJ46wVfx7WX0y28QVA_4yJug9zu502z02CpwIUc1GP65lPnf-5FwnLbzflDFyTlj1sIfLOVa68UOkwowqqsba4_jLLoHS0aAF-5Bk6wTtXM0AG1h796lxYVg4nDb3dV9MF0bFiAiyausLhKrhQ"/>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 font-label-caps text-[10px] tracking-widest rounded-sm">
+                            ONGOING
+                        </div>
+</div>
+<div class="p-8 md:w-3/5 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-h2 text-h2 text-primary">Green Meadows</h2>
+<span class="font-label-caps text-xs text-on-surface-variant">RERA: PRM/KA/RERA/001715</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-body-md italic">North Suburban Growth Corridor</span>
+</div>
+<div class="grid grid-cols-2 gap-y-6 blueprint-line pb-6 mb-6">
+<div>
+<p class="font-label-caps text-[10px] text-outline mb-1">POSSESSION DATE</p>
+<p class="font-h3 text-lg text-tertiary">December 2025</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-outline mb-1">STARTING PRICE</p>
+<p class="font-h3 text-lg text-tertiary">₹1.2 Cr onwards</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-outline mb-1">CONFIGURATION</p>
+<p class="font-body-md font-semibold text-primary">3 &amp; 4 BHK Luxury Villas</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-outline mb-1">PROJECT SIZE</p>
+<p class="font-body-md font-semibold text-primary">22 Acres Gated Community</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="flex-grow py-3 bg-primary text-white font-ui-button rounded text-center hover:bg-primary-container">VIEW DETAILS</button>
+<button class="px-4 border border-primary text-primary hover:bg-primary-fixed transition-colors rounded">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Project Card 2: Skyview Residency (Completed) -->
+<div class="bg-white border border-outline-variant rounded-lg overflow-hidden flex flex-col md:flex-row transition-all hover:border-primary-container">
+<div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden">
+<img alt="Finished Modern Apartment Building" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500" data-alt="A completed luxury high-rise apartment building named Skyview Residency. The exterior features a sophisticated blend of glass, white concrete, and dark steel accents. Lush green landscaping with manicured lawns and architectural lighting surrounds the base. The photo is taken during the golden hour, with soft, warm sunlight reflecting off the expansive windows, projecting an image of premium urban living and structural perfection in a modern city environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQTHSoc_P3a7i9__Ml68BR-xJwb69KRnUWFQS7CHI1v_ujgmD_bjmDFcdNe8ss7eBf9H_dU11Pz4soKjhd2bT37zuK7S9SVETqDrvOsq9E_x1_saaXJ5CMlOnJi9o7TK2bfIn7-vA9AltG_jMrz7k0YSkf3xQ-h5J0P3mn0izH8o5t3mZRU2-KaJEhZ3E6VGrtluJVzDPVAL9ZwD7rMVGjt6PDFvpEr8472YSpVjYH-A8Wq8DIHGWygHv0cE5MMxwwysTv9tyL1w"/>
+<div class="absolute top-4 left-4 bg-tertiary text-on-tertiary px-3 py-1 font-label-caps text-[10px] tracking-widest rounded-sm">
+                            COMPLETED
+                        </div>
+</div>
+<div class="p-8 md:w-3/5 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-h2 text-h2 text-primary">Skyview Residency</h2>
+<span class="font-label-caps text-xs text-on-surface-variant">RERA: PRM/KA/RERA/004592</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-body-md italic">City Heights, Central District</span>
+</div>
+<div class="grid grid-cols-2 gap-y-6 blueprint-line pb-6 mb-6">
+<div>
+<p class="font-label-caps text-[10px] text-outline mb-1">POSSESSION DATE</p>
+<p class="font-h3 text-lg text-tertiary">Ready to Move</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-outline mb-1">STARTING PRICE</p>
+<p class="font-h3 text-lg text-tertiary">₹2.8 Cr onwards</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-outline mb-1">CONFIGURATION</p>
+<p class="font-body-md font-semibold text-primary">Premium 4 BHK Penthouses</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-outline mb-1">UNITS</p>
+<p class="font-body-md font-semibold text-primary">120 Exclusive Units</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="flex-grow py-3 bg-primary text-white font-ui-button rounded text-center hover:bg-primary-container">VIEW DETAILS</button>
+<button class="px-4 border border-primary text-primary hover:bg-primary-fixed transition-colors rounded">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Industrial Accent: Progress Overview -->
+<div class="bg-surface-container p-8 border-l-8 border-secondary-container rounded-r-lg">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-primary scale-150">construction</span>
+<h3 class="font-h3 text-primary uppercase">Portfolio Statistics</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<p class="font-label-caps text-outline mb-2">COMMERCIAL SPACE DELIVERED</p>
+<div class="flex items-end gap-2">
+<span class="text-h2 font-black text-primary">2.4M</span>
+<span class="pb-1 font-semibold text-on-surface-variant">SQ.FT.</span>
+</div>
+<div class="w-full h-1 bg-white mt-2">
+<div class="h-full bg-secondary-container" style="width: 85%;"></div>
+</div>
+</div>
+<div>
+<p class="font-label-caps text-outline mb-2">HAPPY FAMILIES</p>
+<div class="flex items-end gap-2">
+<span class="text-h2 font-black text-primary">1500+</span>
+</div>
+<div class="w-full h-1 bg-white mt-2">
+<div class="h-full bg-secondary-container" style="width: 92%;"></div>
+</div>
+</div>
+<div>
+<p class="font-label-caps text-outline mb-2">SAFETY SCORE</p>
+<div class="flex items-end gap-2">
+<span class="text-h2 font-black text-primary">99.8%</span>
+</div>
+<div class="w-full h-1 bg-white mt-2">
+<div class="h-full bg-secondary-container" style="width: 99%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-900 dark:bg-black w-full border-t border-gray-800 text-white font-['Inter'] text-sm leading-relaxed mt-24">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto">
+<div>
+<div class="text-xl font-bold text-white uppercase mb-6">MC Infra</div>
+<p class="text-gray-400 mb-6">Engineering excellence and building trust through precision-driven infrastructure and architectural landmarks since 1998.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-gray-400 hover:text-yellow-500 cursor-pointer">public</span>
+<span class="material-symbols-outlined text-gray-400 hover:text-yellow-500 cursor-pointer">share</span>
+<span class="material-symbols-outlined text-gray-400 hover:text-yellow-500 cursor-pointer">corporate_fare</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-yellow-500 uppercase mb-6 tracking-widest">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">RERA Disclosure</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Site Map</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-yellow-500 uppercase mb-6 tracking-widest">Projects</h4>
+<ul class="space-y-3">
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Residential Portfolios</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Commercial Hubs</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Infrastructure Projects</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Quality Assurance</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-yellow-500 uppercase mb-6 tracking-widest">Contact</h4>
+<ul class="space-y-4">
+<li class="flex gap-3 text-gray-400">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span>info@mcinfra.com</span>
+</li>
+<li class="flex gap-3 text-gray-400">
+<span class="material-symbols-outlined text-sm">call</span>
+<span>+91 80 4455 6677</span>
+</li>
+<li class="flex gap-3 text-gray-400">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Level 8, Corporate Tower, Brigade Road, Bengaluru - 560001</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-6 border-t border-gray-800 text-gray-500 text-xs text-center md:text-left">
+            © 2024 MC Infra. RERA Reg No: PRM/KA/RERA/1251/310/PR/180516/001715
+        </div>
+</footer>
+</body></html>

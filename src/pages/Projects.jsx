@@ -1,130 +1,224 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MapPinIcon = ({ size = 14 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
-    <circle cx="12" cy="10" r="3"/>
-  </svg>
-);
-
-const projectsData = [
-  { id: 1, title: 'The Aura Residences', category: 'Residential', location: 'Downtown District', price: '$2.5M', badge: 'Ready to Move', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDmC3J-ChyV_5me-Y3GlJZwRZfNdtxIlvpeacohJNTAPlrWvhdvzLq84kZKxnrfztvotrojix8gm5_60E9rkwLrY5UKgMAeMLe9241xBYHPmNxF7IvvbzKrnkElHqJwRFIvb5GR_v0vKsPPVEIYFCJVWTbRfeD6j-_DH9FdLswxmS4vVso0WDMLnptP40gP15eDcBI1tOVJD3aoHalrZiDLVakr_Lq-NEnJz7f9ruVnOylyR40LWzC5z2kMtluEMgRmrUzSn3hUsw' },
-  { id: 2, title: 'Crestview Estates', category: 'Residential', location: 'Highland Hills', price: '$4.1M', badge: 'Under Construction', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCAh6WyHtlwmTpnZNSRQ9_LDKtJe7v6I8CrwgTV22-XJB5eV7xiTBGhIwytyBWxDmpT_eMTd80yvLJ_lx-WPW2n2_22rwUJE021ChVbC869AScroFQcumkTYwW1CB5uugtkyLfls7bav2CjH7e4X3R7kXlUnntS-CXkuB1tZZuG_opzVRzhUjt43OfoXyBAa3F6iX93uGIqfaU2fNtK3KffGFS_cg36l0MWIMMuFOwFYHhu3BMVtgZgyof-tOsGUUdhi3t3srkOxg' },
-  { id: 3, title: 'Nexus Commercial', category: 'Commercial', location: 'Financial Hub', price: '$1.2M', badge: 'New Launch', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB51DDv5UWs6ldLIrA9whdv_KE6mvIlTcpVk1IZDvyxbEv_bFEK7N0mwxzzz_UOvL9JFHSAuVPl4IL-4ag4Jc_Lc4XvIntECREJ3zLJW51ixotZJCXD-aF5_8lHpcBQ-MvyWdBFnKI0PyloXdGTvyttS9ffWeOludmnilNzm2n0tOFI_suCK293p0PHMXNL4gJlB1xHAlXABYqwINmHddjpTQhmuBlJTP8M6aLHGDevnl4cUCUBGMz8DhG-Zc3pg1UKkSwzK84HYg' },
-  { id: 4, title: 'Lumina Heights', category: 'Residential', location: 'London, UK', image: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=800', price: '£3.2M' },
-  { id: 5, title: 'Nova Logistics Hub', category: 'Industrial', location: 'Dubai, UAE', image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800', price: '$120M' },
-  { id: 6, title: 'Azure Retreat', category: 'Hospitality', location: 'Santorini, Greece', image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800', price: '$18M' }
-];
-
 const Projects = () => {
-  const [filter, setFilter] = useState('All');
-  const categories = ['All', 'Residential', 'Commercial', 'Industrial', 'Hospitality'];
-
-  const filteredProjects = filter === 'All' 
-    ? projectsData 
-    : projectsData.filter(p => p.category === filter);
-
   return (
-    <div style={{ paddingTop: '80px', backgroundColor: '#fcf8f8' }}>
-      {/* Header */}
-      <section style={{ padding: '80px 0', borderBottom: '1px solid #e5e2e1', backgroundColor: '#ffffff' }}>
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '32px' }}>
-            <div>
-              <span className="text-gradient-gold" style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', display: 'block', marginBottom: '8px' }}>CURATED COLLECTION</span>
-              <h1 style={{ fontSize: 'clamp(1.8rem,4vw,48px)', color: '#1c1b1b' }}>Our Portfolio</h1>
+    <main className="max-w-7xl mx-auto px-4 md:px-8 py-12 bg-background font-body-md text-on-background">
+      {/* Page Header */}
+      <div className="mb-12 border-l-4 border-secondary-container pl-6">
+        <h1 className="font-h1 text-3xl md:text-h1 text-primary uppercase">Project Portfolio</h1>
+        <p className="font-body-lg text-base md:text-body-lg text-on-surface-variant max-w-2xl mt-4">
+          Explore our landmark developments, from premium residential enclaves to sophisticated commercial hubs. Built on precision engineering and architectural integrity.
+        </p>
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* Filters Sidebar */}
+        <aside className="w-full lg:w-64 flex-shrink-0">
+          <div className="bg-white border border-outline-variant p-6 rounded-lg sticky top-24">
+            <div className="flex items-center gap-2 mb-6 text-primary">
+              <span className="material-symbols-outlined">filter_list</span>
+              <span className="font-h3 text-lg uppercase tracking-tight">Filters</span>
             </div>
             
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              {categories.map(cat => (
-                <button
-                  key={cat}
-                  onClick={() => setFilter(cat)}
-                  style={{
-                    padding: '10px 24px',
-                    borderRadius: '9999px',
-                    backgroundColor: filter === cat ? '#C89B3C' : '#f1edec',
-                    color: filter === cat ? 'white' : '#444748',
-                    fontSize: '14px',
-                    fontWeight: 700,
-                    transition: 'all 0.3s ease',
-                    border: 'none',
-                    cursor: 'pointer'
-                  }}
-                >
-                  {cat}
+            {/* Category Filter */}
+            <div className="mb-8">
+              <label className="font-label-caps text-label-caps text-on-surface-variant mb-3 block">CATEGORY</label>
+              <div className="space-y-2">
+                <label className="flex items-center gap-2 cursor-pointer group">
+                  <input defaultChecked className="form-checkbox text-primary rounded-sm border-outline-variant" type="checkbox" />
+                  <span className="text-body-md group-hover:text-primary transition-colors">Residential</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer group">
+                  <input className="form-checkbox text-primary rounded-sm border-outline-variant" type="checkbox" />
+                  <span className="text-body-md group-hover:text-primary transition-colors">Commercial</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer group">
+                  <input className="form-checkbox text-primary rounded-sm border-outline-variant" type="checkbox" />
+                  <span className="text-body-md group-hover:text-primary transition-colors">Plots</span>
+                </label>
+              </div>
+            </div>
+            
+            {/* Status Filter */}
+            <div className="mb-8">
+              <label className="font-label-caps text-label-caps text-on-surface-variant mb-3 block">PROJECT STATUS</label>
+              <div className="space-y-2">
+                <label className="flex items-center gap-2 cursor-pointer group">
+                  <input className="form-radio text-primary border-outline-variant" name="status" type="radio" />
+                  <span className="text-body-md group-hover:text-primary transition-colors">Ongoing</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer group">
+                  <input className="form-radio text-primary border-outline-variant" name="status" type="radio" />
+                  <span className="text-body-md group-hover:text-primary transition-colors">Completed</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer group">
+                  <input className="form-radio text-primary border-outline-variant" name="status" type="radio" />
+                  <span className="text-body-md group-hover:text-primary transition-colors">Upcoming</span>
+                </label>
+              </div>
+            </div>
+            
+            {/* Location Filter */}
+            <div className="mb-6">
+              <label className="font-label-caps text-label-caps text-on-surface-variant mb-3 block">LOCATION</label>
+              <select className="w-full bg-surface-container-lowest border border-outline-variant rounded p-2 text-body-md focus:border-primary focus:ring-0">
+                <option>All Locations</option>
+                <option>Central Business District</option>
+                <option>North Industrial Corridor</option>
+                <option>Premium Residential Zone</option>
+              </select>
+            </div>
+            
+            <button className="w-full py-2 bg-primary text-white font-ui-button rounded hover:bg-primary-container transition-all uppercase tracking-widest text-xs">
+              Reset Filters
+            </button>
+          </div>
+        </aside>
+
+        {/* Projects Grid */}
+        <div className="flex-grow space-y-8">
+          {/* Project Card 1: Green Meadows */}
+          <div className="bg-white border border-outline-variant rounded-lg overflow-hidden flex flex-col md:flex-row transition-all hover:border-primary-container">
+            <div className="md:w-2/5 relative h-64 md:h-auto overflow-hidden">
+              <img 
+                alt="Ongoing Construction Site" 
+                className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500" 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO8Qg-XL2HWu02ucwB1NAQSDGV-jiqhfsOgFJkLi8FpvRcTTBJeCq54NUO3hruIb27RvBDufKzVgsBqHs8-A-aa4I8Qe26ZkUkuULhxxKFBWNaFcJ7RYxCbfSPoJ46wVfx7WX0y28QVA_4yJug9zu502z02CpwIUc1GP65lPnf-5FwnLbzflDFyTlj1sIfLOVa68UOkwowqqsba4_jLLoHS0aAF-5Bk6wTtXM0AG1h796lxYVg4nDb3dV9MF0bFiAiyausLhKrhQ"
+              />
+              <div className="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 font-label-caps text-[10px] tracking-widest rounded-sm">
+                ONGOING
+              </div>
+            </div>
+            <div className="p-6 md:p-8 md:w-3/5 flex flex-col justify-between">
+              <div>
+                <div className="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
+                  <h2 className="font-h2 text-2xl md:text-h2 text-primary">Green Meadows</h2>
+                  <span className="font-label-caps text-xs text-on-surface-variant">RERA: PRM/KA/RERA/001715</span>
+                </div>
+                <div className="flex items-center gap-2 text-on-surface-variant mb-6">
+                  <span className="material-symbols-outlined text-sm">location_on</span>
+                  <span className="text-body-md italic text-sm md:text-base">North Suburban Growth Corridor</span>
+                </div>
+                <div className="grid grid-cols-2 gap-y-6 blueprint-line pb-6 mb-6">
+                  <div>
+                    <p className="font-label-caps text-[10px] text-outline mb-1">POSSESSION DATE</p>
+                    <p className="font-h3 text-base md:text-lg text-tertiary">December 2025</p>
+                  </div>
+                  <div>
+                    <p className="font-label-caps text-[10px] text-outline mb-1">STARTING PRICE</p>
+                    <p className="font-h3 text-base md:text-lg text-tertiary">₹1.2 Cr onwards</p>
+                  </div>
+                  <div>
+                    <p className="font-label-caps text-[10px] text-outline mb-1">CONFIGURATION</p>
+                    <p className="font-body-md font-semibold text-primary text-sm md:text-base">3 & 4 BHK Luxury Villas</p>
+                  </div>
+                  <div>
+                    <p className="font-label-caps text-[10px] text-outline mb-1">PROJECT SIZE</p>
+                    <p className="font-body-md font-semibold text-primary text-sm md:text-base">22 Acres Gated Community</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <Link to="/projects/green-meadows" className="flex-grow py-3 bg-primary text-white font-ui-button rounded text-center hover:bg-primary-container text-xs md:text-sm">VIEW DETAILS</Link>
+                <button className="px-4 border border-primary text-primary hover:bg-primary-fixed transition-colors rounded">
+                  <span className="material-symbols-outlined">download</span>
                 </button>
-              ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Grid */}
-      <section style={{ padding: '80px 0' }}>
-        <div className="container">
-          <div className="projects-grid">
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project) => (
-                <motion.div
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4 }}
-                  whileHover={{ y: -8 }}
-                  style={{
-                    backgroundColor: '#ffffff',
-                    borderRadius: '24px',
-                    overflow: 'hidden',
-                    border: '1px solid #e5e2e1',
-                    boxShadow: '0 40px 40px rgba(33,33,33,0.04)'
-                  }}
-                >
-                  <div style={{ height: '300px', position: 'relative' }}>
-                    <img src={project.img || project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    <div style={{ 
-                      position: 'absolute', 
-                      top: '16px', 
-                      left: '16px', 
-                      padding: '6px 16px', 
-                      backgroundColor: 'rgba(255, 255, 255, 0.9)', 
-                      backdropFilter: 'blur(10px)',
-                      borderRadius: '9999px',
-                      fontSize: '12px',
-                      fontWeight: 800,
-                      color: '#1c1b1b'
-                    }}>
-                      {project.category}
-                    </div>
+          {/* Project Card 2: Skyview Residency */}
+          <div className="bg-white border border-outline-variant rounded-lg overflow-hidden flex flex-col md:flex-row transition-all hover:border-primary-container">
+            <div className="md:w-2/5 relative h-64 md:h-auto overflow-hidden">
+              <img 
+                alt="Finished Modern Apartment Building" 
+                className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500" 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQTHSoc_P3a7i9__Ml68BR-xJwb69KRnUWFQS7CHI1v_ujgmD_bjmDFcdNe8ss7eBf9H_dU11Pz4soKjhd2bT37zuK7S9SVETqDrvOsq9E_x1_saaXJ5CMlOnJi9o7TK2bfIn7-vA9AltG_jMrz7k0YSkf3xQ-h5J0P3mn0izH8o5t3mZRU2-KaJEhZ3E6VGrtluJVzDPVAL9ZwD7rMVGjt6PDFvpEr8472YSpVjYH-A8Wq8DIHGWygHv0cE5MMxwwysTv9tyL1w"
+              />
+              <div className="absolute top-4 left-4 bg-tertiary text-on-tertiary px-3 py-1 font-label-caps text-[10px] tracking-widest rounded-sm">
+                COMPLETED
+              </div>
+            </div>
+            <div className="p-6 md:p-8 md:w-3/5 flex flex-col justify-between">
+              <div>
+                <div className="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
+                  <h2 className="font-h2 text-2xl md:text-h2 text-primary">Skyview Residency</h2>
+                  <span className="font-label-caps text-xs text-on-surface-variant">RERA: PRM/KA/RERA/004592</span>
+                </div>
+                <div className="flex items-center gap-2 text-on-surface-variant mb-6">
+                  <span className="material-symbols-outlined text-sm">location_on</span>
+                  <span className="text-body-md italic text-sm md:text-base">City Heights, Central District</span>
+                </div>
+                <div className="grid grid-cols-2 gap-y-6 blueprint-line pb-6 mb-6">
+                  <div>
+                    <p className="font-label-caps text-[10px] text-outline mb-1">POSSESSION DATE</p>
+                    <p className="font-h3 text-base md:text-lg text-tertiary">Ready to Move</p>
                   </div>
-                  <div style={{ padding: '32px' }}>
-                    <h3 style={{ fontSize: '24px', marginBottom: '4px' }}>{project.title}</h3>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#444748', fontSize: '14px', marginBottom: '16px' }}>
-                      <MapPinIcon size={14} /> {project.location}
-                    </div>
-                    <div style={{ height: '1px', background: '#e5e2e1', marginBottom: '16px' }}></div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <div>
-                        <span style={{ fontSize: '12px', color: '#444748', display: 'block' }}>STARTING FROM</span>
-                        <span style={{ fontSize: '24px', fontWeight: 600 }}>{project.price}</span>
-                      </div>
-                      <Link to={`/projects/${project.id}`} style={{ color: '#C89B3C', fontSize: '12px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>
-                        View Details <ChevronRight size={14} />
-                      </Link>
-                    </div>
+                  <div>
+                    <p className="font-label-caps text-[10px] text-outline mb-1">STARTING PRICE</p>
+                    <p className="font-h3 text-base md:text-lg text-tertiary">₹2.8 Cr onwards</p>
                   </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+                  <div>
+                    <p className="font-label-caps text-[10px] text-outline mb-1">CONFIGURATION</p>
+                    <p className="font-body-md font-semibold text-primary text-sm md:text-base">Premium 4 BHK Penthouses</p>
+                  </div>
+                  <div>
+                    <p className="font-label-caps text-[10px] text-outline mb-1">UNITS</p>
+                    <p className="font-body-md font-semibold text-primary text-sm md:text-base">120 Exclusive Units</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <Link to="/projects/skyview-residency" className="flex-grow py-3 bg-primary text-white font-ui-button rounded text-center hover:bg-primary-container text-xs md:text-sm">VIEW DETAILS</Link>
+                <button className="px-4 border border-primary text-primary hover:bg-primary-fixed transition-colors rounded">
+                  <span className="material-symbols-outlined">download</span>
+                </button>
+              </div>
+            </div>
           </div>
+
+          {/* Industrial Accent: Progress Overview */}
+          <div className="bg-surface-container p-6 md:p-8 border-l-8 border-secondary-container rounded-r-lg">
+            <div className="flex items-center gap-4 mb-4">
+              <span className="material-symbols-outlined text-primary scale-125 md:scale-150">construction</span>
+              <h3 className="font-h3 text-primary uppercase text-xl md:text-2xl">Portfolio Statistics</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <p className="font-label-caps text-outline mb-2">COMMERCIAL SPACE DELIVERED</p>
+                <div className="flex items-end gap-2">
+                  <span className="text-h2 font-black text-primary">2.4M</span>
+                  <span className="pb-1 font-semibold text-on-surface-variant">SQ.FT.</span>
+                </div>
+                <div className="w-full h-1 bg-white mt-2">
+                  <div className="h-full bg-secondary-container" style={{width: '85%'}}></div>
+                </div>
+              </div>
+              <div>
+                <p className="font-label-caps text-outline mb-2">HAPPY FAMILIES</p>
+                <div className="flex items-end gap-2">
+                  <span className="text-h2 font-black text-primary">1500+</span>
+                </div>
+                <div className="w-full h-1 bg-white mt-2">
+                  <div className="h-full bg-secondary-container" style={{width: '92%'}}></div>
+                </div>
+              </div>
+              <div>
+                <p className="font-label-caps text-outline mb-2">SAFETY SCORE</p>
+                <div className="flex items-end gap-2">
+                  <span className="text-h2 font-black text-primary">99.8%</span>
+                </div>
+                <div className="w-full h-1 bg-white mt-2">
+                  <div className="h-full bg-secondary-container" style={{width: '99%'}}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </section>
-    </div>
+      </div>
+    </main>
   );
 };
 
