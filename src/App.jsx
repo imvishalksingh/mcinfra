@@ -11,13 +11,15 @@ import Gallery from './pages/Gallery';
 import Careers from './pages/Careers';
 import News from './pages/News';
 import Portal from './pages/Portal';
+import Admin from './pages/Admin';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Portal gets its own layout */}
+        {/* Portal and Admin get their own layouts */}
         <Route path="/portal" element={<Portal />} />
+        <Route path="/admin" element={<Admin />} />
         
         {/* Everything else uses the main Layout with Navbar and Footer */}
         <Route path="/*" element={

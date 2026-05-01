@@ -1,4 +1,5 @@
 import React from 'react';
+import { teamMembers } from '../data/team';
 
 const Story = () => {
   return (
@@ -39,7 +40,7 @@ const Story = () => {
       {/* Blueprint Separator */}
       <div className="w-full h-px blueprint-line mb-24"></div>
 
-      {/* Company Journey Timeline */}
+      {/* Company Journey Timeline (Restored) */}
       <section className="mb-24">
         <div className="text-center mb-16">
           <h2 className="font-h2 text-3xl md:text-h2 text-primary">The MC Infra Journey</h2>
@@ -76,25 +77,49 @@ const Story = () => {
         </div>
       </section>
 
-      {/* Founder's Message & Team */}
+      {/* Team Section (Added) */}
+      <section className="mb-24">
+        <div className="text-center mb-16">
+          <span className="font-label-caps text-secondary mb-2 block">OUR LEADERSHIP & EXPERTS</span>
+          <h2 className="font-h2 text-3xl md:text-h2 text-primary">Meet the MC Infra Team</h2>
+          <div className="w-24 h-2 bg-secondary-container mx-auto mt-4"></div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {teamMembers.map((member, index) => (
+            <div key={index} className="bg-white border border-gray-200 p-6 group hover:shadow-lg transition-all">
+              <div className="w-full h-64 overflow-hidden mb-6">
+                <img 
+                  alt={member.name} 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                  src={member.image}
+                />
+              </div>
+              <h3 className="font-h3 text-xl text-primary mb-1">{member.name}</h3>
+              <p className="font-label-caps text-xs text-secondary tracking-widest">{member.designation}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Founder's Message & Team Strength (Restored) */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
         <div className="bg-primary-container p-8 md:p-12 text-white flex flex-col justify-center">
           <span className="material-symbols-outlined text-4xl text-secondary-container mb-6" data-icon="format_quote">format_quote</span>
-          <h2 className="font-h2 text-2xl md:text-h2 text-white mb-6">A Message from Marcus Cole</h2>
+          <h2 className="font-h2 text-2xl md:text-h2 text-white mb-6">A Message from Mr. Jaivinder Kumar</h2>
           <p className="font-body-lg italic mb-8 opacity-90 text-sm md:text-base">
             "At MC Infra, we believe that construction is more than just steel and concrete. It's about trust. When we sign a contract, we aren't just promising a building; we are promising our word that every bolt is tightened and every safety protocol is exceeded. Our stability comes from the sweat of our engineers and the honesty of our leadership."
           </p>
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-secondary-container">
               <img 
-                alt="Portrait of Marcus Cole" 
+                alt="Portrait of Mr. Jaivinder Kumar" 
                 className="w-full h-full object-cover" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC52hxqMHNpGuk9DNGYQtN7pKcEPu4j1ZQaENFHCNIGDOF8Q0R_cYpdl5lx80b2AaJDEVaqgcO2GwChDkWDaMaqt1adEK3cvLjZ2L47qLA8XVnBKkzJrery-UaWu6dIOy-N_9zxlfyRBXtzIdHryceDscKFH6Gsj3r1IhhJCrhnUreLRRLN_en4IMOBIZFDUAG5_d1V5KcHvSnrE1-SPya8fw4tOMiH-3WXUQAkq85_0nESNCT56Ec_Ok81b7A8UM-iLce1tBY7Tw"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
               />
             </div>
             <div>
-              <div className="font-bold text-lg">Marcus Cole</div>
-              <div className="font-label-caps text-secondary-container">FOUNDER & CHIEF ENGINEER</div>
+              <div className="font-bold text-lg">Mr. Jaivinder Kumar</div>
+              <div className="font-label-caps text-secondary-container">FOUNDER</div>
             </div>
           </div>
         </div>
@@ -126,7 +151,7 @@ const Story = () => {
         </div>
       </section>
 
-      {/* Certifications & Standards */}
+      {/* Certifications & Standards (Restored) */}
       <section className="border border-gray-200 bg-white p-8 md:p-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="max-w-md text-center md:text-left">

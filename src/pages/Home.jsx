@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ConstructionProcess from '../components/ConstructionProcess';
+import { happyClients } from '../data/clients';
 
 const Home = () => {
   return (
     <main className="bg-background text-on-background font-body-md">
-      {/* Hero Section */}
+      {/* Hero Section (Restored visuals) */}
       <section className="relative h-[650px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
@@ -31,11 +33,11 @@ const Home = () => {
           </div>
           <div className="hidden md:grid grid-cols-2 gap-4">
             <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
-              <div className="text-secondary-container font-h1 text-4xl mb-2">15+</div>
+              <div className="text-secondary-container font-h1 text-4xl mb-2">16+</div>
               <div className="font-label-caps text-xs text-surface-variant uppercase tracking-widest">Years of Excellence</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
-              <div className="text-secondary-container font-h1 text-4xl mb-2">50+</div>
+              <div className="text-secondary-container font-h1 text-4xl mb-2">450+</div>
               <div className="font-label-caps text-xs text-surface-variant uppercase tracking-widest">Projects Delivered</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-8 border border-white/20 col-span-2">
@@ -46,7 +48,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section (Restored visuals) */}
       <section className="py-24 bg-white border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
@@ -76,7 +78,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section (Restored visuals) */}
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="relative">
@@ -116,7 +118,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects Section (Restored visuals) */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -146,7 +148,7 @@ const Home = () => {
                   <div>
                     <h3 className="font-h3 text-xl mb-1">Skyline Heights</h3>
                     <p className="text-sm text-on-surface-variant flex items-center gap-1">
-                      <span className="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> Demo Location, Test City
+                      <span className="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> Rohta Road, Meerut
                     </p>
                   </div>
                   <div className="sm:text-right">
@@ -179,7 +181,7 @@ const Home = () => {
                   <div>
                     <h3 className="font-h3 text-xl mb-1">Nexus Business Hub</h3>
                     <p className="text-sm text-on-surface-variant flex items-center gap-1">
-                      <span className="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> Demo Location, Test City
+                      <span className="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> Meerut City
                     </p>
                   </div>
                   <div className="sm:text-right">
@@ -187,7 +189,7 @@ const Home = () => {
                     <span className="bg-green-100 text-green-700 px-2 py-1 text-[10px] border border-green-200">Ready to Move</span>
                   </div>
                 </div>
-                <p className="text-sm text-on-surface-variant mb-6">A premium grade-A office space delivered 4 months ahead of schedule with 100% occupancy.</p>
+                <p className="text-sm text-on-surface-variant mb-6">A premium grade-A office space delivered ahead of schedule with 100% occupancy.</p>
                 <button className="text-primary font-label-caps text-xs flex items-center gap-2 hover:gap-4 transition-all">
                   VIEW CASE STUDY <span className="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
                 </button>
@@ -204,34 +206,14 @@ const Home = () => {
             <span className="text-secondary-container font-label-caps tracking-[0.2em] uppercase">The Blueprint</span>
             <h2 className="font-h2 text-3xl md:text-h2">Our Systematic Construction Process</h2>
           </div>
-          <div className="relative">
-            <div className="absolute top-12 left-0 w-full border-t border-dashed border-white/20 hidden md:block"></div>
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-8 relative z-10">
-              {[
-                { step: "01", title: "Planning", desc: "Feasibility study and landscape analysis.", active: true },
-                { step: "02", title: "Design", desc: "3D modeling and architectural blueprints." },
-                { step: "03", title: "Site Dev", desc: "Excavation and foundation engineering." },
-                { step: "04", title: "Structure", desc: "Framing, walls, and structural roofing." },
-                { step: "05", title: "Finishing", desc: "Interior, MEP, and aesthetic detailing." },
-                { step: "06", title: "Handover", desc: "Final audit and key handover ceremony." },
-              ].map((item, idx) => (
-                <div key={idx} className="text-center space-y-4">
-                  <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary border-4 ${item.active ? 'border-secondary-container' : 'border-white/20'} flex items-center justify-center mx-auto mb-6 relative z-10`}>
-                    <span className="text-xl md:text-2xl font-bold">{item.step}</span>
-                  </div>
-                  <h4 className="font-bold uppercase text-sm tracking-widest">{item.title}</h4>
-                  <p className="text-xs text-surface-variant opacity-70">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ConstructionProcess dark={true} />
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section (Updated content, restored visuals) */}
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
             <div className="space-y-8">
               <span className="text-secondary font-label-caps tracking-[0.2em] uppercase">Happy Homeowners</span>
               <h2 className="font-h2 text-3xl md:text-h2 text-primary">Voices of Satisfaction</h2>
@@ -256,6 +238,26 @@ const Home = () => {
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Tsc1JQyPrE9w8JdIbQYdrw3_0AEC5_QCFXUqJZjHKonmnYX7VIU_9BIihDqyF3LAjUpJ6dO2K2GItQ1oVhNBUCKQzIBVp_WVgAl7MAKAnYr_DEiu0OAPVw93Nh60KVQF54xbC8WOm7TQY4fGmvz_8riyuyabBRJK2nvRwVSzHP9rkI8pFzz25cePoyAIYL3S78hIWeIgHf_O5p6gaLgrTcY1fcaYAwf9f0lp-MitWK6IuGCeq21nT80w42ympcbpd7x1IpXEGw"
               />
             </div>
+          </div>
+          
+          {/* Grid for Additional Happy Clients */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {happyClients.map((client, index) => (
+              <div key={index} className="bg-white p-6 border border-gray-200 relative group hover:border-primary transition-all">
+                <p className="text-on-surface-variant italic mb-6 text-xs md:text-sm leading-relaxed">
+                  "{client.message}"
+                </p>
+                <div className="flex items-center gap-3 border-t border-gray-100 pt-4">
+                  <div className="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold shrink-0 text-xs">
+                    {client.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary text-xs">{client.name}</h4>
+                    <p className="text-[10px] text-on-surface-variant font-medium">{client.designation}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

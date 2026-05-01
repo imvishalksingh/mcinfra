@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ConstructionProcess from '../components/ConstructionProcess';
 
 const Services = () => {
   return (
@@ -111,54 +112,7 @@ const Services = () => {
             <span className="font-label-caps text-secondary tracking-widest text-xs">The MC Infra Methodology</span>
             <h2 className="font-h2 text-3xl md:text-h2 text-primary">From Planning to Handover</h2>
           </div>
-          <div className="relative">
-            {/* Desktop Timeline Line */}
-            <div className="hidden lg:block absolute top-12 left-0 w-full h-1 bg-gray-200">
-              <div className="absolute top-0 left-0 h-full bg-secondary-container w-3/4"></div>
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 relative z-10">
-              {/* Step 1 */}
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-4 shadow-lg">
-                  <span className="material-symbols-outlined text-primary text-3xl" data-icon="edit_note">edit_note</span>
-                </div>
-                <h4 className="font-h3 text-lg md:text-xl mb-2">Planning</h4>
-                <p className="text-xs text-on-surface-variant">Requirement gathering, feasibility studies, and site surveys.</p>
-              </div>
-              {/* Step 2 */}
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-4 shadow-lg">
-                  <span className="material-symbols-outlined text-primary text-3xl" data-icon="design_services">design_services</span>
-                </div>
-                <h4 className="font-h3 text-lg md:text-xl mb-2">Blueprint</h4>
-                <p className="text-xs text-on-surface-variant">Architectural rendering and structural engineering documentation.</p>
-              </div>
-              {/* Step 3 */}
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-4 shadow-lg">
-                  <span className="material-symbols-outlined text-primary text-3xl" data-icon="construction">construction</span>
-                </div>
-                <h4 className="font-h3 text-lg md:text-xl mb-2">Execution</h4>
-                <p className="text-xs text-on-surface-variant">Core construction, site management, and safety compliance.</p>
-              </div>
-              {/* Step 4 */}
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-white border-4 border-secondary-container rounded-full flex items-center justify-center mb-4 shadow-lg">
-                  <span className="material-symbols-outlined text-primary text-3xl" data-icon="assignment_turned_in">assignment_turned_in</span>
-                </div>
-                <h4 className="font-h3 text-lg md:text-xl mb-2">Inspection</h4>
-                <p className="text-xs text-on-surface-variant">Quality audits, structural testing, and finishing checks.</p>
-              </div>
-              {/* Step 5 */}
-              <div className="flex flex-col items-center text-center opacity-50 col-span-2 lg:col-span-1">
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-white border-4 border-gray-200 rounded-full flex items-center justify-center mb-4">
-                  <span className="material-symbols-outlined text-outline text-3xl" data-icon="key">key</span>
-                </div>
-                <h4 className="font-h3 text-lg md:text-xl mb-2">Handover</h4>
-                <p className="text-xs text-on-surface-variant">Project delivery, final documentation, and maintenance support.</p>
-              </div>
-            </div>
-          </div>
+          <ConstructionProcess dark={false} />
         </div>
       </section>
 

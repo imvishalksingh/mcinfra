@@ -1,9 +1,10 @@
 import React from 'react';
+import { jobOpenings } from '../data/jobs';
 
 const Careers = () => {
   return (
     <main className="pt-8 pb-12 px-4 md:px-8 max-w-7xl mx-auto font-body-md text-on-background">
-      {/* Hero Section */}
+      {/* Hero Section (Restored visuals) */}
       <section className="mb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
@@ -24,7 +25,7 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Life at MC Infra: Bento Grid */}
+      {/* Life at MC Infra: Bento Grid (Restored visuals) */}
       <section className="mb-24" id="life">
         <div className="mb-8">
           <span className="font-label-caps text-xs md:text-label-caps text-secondary mb-2 block">CULTURE & ENVIRONMENT</span>
@@ -68,7 +69,7 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Job Openings */}
+      {/* Job Openings (Updated content, restored style) */}
       <section className="mb-24" id="openings">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
           <div>
@@ -76,61 +77,30 @@ const Careers = () => {
             <h2 className="font-h2 text-3xl md:text-h2 text-primary">Open Positions</h2>
           </div>
           <div className="flex flex-wrap gap-2">
-            <span className="px-4 py-2 bg-surface-container rounded-full text-[10px] md:text-xs font-bold border border-gray-200 uppercase tracking-widest text-on-surface-variant">All Locations</span>
-            <span className="px-4 py-2 bg-surface-container rounded-full text-[10px] md:text-xs font-bold border border-gray-200 uppercase tracking-widest text-on-surface-variant">Full-Time</span>
+            <span className="px-4 py-2 bg-surface-container rounded-full text-[10px] md:text-xs font-bold border border-gray-200 uppercase tracking-widest text-on-surface-variant">Meerut</span>
+            <span className="px-4 py-2 bg-surface-container rounded-full text-[10px] md:text-xs font-bold border border-gray-200 uppercase tracking-widest text-on-surface-variant">Onsite</span>
           </div>
         </div>
         <div className="space-y-4">
-          {/* Job Card 1 */}
-          <div className="bg-white p-6 rounded border border-gray-200 hover:shadow-md transition-shadow flex flex-col md:flex-row justify-between items-start md:items-center group">
-            <div>
-              <div className="flex flex-wrap items-center gap-3 mb-2">
-                <h3 className="font-h3 text-xl md:text-h3 text-primary">Senior Site Engineer</h3>
-                <span className="bg-green-100 text-green-800 text-[10px] px-2 py-1 rounded font-bold uppercase tracking-wider">Immediate Joiner</span>
+          {jobOpenings.map((job, index) => (
+            <div key={index} className="bg-white p-6 rounded border border-gray-200 hover:shadow-md transition-shadow flex flex-col md:flex-row justify-between items-start md:items-center group">
+              <div>
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 className="font-h3 text-xl md:text-h3 text-primary">{job.title}</h3>
+                </div>
+                <div className="flex flex-wrap gap-4 md:gap-6 text-xs md:text-sm text-on-surface-variant">
+                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">location_on</span> {job.location}</span>
+                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">payments</span> {job.ctc}</span>
+                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">work</span> {job.type}</span>
+                </div>
               </div>
-              <div className="flex flex-wrap gap-4 md:gap-6 text-xs md:text-sm text-on-surface-variant">
-                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">location_on</span> Mumbai, India</span>
-                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">work</span> 5-8 Years Exp</span>
-                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">payments</span> Competitive</span>
-              </div>
+              <button className="mt-4 md:mt-0 w-full md:w-auto border-2 border-primary text-primary px-8 py-2 font-ui-button uppercase tracking-widest group-hover:bg-primary group-hover:text-white transition-all" onClick={(e) => {e.preventDefault(); document.getElementById('apply').scrollIntoView({behavior: 'smooth'})}}>Apply Now</button>
             </div>
-            <button className="mt-4 md:mt-0 w-full md:w-auto border-2 border-primary text-primary px-8 py-2 font-ui-button uppercase tracking-widest group-hover:bg-primary group-hover:text-white transition-all" onClick={(e) => {e.preventDefault(); document.getElementById('apply').scrollIntoView({behavior: 'smooth'})}}>Apply Now</button>
-          </div>
-          
-          {/* Job Card 2 */}
-          <div className="bg-white p-6 rounded border border-gray-200 hover:shadow-md transition-shadow flex flex-col md:flex-row justify-between items-start md:items-center group">
-            <div>
-              <div className="flex flex-wrap items-center gap-3 mb-2">
-                <h3 className="font-h3 text-xl md:text-h3 text-primary">Project Manager (Industrial)</h3>
-                <span className="bg-yellow-100 text-yellow-800 text-[10px] px-2 py-1 rounded font-bold uppercase tracking-wider">High Priority</span>
-              </div>
-              <div className="flex flex-wrap gap-4 md:gap-6 text-xs md:text-sm text-on-surface-variant">
-                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">location_on</span> Delhi HQ</span>
-                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">work</span> 10+ Years Exp</span>
-                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">payments</span> Industry Standard</span>
-              </div>
-            </div>
-            <button className="mt-4 md:mt-0 w-full md:w-auto border-2 border-primary text-primary px-8 py-2 font-ui-button uppercase tracking-widest group-hover:bg-primary group-hover:text-white transition-all" onClick={(e) => {e.preventDefault(); document.getElementById('apply').scrollIntoView({behavior: 'smooth'})}}>Apply Now</button>
-          </div>
-          
-          {/* Job Card 3 */}
-          <div className="bg-white p-6 rounded border border-gray-200 hover:shadow-md transition-shadow flex flex-col md:flex-row justify-between items-start md:items-center group">
-            <div>
-              <div className="flex flex-wrap items-center gap-3 mb-2">
-                <h3 className="font-h3 text-xl md:text-h3 text-primary">Junior Architect</h3>
-              </div>
-              <div className="flex flex-wrap gap-4 md:gap-6 text-xs md:text-sm text-on-surface-variant">
-                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">location_on</span> Pune, India</span>
-                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">work</span> 2-4 Years Exp</span>
-                <span className="flex items-center gap-1"><span className="material-symbols-outlined text-sm">payments</span> Negotiable</span>
-              </div>
-            </div>
-            <button className="mt-4 md:mt-0 w-full md:w-auto border-2 border-primary text-primary px-8 py-2 font-ui-button uppercase tracking-widest group-hover:bg-primary group-hover:text-white transition-all" onClick={(e) => {e.preventDefault(); document.getElementById('apply').scrollIntoView({behavior: 'smooth'})}}>Apply Now</button>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Application Form */}
+      {/* Application Form (Restored) */}
       <section className="max-w-4xl mx-auto" id="apply">
         <div className="bg-white border border-gray-200 p-6 md:p-12">
           <div className="mb-10 text-center">
