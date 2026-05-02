@@ -16,13 +16,18 @@ const Portal = () => {
       {/* SideNavBar */}
       <aside className={`fixed md:sticky top-0 md:top-20 h-screen md:h-[calc(100vh-80px)] w-64 border-r border-gray-300 bg-gray-100 z-50 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 flex flex-col`}>
         <div className="p-6 border-b border-gray-300 md:hidden flex justify-between items-center bg-white">
-          <div className="text-xl font-bold text-primary uppercase tracking-wider">MC Infra</div>
+          <div className="flex items-center">
+            <img src="/logo.png" alt="MC Infra" className="h-10 w-auto object-contain" />
+          </div>
           <button onClick={() => setIsSidebarOpen(false)} className="text-primary">
             <span className="material-symbols-outlined text-3xl">close</span>
           </button>
         </div>
         <div className="p-6 border-b border-gray-300 hidden md:block">
-          <div className="text-lg font-black text-primary uppercase">MC Infra Portal</div>
+          <div className="flex items-center gap-2">
+            <img src="/logo.png" alt="MC Infra" className="h-8 w-auto object-contain" />
+            <span className="text-lg font-black text-primary uppercase">Portal</span>
+          </div>
           <div className="text-[10px] font-label-caps text-gray-500 uppercase tracking-widest mt-1">Precision Engineering</div>
         </div>
         <nav className="flex-1 py-4 overflow-y-auto">

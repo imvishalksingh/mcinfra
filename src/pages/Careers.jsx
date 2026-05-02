@@ -1,7 +1,13 @@
-import React from 'react';
-import { jobOpenings } from '../data/jobs';
+import React, { useState, useEffect } from 'react';
+import { jobOpenings as initialJobs } from '../data/jobs';
+import { getStoredData, STORAGE_KEYS } from '../utils/storage';
 
 const Careers = () => {
+  const [jobOpenings, setJobOpenings] = useState([]);
+
+  useEffect(() => {
+    setJobOpenings(getStoredData(STORAGE_KEYS.JOBS, initialJobs));
+  }, []);
   return (
     <main className="pt-8 pb-12 px-4 md:px-8 max-w-7xl mx-auto font-body-md text-on-background">
       {/* Hero Section (Restored visuals) */}

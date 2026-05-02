@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ConstructionProcess from '../components/ConstructionProcess';
-import { happyClients } from '../data/clients';
+import { happyClients as initialClients } from '../data/clients';
+import { getStoredData, STORAGE_KEYS } from '../utils/storage';
 
 const Home = () => {
+  const [happyClients, setHappyClients] = useState([]);
+
+  useEffect(() => {
+    setHappyClients(getStoredData(STORAGE_KEYS.CLIENTS, initialClients));
+  }, []);
   return (
     <main className="bg-background text-on-background font-body-md">
       {/* Hero Section (Restored visuals) */}

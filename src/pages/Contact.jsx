@@ -30,12 +30,12 @@ const Contact = () => {
             <div className="space-y-8">
               {/* Main Office */}
               <div className="blueprint-line pb-6">
-                <span className="font-label-caps text-secondary uppercase block mb-3">Main Office - Test City</span>
+                <span className="font-label-caps text-secondary uppercase block mb-3">Main Office - Meerut</span>
                 <div className="flex gap-4">
                   <span className="material-symbols-outlined text-outline">apartment</span>
                   <p className="font-body-md text-on-surface-variant text-sm md:text-base">
-                    123 Demo Street,<br />
-                    Test City, 000000
+                    Office no 501, Gokul Vihar, Rohta Road,<br />
+                    Near Cambridge Public School, Pin 250002
                   </p>
                 </div>
               </div>
@@ -60,20 +60,41 @@ const Contact = () => {
               {/* Communication */}
               <div className="blueprint-line pb-6">
                 <span className="font-label-caps text-secondary uppercase block mb-3">Communication</span>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-4">
-                    <span className="material-symbols-outlined text-outline">phone_iphone</span>
-                    <a className="font-body-md text-primary font-bold hover:underline text-sm md:text-base" href="tel:+910000000000">+91 00000 00000</a>
+                <div className="space-y-4">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[10px] font-bold text-gray-500 uppercase">Project Discussion</span>
+                    <div className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-outline text-sm">call</span>
+                      <a className="font-body-md text-primary font-bold hover:underline text-sm md:text-base" href="tel:+917983032984">+91 79830 32984</a>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <span className="material-symbols-outlined text-outline">call</span>
-                    <a className="font-body-md text-primary font-bold hover:underline text-sm md:text-base" href="tel:+910000000000">+91 00 0000 0000</a>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[10px] font-bold text-gray-500 uppercase">Site Visit</span>
+                    <div className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-outline text-sm">call</span>
+                      <a className="font-body-md text-primary font-bold hover:underline text-sm md:text-base" href="tel:+917457891221">+91 7457 891 221</a>
+                    </div>
                   </div>
-                  <div className="mt-4">
-                    <button className="flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3 font-ui-button hover:opacity-90 transition-all w-full sm:w-auto">
-                      <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>chat</span>
-                      Chat on WhatsApp
-                    </button>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[10px] font-bold text-gray-500 uppercase">Material Discussion</span>
+                    <div className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-outline text-sm">call</span>
+                      <a className="font-body-md text-primary font-bold hover:underline text-sm md:text-base" href="tel:+9109568861832">+91 095688 61832</a>
+                    </div>
+                  </div>
+                  <div className="pt-2 space-y-2">
+                    <div className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-outline text-sm">mail</span>
+                      <a className="text-sm hover:text-primary transition-colors" href="mailto:Sales@mcinfra.in">Sales@mcinfra.in</a>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-outline text-sm">mail</span>
+                      <a className="text-sm hover:text-primary transition-colors" href="mailto:Projects@mcinfra.in">Projects@mcinfra.in</a>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-outline text-sm">mail</span>
+                      <a className="text-sm hover:text-primary transition-colors" href="mailto:hr@mcinfra.com">hr@mcinfra.com</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -83,8 +104,7 @@ const Contact = () => {
                 <div className="flex gap-4">
                   <span className="material-symbols-outlined text-outline">schedule</span>
                   <div>
-                    <p className="font-body-md text-on-surface-variant text-sm md:text-base">Monday - Saturday: 09:00 AM - 07:00 PM</p>
-                    <p className="font-body-md text-on-surface-variant text-sm md:text-base">Sunday: Closed</p>
+                    <p className="font-body-md text-on-surface-variant text-sm md:text-base">Monday - Sunday: 08:30 AM - 08:00 PM</p>
                   </div>
                 </div>
               </div>

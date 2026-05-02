@@ -1,7 +1,13 @@
-import React from 'react';
-import { teamMembers } from '../data/team';
+import React, { useState, useEffect } from 'react';
+import { teamMembers as initialTeam } from '../data/team';
+import { getStoredData, STORAGE_KEYS } from '../utils/storage';
 
 const Story = () => {
+  const [teamMembers, setTeamMembers] = useState([]);
+
+  useEffect(() => {
+    setTeamMembers(getStoredData(STORAGE_KEYS.TEAM, initialTeam));
+  }, []);
   return (
     <main className="max-w-7xl mx-auto px-4 md:px-8 py-16 bg-surface text-on-surface font-body-md">
       {/* Hero Section: Company Story */}
