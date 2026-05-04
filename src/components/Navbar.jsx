@@ -81,7 +81,7 @@ const Navbar = () => {
           
           <div className="hidden md:flex items-center gap-4">
             <button className="bg-secondary-container text-primary font-ui-button px-6 py-2 rounded-lg hover:bg-yellow-400 transition-all uppercase tracking-widest text-xs">
-              Get Quote
+              Get Free Estimate
             </button>
           </div>
 
@@ -112,7 +112,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <button className="bg-secondary-container text-primary font-ui-button px-6 py-3 rounded-lg hover:bg-yellow-400 transition-all uppercase tracking-widest text-sm w-full mt-4">
-                Get Quote
+                Get Free Estimate
               </button>
             </div>
           </div>

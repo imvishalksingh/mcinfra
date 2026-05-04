@@ -58,7 +58,7 @@ const ProjectDetails = () => {
                   <div key={index} className="border border-gray-300 p-4 bg-surface-container-lowest">
                     <img 
                       alt={plan.type} 
-                      className="w-full grayscale opacity-80 hover:opacity-100 transition-opacity" 
+                      className="w-full hover:scale-105 transition-transform duration-500" 
                       src={plan.image}
                     />
                     <div className="mt-4">

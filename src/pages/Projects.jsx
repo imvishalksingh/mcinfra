@@ -90,7 +90,7 @@ const Projects = () => {
               <div className="md:w-2/5 relative h-64 md:h-auto overflow-hidden">
                 <img 
                   alt={project.name} 
-                  className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                   src={project.image}
                 />
                 <div className={`absolute top-4 left-4 ${project.status === 'Completed' ? 'bg-tertiary text-on-tertiary' : 'bg-secondary-container text-on-secondary-container'} px-3 py-1 font-label-caps text-[10px] tracking-widest rounded-sm`}>
